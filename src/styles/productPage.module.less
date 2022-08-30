@@ -1,0 +1,67 @@
+.product-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info {
+  padding: 12px;
+
+  &__name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #173143;
+  }
+
+  &__hero-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #173143;
+  }
+
+  .pricing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    margin-top: 8px;
+    &__sp {
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      color: #173143;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__mrp {
+      color: #979baa;
+      font-family: 'Roboto', sans-serif;
+      text-decoration: line-through;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      margin-left: 6px;
+      margin-right: 6px;
+      white-space: nowrap;
+    }
+
+    &__discount-percent {
+      font-family: 'Roboto', sans-serif;
+      color: #fd5c63;
+      opacity: 70%;
+      white-space: nowrap;
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+
+  &__additional-message {
+    font-family: 'Roboto', sans-serif;
+    color: #fd5c63;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,26 @@
+.header-container {
+  width: 100%;
+  height: 44px;
+  //   background-color: grey;
+  display: flex;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0) 0px 8px 8px -10px;
+  z-index: 1015;
+}
+
+.title-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  //   background-color: blue;
+  overflow: hidden;
+}
+
+.header-title {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
