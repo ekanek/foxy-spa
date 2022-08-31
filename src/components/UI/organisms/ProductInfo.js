@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from 'styles/productPage.module.less';
+import styles from 'styles/productPage.module.scss';
 
 const ProductInfo = () => {
   return (
     <div className={styles['product-info']}>
-      <p className={styles['product-info__name']}>
+      <span className={styles['product-info__name']}>
         Boho Botanist Green Tea &amp; Cactus Body Wash (350ml)
-      </p>
+      </span>
       <div className={styles['product-info__hero-description']}>
         A rich mix of 8 botanical oils and plant-based extracts. Enriched with botanicals like Green
         Tea and Cactus, this body wash gives your skin much-needed hydration.

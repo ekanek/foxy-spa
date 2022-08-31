@@ -4,9 +4,9 @@ import styles from 'styles/header.module.scss';
 function HeaderTitle(props) {
   const { title } = props;
   return (
-    <span className={styles['title-container']}>
-      <p className={styles['header-title']}>{title} </p>
-    </span>
+    <div className={styles['title-container']}>
+      <span className={styles['header-title']}>{title} </span>
+    </div>
   );
 }
 

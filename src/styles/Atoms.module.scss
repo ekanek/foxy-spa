@@ -1,0 +1,15 @@
+.pill {
+  display: flex;
+  flex-direction: row;
+  background: #eaeaea;
+  border-radius: 16px;
+  font-size: 12px;
+  height: 24px;
+  color: #173143;
+  margin: 0 8px 8px 0;
+  font-family: 'Roboto', sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  padding: 0 8px;
+}
