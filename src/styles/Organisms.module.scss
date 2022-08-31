@@ -1,0 +1,104 @@
+.site-footer {
+  margin: 12px;
+
+  .top-brands {
+    padding: 12px;
+    background: white;
+    &__title {
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 12px;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 12px;
+    }
+
+    &__brand {
+      flex-direction: row;
+      border-radius: 16px;
+      font-size: 12px;
+      height: 24px;
+      color: #17314380;
+      font-family: 'Roboto', sans-serif;
+      justify-content: space-between;
+      align-items: center;
+      width: fit-content;
+      margin-right: 5px;
+
+      :active {
+        color: red;
+        opacity: 0.5;
+      }
+
+      :visited {
+        color: 'purple';
+      }
+    }
+  }
+
+  .foxy-promises {
+    padding: 12px;
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    background-color: #f9faff;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .promise {
+    display: flex;
+    flex: 0.25;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+      width: 90%;
+      margin-top: 4px;
+      font-size: 11px;
+      color: #173143;
+      word-wrap: normal;
+      text-align: center;
+    }
+  }
+
+  .policy-and-connect {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    font-size: 11px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    .title {
+      font-weight: 900;
+      margin-bottom: 8px;
+      margin-top: 12px;
+    }
+
+    .policies {
+      grid-column: 1 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        width: max-content;
+        color: #000;
+
+        :hover {
+          color: white;
+        }
+      }
+    }
+
+    .connect-with-us {
+      grid-column: 2;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+
+      a {
+        padding-right: 8px;
+        width: max-content;
+      }
+    }
+  }
+}
