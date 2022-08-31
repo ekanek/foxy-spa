@@ -1,11 +1,12 @@
 .product-page-container {
   display: flex;
   flex-direction: column;
+  background: #ececec;
 }
 
 .product-info {
   padding: 12px;
-
+  background: white;
   &__name {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;

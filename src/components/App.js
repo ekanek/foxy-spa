@@ -4,7 +4,7 @@ import '../styles/App.scss';
 import styles from 'styles/productPage.module.scss';
 import ImageCarousel from 'components/UI/organisms/ImageCarousel';
 import ProductInfo from 'components/UI/organisms/ProductInfo';
-import AttributePills from 'components/UI/molecules/AttributePills';
+import IngredientsList from 'components/UI/molecules/IngredientsList';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <ImageCarousel />
       <ProductInfo />
-      <AttributePills />
+      <IngredientsList />
     </div>
   );
 }

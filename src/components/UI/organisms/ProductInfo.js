@@ -1,3 +1,4 @@
+import AttributePills from 'components/UI/molecules/AttributePills';
 import React from 'react';
 import styles from 'styles/productPage.module.scss';
 
@@ -20,6 +21,7 @@ const ProductInfo = () => {
       <div className={styles['product-info__additional-message']}>
         SPLURGE30 applied. Final prices in bag
       </div>
+      <AttributePills />
     </div>
   );
 };

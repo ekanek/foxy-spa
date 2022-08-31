@@ -3,9 +3,12 @@ import React from 'react';
 const contentStyle = {
   height: '375px',
   color: '#fff',
-  lineHeight: '160px',
   textAlign: 'center',
   background: '#364d79',
+};
+
+const carouselContainer = {
+  background: 'white',
 };
 
 const ImageCarousel = () => {
@@ -14,7 +17,7 @@ const ImageCarousel = () => {
   };
 
   return (
-    <Carousel afterChange={onChange}>
+    <Carousel afterChange={onChange} style={carouselContainer}>
       <div>
         <h3 style={contentStyle}>1</h3>
       </div>
