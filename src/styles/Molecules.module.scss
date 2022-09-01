@@ -1,5 +1,5 @@
 .attribute-pills {
-  padding: 12px;
+  padding-top: 12px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -30,6 +30,8 @@
 
   &__image {
     flex: 0.1;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
 

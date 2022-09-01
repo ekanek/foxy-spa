@@ -1,35 +1,23 @@
 import { Carousel } from 'antd';
 import React from 'react';
-const contentStyle = {
-  height: '375px',
-  color: '#fff',
-  textAlign: 'center',
-  background: '#364d79',
-};
 
-const carouselContainer = {
-  background: 'white',
+const ProductImage = ({ imageUrl }) => {
+  return (
+    <div>
+      <img src={imageUrl} height={375} />
+    </div>
+  );
 };
-
-const ImageCarousel = () => {
+const ImageCarousel = ({ images = [] }) => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
 
   return (
-    <Carousel afterChange={onChange} style={carouselContainer}>
-      <div>
-        <h3 style={contentStyle}>1</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>2</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>3</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>4</h3>
-      </div>
+    <Carousel afterChange={onChange}>
+      {images.map((image) => (
+        <ProductImage imageUrl={image} key={image} />
+      ))}
     </Carousel>
   );
 };
