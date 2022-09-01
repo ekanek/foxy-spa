@@ -1,10 +1,10 @@
 import { Carousel } from 'antd';
 import React from 'react';
-
+import styles from 'styles/Organisms.module.scss';
 const ProductImage = ({ imageUrl }) => {
   return (
     <div>
-      <img src={imageUrl} height={375} />
+      <img src={imageUrl} width={400} />
     </div>
   );
 };
@@ -14,7 +14,7 @@ const ImageCarousel = ({ images = [] }) => {
   };
 
   return (
-    <Carousel afterChange={onChange}>
+    <Carousel afterChange={onChange} className={styles['carousel']}>
       {images.map((image) => (
         <ProductImage imageUrl={image} key={image} />
       ))}
