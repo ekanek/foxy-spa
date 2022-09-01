@@ -1,0 +1,83 @@
+.prompts-container {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+.prompts-container::-webkit-scrollbar {
+  display: none;
+}
+.prompt-active {
+  border-radius: 12px;
+  min-width: 280px;
+  max-width: 280px;
+  margin-left: 12px;
+  height: 156px;
+  position: relative;
+  border: 4px solid #f5f6f8;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border: 4px solid #cfe9da;
+  background: #cfe9da;
+}
+.prompt-not-active {
+  border-radius: 12px;
+  min-width: 280px;
+  max-width: 280px;
+  margin-left: 12px;
+  height: 156px;
+}
+.offer-image {
+  display: block;
+  background-color: white;
+  border-radius: 10px;
+  // position: relative;
+}
+.prompt-top {
+  min-height: 94px;
+  padding: 10px 12px 0;
+  background: white;
+  border-radius: 8px 8px 0 0;
+  display: grid;
+  grid-template-rows: 35px 30px;
+}
+.prompt-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  height: 28px;
+}
+.prompt-header-text {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.prompt-text {
+  color: #979baa;
+  font-size: 12px;
+  min-height: 2.8em;
+}
+.prompt-bottom-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  padding: 10px;
+  margin-top: 10px;
+}
+.prompt-bottom-coupon-code {
+  background-color: #01b4601a;
+  border: 1px #01b460 dashed;
+}
+.prompt-bottom-coupon-applied {
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 16px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 10px;
+  text-align: center;
+  padding: 6px;
+  cursor: pointer;
+}

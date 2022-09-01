@@ -8,6 +8,7 @@ import IngredientsList from 'components/UI/molecules/IngredientsList';
 import SiteFooter from 'components/UI/organisms/SiteFooter';
 import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
 import { useGetProductDetailsQuery } from 'apis/productApis';
+import OffersRail from 'components/UI/organisms/OffersRail';
 
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery();
@@ -38,6 +39,7 @@ function App() {
           sp={finalSp}
           discount={discount}
         />
+        <OffersRail />
         <IngredientsList ingredients={ingredients} />
       </div>
       <SiteFooter />
