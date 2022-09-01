@@ -93,7 +93,7 @@ const PolicyAndConnect = () => {
           <img src={images.downloadPlayStore} width={87} height={23} />
         </a>
         <span className={styles['title']}>CONNECT WITH US</span>
-        <div className="connect-buttons-footer">
+        <div>
           <a target="_blank" href="https://www.instagram.com/foxy.famous/" rel="noreferrer">
             <img src={images.instaIcon} width={23} height={23} />
           </a>
