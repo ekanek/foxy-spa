@@ -27,6 +27,7 @@ function App() {
     final_sp: finalSp,
     discount,
     star_ingredients: ingredients,
+    reviews = [],
   } = data;
   console.log('PRODUCT DATA', data);
   return (
@@ -42,7 +43,7 @@ function App() {
           discount={discount}
         />
         <OffersRail />
-        <CustomerReviewList />
+        <CustomerReviewList reviews={reviews} />
         <IngredientsList ingredients={ingredients} />
       </div>
       <SiteFooter />
