@@ -10,6 +10,7 @@ import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
 import { useGetProductDetailsQuery } from 'apis/productApis';
 import OffersRail from 'components/UI/organisms/OffersRail';
 import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
+import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery(
@@ -55,6 +56,7 @@ function App() {
         />
         <IngredientsList ingredients={ingredients} />
       </div>
+      <BuyNowAddToBag />
       <SiteFooter />
     </>
   );

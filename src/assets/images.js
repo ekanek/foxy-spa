@@ -28,6 +28,8 @@ const images = {
   },
   blueLike: require('./images/thumb-up-blue.png'),
   greyLike: require('./images/thumb-up-grey.png'),
+  zap: require('./images/zap.png'),
+  addToBagGreen: require('./images/add-to-bag-green.png'),
 };
 
 export default images;

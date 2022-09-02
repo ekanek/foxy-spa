@@ -121,3 +121,50 @@
     align-items: center;
   }
 }
+
+.buy-cta {
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  background-color: white;
+  padding: 8px;
+  padding-top: 0px;
+  font-style: normal;
+  font-size: 16px;
+
+  &__flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__header {
+    height: 1px;
+    width: 100%;
+    background: #979baa;
+    opacity: 0.4;
+    margin-bottom: 8px;
+  }
+
+  &__add-to-bag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    margin-right: 8px;
+    background: white !important;
+    border: 1px #01b460 solid;
+    color: #01b460;
+  }
+  &__buy-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(to right, #52cb8c, #01b460);
+    color: white;
+  }
+}
