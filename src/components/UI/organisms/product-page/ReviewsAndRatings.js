@@ -2,6 +2,7 @@ import RatingsOverviewHeader from 'components/UI/atoms/product-review/RatingsOve
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
 import styles from 'styles/Organisms.module.scss';
 import React from 'react';
+import RateStars from 'components/UI/molecules/RateStars';
 
 const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratingsCount = 0 }) => {
   return (
@@ -13,6 +14,7 @@ const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratings
         ratingsCount={ratingsCount}
       />
       <CustomerReviewList reviews={reviews} />
+      <RateStars />
     </div>
   );
 };
