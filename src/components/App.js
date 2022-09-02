@@ -10,7 +10,7 @@ import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
 import { useGetProductDetailsQuery } from 'apis/productApis';
 import OffersRail from 'components/UI/organisms/OffersRail';
 // import ProductReviewCard from 'components/UI/atoms/ProductReviewCard';
-import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
+import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
 
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery(
@@ -30,6 +30,9 @@ function App() {
     discount,
     star_ingredients: ingredients,
     reviews = [],
+    rating = 0,
+    ratings_count: ratingsCount = 0,
+    reviews_count: reviewsCount = 0,
   } = data;
   console.log('PRODUCT DATA', data, window.location.href);
   return (
@@ -45,7 +48,12 @@ function App() {
           discount={discount}
         />
         <OffersRail />
-        <CustomerReviewList reviews={reviews} />
+        <ReviewsAndRatings
+          reviews={reviews}
+          rating={rating}
+          reviewsCount={reviewsCount}
+          ratingsCount={ratingsCount}
+        />
         <IngredientsList ingredients={ingredients} />
       </div>
       <SiteFooter />
