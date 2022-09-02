@@ -9,7 +9,6 @@ import SiteFooter from 'components/UI/organisms/SiteFooter';
 import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
 import { useGetProductDetailsQuery } from 'apis/productApis';
 import OffersRail from 'components/UI/organisms/OffersRail';
-// import ProductReviewCard from 'components/UI/atoms/ProductReviewCard';
 import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
 
 function App() {
@@ -34,7 +33,7 @@ function App() {
     ratings_count: ratingsCount = 0,
     reviews_count: reviewsCount = 0,
   } = data;
-  console.log('PRODUCT DATA', data, window.location.href);
+  // console.log('PRODUCT DATA', productCategory);
   return (
     <>
       <div className={styles['product-page-container']}>

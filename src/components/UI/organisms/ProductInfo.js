@@ -13,9 +13,9 @@ const ProductInfo = ({ name = '', description = '', mrp = '', sp = '', discount 
 
         <span className={styles['pricing__discount-percent']}>{discount}</span>
       </div>
-      <div className={styles['product-info__additional-message']}>
+      {/* <div className={styles['product-info__additional-message']}>
         SPLURGE30 applied. Final prices in bag
-      </div>
+      </div> */}
       <AttributePills />
     </div>
   );
