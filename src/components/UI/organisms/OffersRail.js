@@ -46,17 +46,20 @@ const offersData = [
 ];
 const OffersRail = () => {
   return (
-    <div className={styles['prompts-container']}>
-      {offersData.map((offer) => (
-        <OfferRailsCard
-          key={offer.id}
-          discount={offer.discount}
-          url={offer.logo}
-          text={offer.text}
-          couponCode={offer.couponCode}
-          buttonText={offer.buttonText}
-        />
-      ))}
+    <div className={styles['offer-rail']}>
+      <div className={styles['list-title']}>Pick your best offer</div>
+      <div className={styles['prompts-container']}>
+        {offersData.map((offer) => (
+          <OfferRailsCard
+            key={offer.id}
+            discount={offer.discount}
+            url={offer.logo}
+            text={offer.text}
+            couponCode={offer.couponCode}
+            buttonText={offer.buttonText}
+          />
+        ))}
+      </div>
     </div>
   );
 };

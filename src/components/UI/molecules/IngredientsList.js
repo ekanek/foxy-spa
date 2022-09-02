@@ -7,7 +7,7 @@ const IngredientItem = ({ name = '', icon_image_url: image }) => {
     <div className={styles['ingredient']}>
       <div className={styles['ingredient__name']}> {name}</div>
       <div className={styles['ingredient__image']}>
-        <img src={image} height={32} />
+        <img src={image} width={32} />
       </div>
     </div>
   );
@@ -16,6 +16,7 @@ const IngredientItem = ({ name = '', icon_image_url: image }) => {
 function IngredientsList({ ingredients = [] }) {
   return (
     <div className={styles['ingredients-list']}>
+      <div className={styles['list-title']}>What`s in it ?</div>
       <List dataSource={ingredients} renderItem={IngredientItem} />
     </div>
   );

@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <div className={styles['product-page-container']}>
-        <Header />
+        <Header title={name} />
         <ImageCarousel images={images} />
         <ProductInfo
           name={name}
