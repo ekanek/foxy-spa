@@ -18,7 +18,7 @@ export default function ProductReviewCard(review) {
         <div className={styles['review-card__likes']}>
           {
             <a>
-              <img src={images.white_star} width={12} />
+              <img src={images.greyLike} width={12} />
               <span className={styles['review-card__num-likes']}>{likes}</span>
             </a>
           }

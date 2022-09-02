@@ -31,7 +31,7 @@ function App() {
     star_ingredients: ingredients,
     reviews = [],
   } = data;
-  console.log('PRODUCT DATA', data);
+  console.log('PRODUCT DATA', data, window.location.href);
   return (
     <>
       <div className={styles['product-page-container']}>
