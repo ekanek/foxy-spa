@@ -13,7 +13,9 @@ import OffersRail from 'components/UI/organisms/OffersRail';
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
 
 function App() {
-  const { data, isFetching } = useGetProductDetailsQuery();
+  const { data, isFetching } = useGetProductDetailsQuery(
+    '/api/v2/products/l-oreal-professionnel-x-tenso-kit.json',
+  );
 
   if (isFetching) {
     return <Shimmer />;

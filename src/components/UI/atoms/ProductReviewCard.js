@@ -3,7 +3,6 @@ import React from 'react';
 import styles from 'styles/atoms/ProductReviewCards.module.scss';
 
 export default function ProductReviewCard(review) {
-  console.log('review', review);
   const { body = '', likes_count: likes = '', user_name: name = '', star = '' } = review;
   return (
     <div className={styles['review-card']}>

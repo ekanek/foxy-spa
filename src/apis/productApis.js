@@ -121,7 +121,7 @@ export const api = createApi({
     //   query: () => '/api/v4/lists/store-page.json',
     // }),
     getProductDetails: builder.query({
-      query: () => '/api/v2/products/l-oreal-professionnel-x-tenso-kit.json',
+      query: (slug) => slug,
     }),
   }),
 });
