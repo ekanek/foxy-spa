@@ -14,6 +14,7 @@ const images = {
   fbIcon: require('./images/fb_ic.png'),
   youtubeIcon: require('./images/youtube_ic.png'),
   twitterIcon: require('./images/twitter_ic.png'),
+  white_star: require('./images/rating-pill-star-white.png'),
 };
 
 export default images;
