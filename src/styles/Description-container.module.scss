@@ -1,0 +1,45 @@
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.container-tap {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: absolute;
+}
+.description-container {
+  background-color: white;
+}
+.description-sub-container {
+  margin: 10px;
+}
+.sub-heading {
+  margin-bottom: 10px;
+}
+.description-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #173143;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+.description-button-container {
+  margin-left: 260px;
+  margin-top: -30px;
+  height: 30px;
+  width: 50%;
+  cursor: pointer;
+}
+.description-button {
+  color: #4285f4;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  font-weight: 500;
+  display: flex;
+}
+.arror-style {
+  margin-left: 8px;
+  transform: rotate(90deg);
+}

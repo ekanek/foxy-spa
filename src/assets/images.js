@@ -15,6 +15,7 @@ const images = {
   youtubeIcon: require('./images/youtube_ic.png'),
   twitterIcon: require('./images/twitter_ic.png'),
   white_star: require('./images/rating-pill-star-white.png'),
+  blue_down_arrow: require('./images/blue-down-arrow.png'),
 };
 
 export default images;

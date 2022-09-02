@@ -11,6 +11,7 @@ import { useGetProductDetailsQuery } from 'apis/productApis';
 import OffersRail from 'components/UI/organisms/OffersRail';
 // import ProductReviewCard from 'components/UI/atoms/ProductReviewCard';
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
+import ProductDescription from 'components/UI/organisms/ProductDescription';
 
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery(
@@ -30,6 +31,10 @@ function App() {
     discount,
     star_ingredients: ingredients,
     reviews = [],
+    clean_description,
+    ingredients: ingredients_description,
+    how_to: howtouse_description,
+    metrological_info,
   } = data;
   console.log('PRODUCT DATA', data);
   return (
@@ -47,6 +52,12 @@ function App() {
         <OffersRail />
         <CustomerReviewList reviews={reviews} />
         <IngredientsList ingredients={ingredients} />
+        <ProductDescription
+          description={clean_description}
+          desc_ingredients={ingredients_description}
+          howtouse_description={howtouse_description}
+          metrological_info={metrological_info}
+        />
       </div>
       <SiteFooter />
     </>
