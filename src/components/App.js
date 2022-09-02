@@ -14,7 +14,7 @@ import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery(
-    '/api/v2/products/l-oreal-professionnel-x-tenso-kit.json',
+    'api/v2/products/colorbar-full-cover-makeup-stick.json',
   );
 
   if (isFetching) {
