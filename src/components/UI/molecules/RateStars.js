@@ -17,12 +17,11 @@ const EmoStar = ({ index, hoverIndex, setIndex }) => {
     image = url;
     comment = text;
   }
-  const onMouseEnter = (event) => {
-    console.log('onMouseEnter', index, event);
+  const onMouseEnter = () => {
     setIndex(index);
   };
   return (
-    <div className={styles['emo-star']} onMouseEnter={(event) => onMouseEnter(event)}>
+    <div className={styles['emo-star']} onMouseEnter={onMouseEnter}>
       <div className={styles['emo-star__centre']}>
         <img src={image} width={50} />
         <div>{comment}</div>
