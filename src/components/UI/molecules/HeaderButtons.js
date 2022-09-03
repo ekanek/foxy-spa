@@ -4,13 +4,14 @@ import React from 'react';
 import styles from 'styles/buttons.module.scss';
 
 export function BackButton(props) {
-  const { height = 18, width = 18 } = props;
+  const { height = 18, width = 18, onPress = () => {} } = props;
   return (
     <HeaderButton
       image={images.backButton}
       height={height}
       width={width}
       style={styles['back-arrow']}
+      onPress={onPress}
     />
   );
 }

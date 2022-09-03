@@ -1,14 +1,16 @@
 .container {
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 .container-tap {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px;
   position: absolute;
 }
 .description-container {
   background-color: white;
+  display: flex;
+  flex-flow: column;
 }
 .description-sub-container {
   margin: 10px;
@@ -26,7 +28,6 @@
 }
 .description-button-container {
   margin-left: 260px;
-  margin-top: -30px;
   height: 30px;
   width: 50%;
   cursor: pointer;
@@ -39,7 +40,19 @@
   font-weight: 500;
   display: flex;
 }
-.arror-style {
+.arrow-style {
   margin-left: 8px;
   transform: rotate(90deg);
+}
+.description-short-container {
+  background-color: white;
+  margin-bottom: 40px;
+  height: 350px;
+}
+.description-content {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+.description-content-container {
+  margin-top: 25px;
 }
