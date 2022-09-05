@@ -1,9 +1,11 @@
 import images from 'assets/images';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from 'styles/atoms/ProductReviewCards.module.scss';
 
 export default function ProductReviewCard(review) {
   const { body = '', likes_count: likes = '', user_name: name = '', star = '' } = review;
+  const [isLiked, setIsLiked] = useState(false);
+  const thumb = isLiked ? images.blueLike : images.greyLike;
   return (
     <div className={styles['review-card']}>
       <div className={styles['review-card__customer-rating']}>
@@ -17,10 +19,17 @@ export default function ProductReviewCard(review) {
         <div className={styles['review-card__subtext']}>2 days ago</div>
         <div className={styles['review-card__likes']}>
           {
-            <a>
-              <img src={images.white_star} width={12} />
-              <span className={styles['review-card__num-likes']}>{likes}</span>
-            </a>
+            <div
+              onClick={() => {
+                setIsLiked(!isLiked);
+              }}>
+              <img src={thumb} width={12} />
+              {likes > 0 && (
+                <span className={styles['review-card__num-likes']}>
+                  {isLiked ? likes + 1 : likes}
+                </span>
+              )}
+            </div>
           }
         </div>
       </div>

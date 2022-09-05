@@ -14,6 +14,7 @@ const IngredientItem = ({ name = '', icon_image_url: image }) => {
 };
 
 function IngredientsList({ ingredients = [] }) {
+  if (ingredients.length < 1) return null;
   return (
     <div className={styles['ingredients-list']}>
       <div className={styles['list-title']}>What`s in it ?</div>

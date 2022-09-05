@@ -13,11 +13,14 @@ import OffersRail from 'components/UI/organisms/OffersRail';
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
 import ProductDescription from 'components/UI/organisms/ProductDescription';
 import ProductDescriptionShort from 'components/UI/organisms/ProductDescriptionShort';
+import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
+import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
+
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery(
-    '/api/v2/products/l-oreal-professionnel-x-tenso-kit.json',
+    'api/v2/products/colorbar-full-cover-makeup-stick.json',
   );
-
+  const [show, setShow] = useState(false);
   if (isFetching) {
     return <Shimmer />;
   }
@@ -35,9 +38,12 @@ function App() {
     ingredients: ingredients_description,
     how_to: howtouse_description,
     metrological_info,
+    rating = 0,
+    ratings_count: ratingsCount = 0,
+    reviews_count: reviewsCount = 0,
   } = data;
   console.log('PRODUCT DATA', data);
-  const [show, setShow] = useState(false);
+
   // const descriptionShow = (status) => {
   //   setShow(status);
   // };
@@ -57,6 +63,12 @@ function App() {
             />
             <OffersRail />
             <CustomerReviewList reviews={reviews} />
+            <ReviewsAndRatings
+              reviews={reviews}
+              rating={rating}
+              reviewsCount={reviewsCount}
+              ratingsCount={ratingsCount}
+            />
             <IngredientsList ingredients={ingredients} />
             <ProductDescriptionShort
               setShow={setShow}
@@ -64,6 +76,7 @@ function App() {
               description={clean_description}
             />
           </div>
+          <BuyNowAddToBag />
           <SiteFooter />
         </div>
       ) : (

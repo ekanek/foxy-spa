@@ -94,3 +94,76 @@
     }
   }
 }
+
+.rate-stars {
+  background: white;
+  height: max-content;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+}
+
+.emo-star {
+  margin: 12px;
+  width: max-content;
+  height: 70px;
+  font-size: 10px;
+  color: #173143;
+  position: relative;
+  text-transform: uppercase;
+  width: 54px;
+  text-align: center;
+
+  &__centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.buy-cta {
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  background-color: white;
+  padding-top: 0px;
+  font-style: normal;
+  font-size: 16px;
+
+  &__flex {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+  }
+
+  &__header {
+    height: 1px;
+    width: 100%;
+    background: #979baa;
+    opacity: 0.4;
+  }
+
+  &__add-to-bag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    margin-right: 8px;
+    background: white !important;
+    border: 1px #01b460 solid;
+    color: #01b460;
+  }
+  &__buy-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(to right, #52cb8c, #01b460);
+    color: white;
+  }
+}
