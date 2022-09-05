@@ -5,3 +5,5 @@ export const REGEX = {
   NON_DIGITS: /[^0-9]/g,
   NON_DIGITS_WITH_PLUS: /[^0-9+]/g,
 };
+
+export const TEST = 'TEST';
