@@ -15,16 +15,16 @@ import ProductDescription from 'components/UI/organisms/ProductDescription';
 import ProductDescriptionShort from 'components/UI/organisms/ProductDescriptionShort';
 import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
 import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
-
 function App() {
+  const [productId, setProductId] = useState('');
   const { data, isFetching } = useGetProductDetailsQuery(
-    'api/v2/products/colorbar-full-cover-makeup-stick.json',
+    'api/v2/products/lakme-enrich-matte-lipstick?variant=7848',
   );
   const [show, setShow] = useState(false);
+
   if (isFetching) {
     return <Shimmer />;
   }
-
   const {
     images = [],
     name = '',
@@ -41,9 +41,10 @@ function App() {
     rating = 0,
     ratings_count: ratingsCount = 0,
     reviews_count: reviewsCount = 0,
+    variant_attributes,
   } = data;
   console.log('PRODUCT DATA', data);
-
+  console.log('productId', productId);
   // const descriptionShow = (status) => {
   //   setShow(status);
   // };
@@ -60,6 +61,8 @@ function App() {
               mrp={mrp}
               sp={finalSp}
               discount={discount}
+              variant={variant_attributes}
+              setProductId={setProductId}
             />
             <OffersRail />
             <CustomerReviewList reviews={reviews} />
