@@ -7,7 +7,22 @@
 .margin-left {
   margin-left: 12px;
 }
-
+.review-button-container {
+  margin-left: 220px;
+  height: 30px;
+  cursor: pointer;
+}
+.review-button {
+  color: #4285f4;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  font-weight: 500;
+  display: flex;
+}
+.arrow-style {
+  margin-left: 8px;
+}
 .carousel {
   display: flex;
   flex: 1;
@@ -108,7 +123,9 @@
         }
       }
     }
-
+    .middle-grid {
+      display: flex;
+    }
     .connect-with-us {
       grid-column: 2;
       padding: 24px;

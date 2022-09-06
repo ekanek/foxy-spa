@@ -20,7 +20,7 @@ const ProductInfo = ({
         <span className={styles['pricing__sp']}>{'₹' + mrp}</span>
         <span className={styles['pricing__mrp']}>{'₹' + sp}</span>
 
-        <span className={styles['pricing__discount-percent']}>{discount}</span>
+        <span className={styles['pricing__discount-percent']}>({discount})</span>
       </div>
       {/* <div className={styles['product-info__additional-message']}>
         SPLURGE30 applied. Final prices in bag

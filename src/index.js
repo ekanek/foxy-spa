@@ -5,14 +5,24 @@ import App from 'components/App';
 import reportWebVitals from './reportWebVitals';
 import 'styles/index.css';
 import store from 'lib/store';
-
+import ProductImagePage from 'components/UI/molecules/ProductImagePage';
+import ProductReviewPage from 'components/UI/molecules/ProductReviewPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/productImage" element={<ProductImagePage />} />
+            <Route path="/AllReview" element={<ProductReviewPage />} />
+          </Routes>
+        </div>
+      </Router>
     </Provider>
   </React.StrictMode>,
 );

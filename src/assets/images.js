@@ -31,6 +31,8 @@ const images = {
   greyLike: require('./images/thumb-up-grey.png'),
   zap: require('./images/zap.png'),
   addToBagGreen: require('./images/add-to-bag-green.png'),
+  arrow_Left: require('./images/arrow-left.png'),
+  cross_image: require('./images/cross-image.png'),
 };
 
 export default images;

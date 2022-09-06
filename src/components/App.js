@@ -9,8 +9,7 @@ import SiteFooter from 'components/UI/organisms/SiteFooter';
 import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
 import { useGetProductDetailsQuery } from 'apis/productApis';
 import OffersRail from 'components/UI/organisms/OffersRail';
-// import ProductReviewCard from 'components/UI/atoms/ProductReviewCard';
-import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
+
 import ProductDescription from 'components/UI/organisms/ProductDescription';
 import ProductDescriptionShort from 'components/UI/organisms/ProductDescriptionShort';
 import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
@@ -65,18 +64,18 @@ function App() {
               setProductId={setProductId}
             />
             <OffersRail />
-            <CustomerReviewList reviews={reviews} />
-            <ReviewsAndRatings
-              reviews={reviews}
-              rating={rating}
-              reviewsCount={reviewsCount}
-              ratingsCount={ratingsCount}
-            />
+
             <IngredientsList ingredients={ingredients} />
             <ProductDescriptionShort
               setShow={setShow}
               show={show}
               description={clean_description}
+            />
+            <ReviewsAndRatings
+              reviews={reviews}
+              rating={rating}
+              reviewsCount={reviewsCount}
+              ratingsCount={ratingsCount}
             />
           </div>
           <BuyNowAddToBag />
