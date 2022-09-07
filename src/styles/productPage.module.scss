@@ -3,9 +3,38 @@
   flex-direction: column;
   background: #ececec;
 }
+.TopRating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+.rate-stars {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.emo-star {
+  font-size: 10px;
+  color: #173143;
+  text-transform: uppercase;
+  width: 30px;
+  text-align: center;
+}
+.verified_text {
+  color: #4285f4;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
 .product-info {
-  padding: 12px;
+  padding: 15px;
   background: white;
   &__name {
     font-family: 'Roboto', sans-serif;
@@ -20,6 +49,7 @@
     font-size: 14px;
     line-height: 16px;
     color: #173143;
+    margin-top: 7px;
   }
 
   .pricing {
@@ -65,4 +95,57 @@
     font-weight: 400;
     font-size: 14px;
   }
+}
+.certificate-container {
+  max-width: 480px;
+  width: 100%;
+  bottom: 0;
+  background: #ffffff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 30px 16px;
+}
+.certificate-sub-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin: auto;
+}
+.certificate-header-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.headline {
+  margin-top: 32px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.headline-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  text-align: start;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+}
+.outer-container-got-it {
+  width: 100%;
+  cursor: pointer;
+}
+.got-it-button-style {
+  text-align: center;
+  color: white;
+  background: black;
+  padding: 4px;
+  margin-top: 12px;
+  border-radius: 16px;
+  height: 32px;
+}
+.cross-image {
+  max-width: '100%';
+  position: absolute;
+  right: 20px;
 }

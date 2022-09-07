@@ -33,6 +33,7 @@ const images = {
   addToBagGreen: require('./images/add-to-bag-green.png'),
   arrow_Left: require('./images/arrow-left.png'),
   cross_image: require('./images/cross-image.png'),
+  verified_image: require('./images/verified-image.png'),
 };
 
 export default images;

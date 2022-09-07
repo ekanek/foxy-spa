@@ -2,6 +2,7 @@ import AttributePills from 'components/UI/molecules/AttributePills';
 import React from 'react';
 import styles from 'styles/productPage.module.scss';
 import ProductVariant from 'components/UI/molecules/ProductVariant';
+import TopRating from 'components/UI/atoms/TopRating';
 const ProductInfo = ({
   name = '',
   description = '',
@@ -10,6 +11,7 @@ const ProductInfo = ({
   discount = '',
   variant = [],
   setProductId = '',
+  rating = 0,
 }) => {
   console.log(variant[0].allowed_values, 'product_info');
   return (
@@ -26,6 +28,7 @@ const ProductInfo = ({
         SPLURGE30 applied. Final prices in bag
       </div> */}
       <ProductVariant variantData={variant[0].allowed_values} setProductId={setProductId} />
+      <TopRating rating={rating} />
       <AttributePills />
     </div>
   );

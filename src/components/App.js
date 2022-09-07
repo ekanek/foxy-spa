@@ -9,7 +9,6 @@ import SiteFooter from 'components/UI/organisms/SiteFooter';
 import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
 import { useGetProductDetailsQuery } from 'apis/productApis';
 import OffersRail from 'components/UI/organisms/OffersRail';
-
 import ProductDescription from 'components/UI/organisms/ProductDescription';
 import ProductDescriptionShort from 'components/UI/organisms/ProductDescriptionShort';
 import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
@@ -44,9 +43,6 @@ function App() {
   } = data;
   console.log('PRODUCT DATA', data);
   console.log('productId', productId);
-  // const descriptionShow = (status) => {
-  //   setShow(status);
-  // };
   return (
     <>
       {show === false ? (
@@ -62,6 +58,7 @@ function App() {
               discount={discount}
               variant={variant_attributes}
               setProductId={setProductId}
+              rating={rating}
             />
             <OffersRail />
 
