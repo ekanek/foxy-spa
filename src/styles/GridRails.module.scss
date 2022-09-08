@@ -10,36 +10,81 @@
 }
 .prompts-container {
   display: flex;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  align-items: center;
+  margin-top: 4px;
+  overflow: scroll;
 }
 .prompts-container::-webkit-scrollbar {
   display: none;
 }
-.prompt-active {
-  border-radius: 12px;
+.offer-card-container {
+  position: relative;
   min-width: 280px;
   max-width: 280px;
+  margin-left: 12px;
   height: 156px;
-  position: relative;
-  border: 4px solid #f5f6f8;
   margin-top: 12px;
+  filter: grayscale(0);
+  opacity: 1;
+  border-radius: 4px;
+  display: block;
   margin-bottom: 8px;
+}
+.behind-prompt {
+  display: block;
   border: 4px solid #cfe9da;
   background: #cfe9da;
-  margin-right: 12px;
+  position: absolute;
+  width: 90%;
+  height: 98%;
+  transform: rotate(4deg);
+  left: 5px;
+  border-radius: 8px;
 }
-.prompt-not-active {
-  border-radius: 12px;
-  min-width: 280px;
-  max-width: 280px;
-  margin-right: 12px;
-  height: 156px;
-}
-.offer-image {
+.main-card-container {
   display: block;
   background-color: white;
+  border: 4px solid #cfe9da;
+  position: absolute;
+  min-width: 270px;
+  max-width: 260px;
+  margin-right: 12px;
+  height: 156px;
+  border-radius: 8px;
+}
+.circle-outside-left {
+  background: linear-gradient(90deg, #ececec 50%, #cfe9da 50%);
+  right: unset;
+  left: -14px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  z-index: 1;
+}
+.circle-inside {
+  background: #ececec;
+  height: 12px;
+  width: 12px;
+  border-radius: 10px;
+}
+.circle-outside-right {
+  background: linear-gradient(90deg, #cfe9da 50%, #ececec 50%);
+  left: unset;
+  right: -14px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  z-index: 1;
 }
 .prompt-top {
   min-height: 94px;
@@ -58,12 +103,15 @@
 .prompt-header-text {
   font-size: 14px;
   line-height: 28px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .prompt-text {
   color: #979baa;
   font-size: 12px;
-  min-height: 2.8em;
+  min-height: 2em;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 .prompt-bottom-container {
   display: grid;
@@ -82,7 +130,7 @@
   color: #ffffff;
   background-color: #000000;
   border-radius: 16px;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: bold;
   line-height: 10px;
   text-align: center;
