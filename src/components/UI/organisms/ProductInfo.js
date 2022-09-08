@@ -10,24 +10,30 @@ const ProductInfo = ({
   sp = '',
   discount = '',
   variant = [],
-  setProductId = '',
+  setVariantId = '',
+  variantId,
   rating = 0,
+  displayName = '',
 }) => {
-  console.log(variant[0].allowed_values, 'product_info');
   return (
     <div className={styles['product-info']}>
       <span className={styles['product-info__name']}>{name}</span>
       <div className={styles['product-info__hero-description']}>{description}</div>
       <div className={styles['pricing']}>
-        <span className={styles['pricing__sp']}>{'₹' + mrp}</span>
-        <span className={styles['pricing__mrp']}>{'₹' + sp}</span>
+        <span className={styles['pricing__sp']}>{'₹' + sp}</span>
+        <span className={styles['pricing__mrp']}>{'₹' + mrp}</span>
 
         <span className={styles['pricing__discount-percent']}>({discount})</span>
       </div>
       {/* <div className={styles['product-info__additional-message']}>
         SPLURGE30 applied. Final prices in bag
       </div> */}
-      <ProductVariant variantData={variant[0].allowed_values} setProductId={setProductId} />
+      <ProductVariant
+        displayName={displayName}
+        variantData={variant[0].allowed_values}
+        variantId={variantId}
+        setVariantId={setVariantId}
+      />
       <TopRating rating={rating} />
       <AttributePills />
     </div>

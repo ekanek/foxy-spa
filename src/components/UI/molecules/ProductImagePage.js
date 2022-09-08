@@ -51,10 +51,9 @@ const ProductImagePage = () => {
   // const onChange = (currentSlide) => {
   //   console.log(currentSlide);
   // };
-  const { data } = useGetProductDetailsQuery(
-    'api/v2/products/lakme-enrich-matte-lipstick?variant=7848',
-  );
+  const { data } = useGetProductDetailsQuery('api/v2/products/lakme-enrich-matte-lipstick');
   const { images = [], name = '' } = data;
+  console.log(images);
   return (
     <div>
       <Header name={name} />

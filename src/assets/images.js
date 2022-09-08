@@ -34,6 +34,7 @@ const images = {
   arrow_Left: require('./images/arrow-left.png'),
   cross_image: require('./images/cross-image.png'),
   verified_image: require('./images/verified-image.png'),
+  tick_image: require('./images/tick-mark.png'),
 };
 
 export default images;

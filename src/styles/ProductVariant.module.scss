@@ -14,6 +14,7 @@
 .variant-color-style {
   border-radius: 10px;
   margin: 5px;
+  position: relative;
 }
 .color-container {
   display: grid;
@@ -24,22 +25,23 @@
   justify-content: space-around;
 }
 .other-shades {
-  height: 34px;
-  width: 34px;
+  height: 35px;
+  width: 35px;
   background-color: #f4f6f8;
   border-radius: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-left: 290px;
-  margin-top: -35px;
+  margin-top: 5px;
+  padding: 8px;
 }
 .other-shades-text {
   font-size: 13px;
   font-weight: bold;
 }
 .variant_color_container {
+  position: relative;
 }
 .view-all-text {
   color: #4285f4;
@@ -47,4 +49,15 @@
   font-family: 'Roboto', sans-serif;
   margin-left: auto;
   font-weight: 500;
+}
+.tick-style {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  border-radius: 7px;
+  background: black;
+  border: solid 1px white;
 }

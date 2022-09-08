@@ -2,7 +2,7 @@ import React from 'react';
 import styles from 'styles/ProductVariant.module.scss';
 import ProductVariantItem from 'components/UI/atoms/ProductVariantItem';
 const ProductVariant = (props) => {
-  const { variantData = [], setProductId = '' } = props;
+  const { variantData = [], setVariantId = '', variantId = '', displayName = '' } = props;
   return (
     <div className={styles['variant_container']}>
       <div className={styles['top-row']}>
@@ -15,7 +15,7 @@ const ProductVariant = (props) => {
               fontSize: 14,
               display: 'inline-block',
             }}>
-            Shade RM15
+            {displayName}
           </span>
         </div>
         <div className={styles['view-all-text']}>View All</div>
@@ -26,18 +26,19 @@ const ProductVariant = (props) => {
             <ProductVariantItem
               key={item.id}
               image={item.image_url}
-              setProductId={setProductId}
-              productId={item.id}
+              setVariantId={setVariantId}
+              variantId={variantId}
+              initialVariantId={item.id}
             />
           ))}
+          {variantData.length > 13 ? (
+            <div className={styles['other-shades']}>
+              <div className={styles['other-shades-text']}>+{variantData.length - 13}</div>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
-        {variantData.length > 13 ? (
-          <div className={styles['other-shades']}>
-            <div className={styles['other-shades-text']}>+{variantData.length - 13}</div>
-          </div>
-        ) : (
-          <div></div>
-        )}
       </div>
     </div>
   );

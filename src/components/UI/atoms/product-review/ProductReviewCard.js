@@ -23,7 +23,7 @@ export default function ProductReviewCard(review) {
               onClick={() => {
                 setIsLiked(!isLiked);
               }}>
-              <img src={thumb} width={12} />
+              <img src={thumb} />
               {likes > 0 && (
                 <span className={styles['review-card__num-likes']}>
                   {isLiked ? likes + 1 : likes}

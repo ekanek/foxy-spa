@@ -5,9 +5,7 @@ import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
 import { useGetProductDetailsQuery } from 'apis/productApis';
 import { useNavigate } from 'react-router-dom';
 const ProductReviewPage = () => {
-  const { data } = useGetProductDetailsQuery(
-    'api/v2/products/lakme-enrich-matte-lipstick?variant=7848',
-  );
+  const { data } = useGetProductDetailsQuery('api/v2/products/lakme-enrich-matte-lipstick');
   const {
     reviews = [],
     rating = 0,

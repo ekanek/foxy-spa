@@ -4,9 +4,7 @@ import { useGetProductDetailsQuery } from 'apis/productApis';
 import { useNavigate } from 'react-router-dom';
 import images from 'assets/images';
 const CertificatePage = () => {
-  const { data } = useGetProductDetailsQuery(
-    'api/v2/products/lakme-enrich-matte-lipstick?variant=7848',
-  );
+  const { data } = useGetProductDetailsQuery('api/v2/products/lakme-enrich-matte-lipstick');
   const { brand } = data;
   const { name = '', certificate_image_url = '' } = brand;
   const navigate = useNavigate();

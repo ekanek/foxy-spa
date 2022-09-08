@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Header from 'components/UI/organisms/Header';
 import '../styles/App.scss';
 import styles from 'styles/productPage.module.scss';
-import ImageCarousel from 'components/UI/organisms/ImageCarousel';
-import ProductInfo from 'components/UI/organisms/ProductInfo';
 import IngredientsList from 'components/UI/molecules/IngredientsList';
 import SiteFooter from 'components/UI/organisms/SiteFooter';
 import ProductPageShimmer from 'components/UI/molecules/ProductPageShimmer';
@@ -13,23 +11,17 @@ import ProductDescription from 'components/UI/organisms/ProductDescription';
 import ProductDescriptionShort from 'components/UI/organisms/ProductDescriptionShort';
 import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRatings';
 import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
+import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 function App() {
-  const [productId, setProductId] = useState('');
   const { data, isFetching } = useGetProductDetailsQuery(
-    'api/v2/products/lakme-enrich-matte-lipstick?variant=7848',
+    'api/v2/products/lakme-enrich-matte-lipstick',
   );
   const [show, setShow] = useState(false);
-
   if (isFetching) {
     return <Shimmer />;
   }
   const {
-    images = [],
     name = '',
-    hero_description: description,
-    mrp,
-    final_sp: finalSp,
-    discount,
     star_ingredients: ingredients,
     reviews = [],
     clean_description,
@@ -39,27 +31,16 @@ function App() {
     rating = 0,
     ratings_count: ratingsCount = 0,
     reviews_count: reviewsCount = 0,
-    variant_attributes,
   } = data;
   console.log('PRODUCT DATA', data);
-  console.log('productId', productId);
+
   return (
     <>
       {show === false ? (
         <div>
           <div className={styles['product-page-container']}>
             <Header title={name} />
-            <ImageCarousel images={images} />
-            <ProductInfo
-              name={name}
-              description={description}
-              mrp={mrp}
-              sp={finalSp}
-              discount={discount}
-              variant={variant_attributes}
-              setProductId={setProductId}
-              rating={rating}
-            />
+            <ProductInfoContainer />
             <OffersRail />
 
             <IngredientsList ingredients={ingredients} />

@@ -17,7 +17,14 @@ const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratings
         ratingsCount={ratingsCount}
       />
       <CustomerReviewList reviews={reviews} />
-      <div style={{ width: '100%', backgroundColor: 'white', marginTop: -3, position: 'absolute' }}>
+      <div
+        style={{
+          width: '100%',
+          backgroundColor: 'white',
+          marginTop: -3,
+          position: 'absolute',
+          // left: 20,
+        }}>
         <div className={styles['review-button-container']} onClick={() => navigate('/AllReview')}>
           <div className={styles['review-button']}>
             View all reviews{' '}
