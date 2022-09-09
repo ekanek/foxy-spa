@@ -1,0 +1,49 @@
+.recommendation-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header {
+}
+.heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #173143;
+}
+.sub-heading {
+  color: #979baa;
+  font-size: 14px;
+  min-height: 2em;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+.review-context-container {
+  background: white;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  height: 80px;
+}
+.review-sub-container {
+  margin-left: 10px;
+}
+.review-context-line {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 12px;
+}
+.review-context-text {
+  margin-left: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #173143;
+}
+.bold-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #173143;
+}

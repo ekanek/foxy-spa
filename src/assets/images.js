@@ -35,6 +35,8 @@ const images = {
   cross_image: require('./images/cross-image.png'),
   verified_image: require('./images/verified-image.png'),
   tick_image: require('./images/tick-mark.png'),
+  match_play_image: require('./images/foxy-match-play.png'),
+  match_star_image: require('./images/star-image.png'),
 };
 
 export default images;
