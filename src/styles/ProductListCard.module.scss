@@ -1,11 +1,16 @@
+.list-container {
+  background-color: rgb(235, 235, 235);
+  margin-top: 10px;
+}
 .product-card-container {
   position: relative;
-  margin: 20px;
   background-color: white;
-  //   background-color: #04c66c;
-  height: 300px;
-  width: 190px;
+  // height: 300px;
+  // width: 190px;
+  margin: 6px;
   border-radius: 6px;
+  // width: Utility.getDynamicWidthForGrid(2, 16),
+  // height: Utility.getDynamicWidthForGrid(2, 16) + 116,
 }
 .product-card-sub-container {
   display: flex;
@@ -16,7 +21,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 .variant-data-container {
   height: 18px;
@@ -45,10 +50,11 @@
   overflow: hidden;
   width: 55px;
   white-space: nowrap;
+  color: #173143;
 }
 .add-to-bag {
   position: absolute;
-  bottom: 80px;
+  bottom: 90px;
   right: 10px;
   //   height: 40px;
   //   width: 40px;
@@ -92,10 +98,11 @@
 .lower-sub-container {
   display: flex;
   flex-direction: column;
-  margin: 8px;
+  margin-left: 8px;
+  margin-top: 8px;
 }
 .shade-name {
-  font-size: 11px;
+  font-size: 12px;
   color: #969a98;
   font-weight: 700;
   margin-bottom: 4px;
@@ -105,9 +112,9 @@
   background: white;
   &__name {
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: #173143;
   }
   &__additional-message {

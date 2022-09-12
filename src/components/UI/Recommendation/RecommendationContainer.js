@@ -2,14 +2,15 @@
 import React from 'react';
 import styles from 'styles/Recommendation.module.scss';
 import ReviewContext from 'components/UI/Recommendation/ReviewContext';
-const RecommendationContainer = () => {
+const RecommendationContainer = ({ foxy_match = {}, rating = '' }) => {
+  const { title, subtitle } = foxy_match;
   return (
     <div className={styles['recommendation-container']}>
       <div className={styles['header']}>
-        <div className={styles['heading']}>Why it works for you</div>
-        <div className={styles['sub-heading']}>or not; We'll be transparent about it</div>
+        <div className={styles['heading']}>{title}</div>
+        <div className={styles['sub-heading']}>{subtitle}</div>
       </div>
-      <ReviewContext />
+      <ReviewContext rating={rating} />
     </div>
   );
 };

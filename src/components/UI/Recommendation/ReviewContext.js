@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'styles/Recommendation.module.scss';
 import images from 'assets/images';
-const ReviewContext = () => {
+const ReviewContext = ({ rating = '' }) => {
   return (
     <div className={styles['review-context-container']}>
       <div className={styles['review-sub-container']}>
@@ -10,7 +10,7 @@ const ReviewContext = () => {
             <img src={images.match_star_image} height={15} width={15} />
           </div>
           <div className={styles['review-context-text']}>
-            <span className={styles['bold-text']}>Very Good</span> Rating of 4.1
+            <span className={styles['bold-text']}>Very Good</span> Rating of {rating}
           </div>
         </div>
         <div className={styles['review-context-line']}>

@@ -13,6 +13,7 @@ import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRa
 import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
+import ProductListContainer from 'components/UI/product-list/ProductListContainer';
 function App() {
   const { data, isFetching } = useGetProductDetailsQuery(
     'api/v2/products/lakme-enrich-matte-lipstick',
@@ -32,6 +33,8 @@ function App() {
     rating = 0,
     ratings_count: ratingsCount = 0,
     reviews_count: reviewsCount = 0,
+    consolidated_list_lower: product_list = [],
+    foxy_match = {},
   } = data;
   console.log('PRODUCT DATA', data);
 
@@ -43,7 +46,7 @@ function App() {
             <Header title={name} />
             <ProductInfoContainer />
             <OffersRail />
-            <RecommendationContainer />
+            <RecommendationContainer foxy_match={foxy_match} rating={rating} />
             <IngredientsList ingredients={ingredients} />
             <ProductDescriptionShort
               setShow={setShow}
@@ -57,8 +60,10 @@ function App() {
               ratingsCount={ratingsCount}
             />
           </div>
-          <BuyNowAddToBag />
+
+          <ProductListContainer productList={product_list} />
           <SiteFooter />
+          <BuyNowAddToBag />
         </div>
       ) : (
         <ProductDescription
