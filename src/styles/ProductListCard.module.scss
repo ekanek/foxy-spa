@@ -1,6 +1,15 @@
 .list-container {
   background-color: rgb(235, 235, 235);
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.header-text {
+  font-weight: bold;
+  font-size: 20px;
+  color: #173143;
+  margin-bottom: 12px;
+  margin: 6px;
 }
 .product-card-container {
   position: relative;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from 'components/UI/organisms/Header';
 import '../styles/App.scss';
 import styles from 'styles/productPage.module.scss';
@@ -15,6 +16,9 @@ import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
 import ProductListContainer from 'components/UI/product-list/ProductListContainer';
 function App() {
+  const location = useLocation();
+  const productUrl = String(location?.state?.slug);
+  console.log(productUrl);
   const { data, isFetching } = useGetProductDetailsQuery(
     'api/v2/products/lakme-enrich-matte-lipstick',
   );

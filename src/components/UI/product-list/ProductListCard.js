@@ -2,13 +2,20 @@ import React from 'react';
 import styles from 'styles/ProductListCard.module.scss';
 import images from 'assets/images';
 import Utilities from 'utils/Utility';
+import { useNavigate } from 'react-router-dom';
 const ProductListCard = ({ product = {} }) => {
   let widthCard = Utilities.getDynamicWidthForGrid(2, 16);
   let heightCard = Utilities.getDynamicWidthForGrid(2, 16) + 137;
   let imageheight = Utilities.getDynamicWidthForGrid(2, 60);
-  const { image_url: image = '', mrp, discount, final_sp, rating, name } = product;
+  const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
+  // console.log(slug);
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate('/product', { state: { slug } });
+  };
   return (
     <div
+      onClick={onClick}
       className={styles['product-card-container']}
       style={{ width: widthCard, height: heightCard }}>
       <div className={styles['product-card-sub-container']}>

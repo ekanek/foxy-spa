@@ -12,6 +12,7 @@ export default function AppRoutes() {
         <Route path="/productImage" element={<ProductImagePage />} />
         <Route path="/AllReview" element={<ProductReviewPage />} />
         <Route path="/brand_certificate" element={<CertificatePage />} />
+        <Route path="/product" element={<App />} />
       </Routes>
     </div>
   );
