@@ -9,4 +9,8 @@ export default class Utilities {
       (width - (Utilities.padding - Utilities.spacingBetweenItems) * 2 - spacing) / numberOfItems
     );
   }
+  static getScreenWidth() {
+    // Change name to window width
+    return width;
+  }
 }

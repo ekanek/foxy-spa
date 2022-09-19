@@ -169,3 +169,77 @@
     font-size: 11px;
   }
 }
+.hero-rail-card-container {
+  background-color: #fff;
+  border-color: #efefef;
+  // margin: 4px;
+  flex-direction: column;
+  border-radius: 2vh;
+  height: 610px;
+  align-self: center;
+  margin: 5vh;
+  &__image {
+    flex: 1;
+    margin: 2vh;
+  }
+  &__info {
+    margin: 0.8vh;
+  }
+  &__name {
+    color: #979baa;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    white-space: nowrap;
+    margin-bottom: 1vh;
+  }
+  &__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #173143;
+  }
+  &__offerText {
+    color: #04c66c;
+  }
+  &__rating {
+    margin-top: -1.5vh;
+  }
+  &__pills {
+  }
+}
+.button-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  // padding: 10px;
+  margin-top: 10px;
+}
+.buttons {
+  color: #ffffff;
+  // background-color: #000000;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  padding: 0.7vh;
+  border: 1.5px solid #000000;
+  cursor: pointer;
+  width: 140px;
+  margin-top: 8px;
+}
+.buttons-content {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin-left: 2vh;
+}
+.button-text {
+  font-size: 14px;
+  font-weight: 700;
+}

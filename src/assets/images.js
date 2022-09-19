@@ -38,6 +38,7 @@ const images = {
   match_play_image: require('./images/foxy-match-play.png'),
   match_star_image: require('./images/star-image.png'),
   addToBag: require('./images/add_to_bag.png'),
+  unlikeImage: require('./images/unlikeImage.png'),
 };
 
 export default images;
