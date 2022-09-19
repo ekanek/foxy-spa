@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ImageCarousel from 'components/UI/organisms/ImageCarousel';
 import ProductInfo from 'components/UI/organisms/ProductInfo';
-import { useGetProductDetailsQuery } from 'apis/productApis';
-function ProductInfoContainer() {
+function ProductInfoContainer({ data = {} }) {
   const [variantId, setVariantId] = useState('');
   const [variantsData, setVariantsData] = useState([]);
   const [imageData, setImageData] = useState([]);
@@ -10,7 +9,6 @@ function ProductInfoContainer() {
   const [finalspData, setFinalspData] = useState('');
   const [discountData, setDiscountData] = useState('');
   const [displayName, setDisplayName] = useState('Shade WM10');
-  const { data } = useGetProductDetailsQuery('api/v2/products/lakme-enrich-matte-lipstick');
 
   useEffect(() => {
     setImageData(data?.images);
@@ -35,11 +33,11 @@ function ProductInfoContainer() {
       setDisplayName(display_name);
     }
   }, [data, variantId]);
-  const { name = '', hero_description: description, rating = 0, variant_attributes } = data;
+  const { name = '', hero_description: description, rating = 0, variant_attributes, brand } = data;
   return (
     <>
       <div>
-        <ImageCarousel images={imageData} />
+        <ImageCarousel images={imageData} name={name} />
         <ProductInfo
           name={name}
           description={description}
@@ -51,6 +49,7 @@ function ProductInfoContainer() {
           setVariantId={setVariantId}
           rating={rating}
           displayName={displayName}
+          brand={brand}
         />
       </div>
     </>

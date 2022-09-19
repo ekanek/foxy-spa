@@ -11,8 +11,11 @@ const EmoStar = ({ index, hoverIndex }) => {
   );
 };
 
-const TopRating = ({ rating = 0 }) => {
+const TopRating = ({ rating = 0, brand }) => {
   const navigate = useNavigate();
+  const onClick = () => {
+    navigate('/brand_certificate', { state: { brand } });
+  };
   return (
     <div className={styles['TopRating']}>
       <div>
@@ -25,7 +28,7 @@ const TopRating = ({ rating = 0 }) => {
           <span style={{ paddingLeft: 4 }}>{rating}</span>
         </div>
       </div>
-      <div onClick={() => navigate('/brand_certificate')}>
+      <div onClick={onClick}>
         <img height={19} width={19} src={images.verified_image} />
         <span className={styles['verified_text']}> 100% Original</span>
       </div>

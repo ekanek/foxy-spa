@@ -33,7 +33,7 @@ const ProductListCard = ({ product = {} }) => {
           </div>
         </div>
         <div className={styles['product-image']}>
-          <img src={image} height={imageheight} width={widthCard} />
+          <img src={image} height={imageheight} />
         </div>
         <div className={styles['lower-container']}>
           <div className={styles['lower-sub-container']}>

@@ -9,14 +9,16 @@ const ProductImage = ({ imageUrl }) => {
     </div>
   );
 };
-const ImageCarousel = ({ images = [] }) => {
+const ImageCarousel = ({ images = [], name = '' }) => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
   const navigate = useNavigate();
-
+  const onClick = () => {
+    navigate('/productImage', { state: { slideImage: images, name: name } });
+  };
   return (
-    <div onClick={() => navigate('/productImage')}>
+    <div onClick={onClick}>
       <Carousel afterChange={onChange} className={styles['carousel']}>
         {images.map((image) => (
           <ProductImage imageUrl={image} key={image} />

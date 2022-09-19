@@ -1,11 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import styles from 'styles/Carousel.module.scss';
 import images from 'assets/images';
 import { useNavigate } from 'react-router-dom';
-import { useGetProductDetailsQuery } from 'apis/productApis';
-
 const ProductImage = ({ imageUrl }) => {
   return (
     <div>
@@ -51,9 +50,8 @@ const ProductImagePage = () => {
   // const onChange = (currentSlide) => {
   //   console.log(currentSlide);
   // };
-  const { data } = useGetProductDetailsQuery('api/v2/products/lakme-enrich-matte-lipstick');
-  const { images = [], name = '' } = data;
-  console.log(images);
+  const { state } = useLocation();
+  const { slideImage, name } = state;
   return (
     <div>
       <Header name={name} />
@@ -76,13 +74,13 @@ const ProductImagePage = () => {
             )
           }
           useKeyboardArrows>
-          {images.map((image) => (
+          {slideImage.map((image) => (
             <ProductImage imageUrl={image} key={image} />
           ))}
         </Carousel>
       </div>
       <div className={styles['short-Image-Slider']} onClick={() => console.log('yes')}>
-        {images.map((image) => (
+        {slideImage.map((image) => (
           <ProductImageShort imageUrl={image} key={image} />
         ))}
       </div>

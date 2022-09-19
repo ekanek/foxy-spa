@@ -2,20 +2,15 @@ import React from 'react';
 import Header from 'components/UI/organisms/Header';
 import RatingsOverviewHeader from 'components/UI/atoms/product-review/RatingsOverviewHeader';
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
-import { useGetProductDetailsQuery } from 'apis/productApis';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 const ProductReviewPage = () => {
-  const { data } = useGetProductDetailsQuery('api/v2/products/lakme-enrich-matte-lipstick');
-  const {
-    reviews = [],
-    rating = 0,
-    ratings_count: ratingsCount = 0,
-    reviews_count: reviewsCount = 0,
-  } = data;
   const navigate = useNavigate();
   function onPressContainer() {
     navigate('/');
   }
+  const { state } = useLocation();
+  const { rating = 0, reviews = [], ratingsCount = 0, reviewsCount = 0 } = state;
+  console.log(state);
   return (
     <div>
       <Header title="All Reviews" onPress={onPressContainer} />

@@ -7,7 +7,9 @@ import images from 'assets/images';
 import { useNavigate } from 'react-router-dom';
 const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratingsCount = 0 }) => {
   const navigate = useNavigate();
-
+  const onClick = () => {
+    navigate('/AllReview', { state: { rating, reviews, reviewsCount, ratingsCount } });
+  };
   return (
     <div>
       <div className={`${styles['list-title']} ${styles['margin-left']}`}>Rating and Reviews</div>
@@ -25,7 +27,7 @@ const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratings
           position: 'absolute',
           // left: 20,
         }}>
-        <div className={styles['review-button-container']} onClick={() => navigate('/AllReview')}>
+        <div className={styles['review-button-container']} onClick={onClick}>
           <div className={styles['review-button']}>
             View all reviews{' '}
             <div className={styles['arrow-style']}>

@@ -14,6 +14,7 @@ const ProductInfo = ({
   variantId,
   rating = 0,
   displayName = '',
+  brand,
 }) => {
   return (
     <div className={styles['product-info']}>
@@ -34,7 +35,7 @@ const ProductInfo = ({
         variantId={variantId}
         setVariantId={setVariantId}
       />
-      <TopRating rating={rating} />
+      <TopRating rating={rating} brand={brand} />
       <AttributePills />
     </div>
   );

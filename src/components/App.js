@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Header from 'components/UI/organisms/Header';
 import '../styles/App.scss';
 import styles from 'styles/productPage.module.scss';
@@ -16,12 +16,20 @@ import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
 import ProductListContainer from 'components/UI/product-list/ProductListContainer';
 function App() {
-  const location = useLocation();
-  const productUrl = String(location?.state?.slug);
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate('/');
+  };
+  const { state } = useLocation();
+  const productUrl = String(state?.slug);
   console.log(productUrl);
-  const { data, isFetching } = useGetProductDetailsQuery(
-    'api/v2/products/lakme-enrich-matte-lipstick',
-  );
+  let url = '';
+  if (productUrl === 'undefined') {
+    url = 'api/v2/products/lakme-enrich-matte-lipstick';
+  } else {
+    url = productUrl;
+  }
+  const { data, isFetching } = useGetProductDetailsQuery(url);
   const [show, setShow] = useState(false);
   if (isFetching) {
     return <Shimmer />;
@@ -47,8 +55,8 @@ function App() {
       {show === false ? (
         <div>
           <div className={styles['product-page-container']}>
-            <Header title={name} />
-            <ProductInfoContainer />
+            <Header title={name} onPress={onClick} />
+            <ProductInfoContainer data={data} />
             <OffersRail />
             <RecommendationContainer foxy_match={foxy_match} rating={rating} />
             <IngredientsList ingredients={ingredients} />
@@ -65,7 +73,11 @@ function App() {
             />
           </div>
 
-          <ProductListContainer productList={product_list} />
+          {product_list.length !== 0 ? (
+            <ProductListContainer productList={product_list} />
+          ) : (
+            <div></div>
+          )}
           <SiteFooter />
           <BuyNowAddToBag />
         </div>
