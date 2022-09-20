@@ -3,16 +3,16 @@ import React from 'react';
 import ProductImagePage from 'components/UI/molecules/ProductImagePage';
 import ProductReviewPage from 'components/UI/molecules/ProductReviewPage';
 import CertificatePage from 'components/UI/molecules/CertificatePage';
-import App from 'components/App';
+import HomeScreen from 'components/home-screen/HomeScreen';
 export default function AppRoutes() {
   return (
     <div className="container">
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<HomeScreen />} />
         <Route path="/productImage" element={<ProductImagePage />} />
         <Route path="/AllReview" element={<ProductReviewPage />} />
         <Route path="/brand_certificate" element={<CertificatePage />} />
-        <Route path="/product" element={<App />} />
+        <Route path="/product" element={<HomeScreen />} />
       </Routes>
     </div>
   );
