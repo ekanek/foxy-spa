@@ -283,3 +283,50 @@
     border: 1px solid #bbbebc;
   }
 }
+.card-container {
+  background-color: white;
+  border-color: #efefef;
+  border-radius: 0.5vh;
+  height: 34vh;
+  width: '100%';
+  margin: 2vh;
+  &__header-title {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #173143;
+    line-height: 1.6rem;
+    margin: 1vh;
+  }
+}
+.card-content {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-self: center;
+  &__info {
+    position: relative;
+  }
+  &__image {
+    margin-top: 2vh;
+  }
+  &__footer {
+    border-top: 2px solid #ecedf3;
+    margin: 1vh;
+    margin-top: 6vh;
+  }
+  &__footer-content {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-self: center;
+  }
+  &__addtoBag {
+    position: absolute;
+    right: 5px;
+    bottom: 7vh;
+    border-radius: 24px;
+    border: 1px solid #bbbebc;
+    margin-right: 1vh;
+  }
+}
