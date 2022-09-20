@@ -182,9 +182,9 @@
     flex: 1;
     margin: 2vh;
   }
-  &__info {
-    margin: 0.8vh;
-  }
+}
+.info {
+  margin: 0.8vh;
   &__name {
     color: #979baa;
     font-family: 'Roboto', sans-serif;
@@ -201,8 +201,22 @@
     font-weight: bold;
     color: #173143;
   }
+  &__truncate-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #173143;
+    line-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 3.2rem;
+  }
   &__offerText {
     color: #04c66c;
+    position: relative;
   }
   &__rating {
     margin-top: -1.5vh;
@@ -211,17 +225,21 @@
   }
 }
 .button-container {
-  display: grid;
-  grid-template-columns: auto auto;
+  // display: grid;
+  // grid-template-columns: auto auto;
+  // justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
   background-color: white;
   border-radius: 0 0 8px 8px;
-  // padding: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 1vh;
+  margin-right: 1vh;
 }
 .buttons {
   color: #ffffff;
-  // background-color: #000000;
   border-radius: 16px;
   font-size: 12px;
   font-weight: 500;
@@ -242,4 +260,26 @@
 .button-text {
   font-size: 14px;
   font-weight: 700;
+}
+.vertical-list-card {
+  background-color: white;
+  border-color: #efefef;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-self: center;
+  height: 160px;
+  margin-top: 10px;
+  margin-bottom: 1vh;
+  border-radius: 0.5vh;
+  &__image {
+    margin: 5px;
+  }
+  &__addtoBag {
+    position: absolute;
+    right: 5px;
+    bottom: -10px;
+    border-radius: 22px;
+    border: 1px solid #bbbebc;
+  }
 }

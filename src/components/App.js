@@ -14,7 +14,9 @@ import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRa
 import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
-import ProductListContainer from 'components/UI/product-list/ProductListContainer';
+import ProductListContainer from 'components/UI/cards/ProductListContainer';
+// import ProductPersonalizedHorizontal from 'components/UI/cards/ProductPersonalizedHorizontal';
+// import VerticalList from 'components/UI/cards/VerticalList';
 function App() {
   const navigate = useNavigate();
   const onClick = () => {
@@ -35,6 +37,7 @@ function App() {
     return <Shimmer />;
   }
   const {
+    // image_url: image = '',
     name = '',
     star_ingredients: ingredients,
     reviews = [],
@@ -57,6 +60,8 @@ function App() {
           <div className={styles['product-page-container']}>
             <Header title={name} onPress={onClick} />
             <ProductInfoContainer data={data} />
+            {/* <ProductPersonalizedHorizontal image={image} />
+            <VerticalList image={image} /> */}
             <OffersRail />
             <RecommendationContainer foxy_match={foxy_match} rating={rating} />
             <IngredientsList ingredients={ingredients} />
