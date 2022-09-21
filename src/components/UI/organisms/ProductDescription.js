@@ -1,14 +1,19 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from 'styles/Description-container.module.scss';
 import Header from 'components/UI/organisms/Header';
-const ProductDescription = (props) => {
-  const { description, desc_ingredients, howtouse_description, metrological_info, show, setShow } =
-    props;
-  function onPressContainer() {
-    setShow(!show);
-  }
+const ProductDescription = () => {
+  const { state = {} } = useLocation();
+  const navigate = useNavigate();
+  const description = state.description;
+  const ingredientsDescription = state.ingredientsDescription;
+  const howToUseDescription = state.howToUseDescription;
+  const metrologicalInfo = state.metrologicalInfo;
+  const onPressBack = () => {
+    navigate('/');
+  };
   return (
     <div>
-      <Header title="Everything you need to know" onPress={onPressContainer} />
+      <Header title="Everything you need to know" onPress={onPressBack} />
       <div className={styles['container']}>
         <div>
           <div className={styles['description-container']}>
@@ -23,7 +28,7 @@ const ProductDescription = (props) => {
 
                 <div
                   className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: desc_ingredients }}></div>
+                  dangerouslySetInnerHTML={{ __html: ingredientsDescription }}></div>
               </div>
               <div>
                 <div className={styles['sub-heading']}>
@@ -31,7 +36,7 @@ const ProductDescription = (props) => {
                 </div>
                 <div
                   className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: howtouse_description }}></div>
+                  dangerouslySetInnerHTML={{ __html: howToUseDescription }}></div>
               </div>
               <div>
                 <div className={styles['sub-heading']}>
@@ -39,7 +44,7 @@ const ProductDescription = (props) => {
                 </div>
                 <div
                   className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: metrological_info }}></div>
+                  dangerouslySetInnerHTML={{ __html: metrologicalInfo }}></div>
               </div>
             </div>
           </div>
