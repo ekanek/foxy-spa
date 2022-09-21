@@ -20,12 +20,12 @@ const ProductPersonalizedHorizontal = ({ image = '' }) => {
               width={20}
               style={{ marginRight: 4 }}
             />
-            <div className={styles['button-text']} style={{ marginLeft: 5, color: 'black' }}>
+            <div className={`${styles['button-text']} ${styles['button-text-color']}`}>
               WishList
             </div>
           </div>
         </div>
-        <div className={styles['buttons']} style={{ backgroundColor: 'black' }}>
+        <div className={`${styles['buttons']} ${styles['black-color']}`}>
           <div className={styles['buttons-content']}>
             <img
               alt="Add To bag Green Icon"

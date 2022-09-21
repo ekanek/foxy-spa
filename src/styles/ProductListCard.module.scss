@@ -220,6 +220,11 @@
   }
   &__rating {
     margin-top: -1.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
   }
   &__pills {
   }
@@ -283,6 +288,10 @@
     border: 1px solid #bbbebc;
   }
 }
-.temp {
+.black-color {
   background-color: #000000;
+}
+.button-text-color {
+  margin-left: 5;
+  color: black;
 }
