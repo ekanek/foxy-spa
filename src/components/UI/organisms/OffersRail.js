@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/GridRails.module.scss';
 import OfferRailsCard from 'components/UI/molecules/OfferRailsCard';
 

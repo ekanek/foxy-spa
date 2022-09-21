@@ -1,5 +1,3 @@
-// import images from 'assets/images';
-import React from 'react';
 import styles from 'styles/Atoms.module.scss';
 import { FiChevronRight } from 'react-icons/fi';
 

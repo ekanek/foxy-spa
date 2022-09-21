@@ -1,6 +1,5 @@
-import React from 'react';
-import styles from 'styles/productPage.module.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
+import styles from 'styles/productPage.module.scss';
 import images from 'assets/images';
 const CertificatePage = () => {
   const { state } = useLocation();
@@ -10,7 +9,7 @@ const CertificatePage = () => {
   return (
     <div className={styles['certificate-container']}>
       <div className={styles['cross-image']} onClick={() => navigate('/')}>
-        <img height={12} width={12} src={images.cross_image} />
+        <img alt="Cross Image" height={12} width={12} src={images.cross_image} />
       </div>
       <div className={styles['certificate-sub-container']}>
         <div className={styles['certificate-header-text']}>
@@ -23,7 +22,7 @@ const CertificatePage = () => {
           </div>
         </div>
         <div className={styles['certificate-image']}>
-          <img src={certificate_image_url} height={400} width={300} />
+          <img alt="Certificate" src={certificate_image_url} height={400} width={300} />
         </div>
         <div className={styles['outer-container-got-it']}>
           <div onClick={() => navigate('/')} className={styles['got-it-button-style']}>

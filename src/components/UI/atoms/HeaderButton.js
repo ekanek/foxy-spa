@@ -1,5 +1,3 @@
-import React from 'react';
-
 function HeaderButton(props) {
   const { height = 18, width = 18, image = '', style, onPress = () => {} } = props;
   return (

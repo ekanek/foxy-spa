@@ -1,18 +1,16 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from 'styles/ProductListCard.module.scss';
 import images from 'assets/images';
 import Utilities from 'utils/Utility';
-import { useNavigate } from 'react-router-dom';
 const ProductListCard = ({ product = {} }) => {
-  let widthCard = Utilities.getDynamicWidthForGrid(2, 16);
-  let heightCard = Utilities.getDynamicWidthForGrid(2, 16) + 137;
-  let imageheight = Utilities.getDynamicWidthForGrid(2, 60);
-  const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
-  // console.log(slug);
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/product', { state: { slug } });
   };
+  const widthCard = Utilities.getDynamicWidthForGrid(2, 16);
+  const heightCard = Utilities.getDynamicWidthForGrid(2, 16) + 137;
+  const imageheight = Utilities.getDynamicWidthForGrid(2, 60);
+  const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
   return (
     <div
       onClick={onClick}
@@ -29,11 +27,17 @@ const ProductListCard = ({ product = {} }) => {
           <div className={styles['customer-rating']}>
             {/* <span>3.8</span> */}
             <div style={{ fontWeight: 700 }}>{rating}</div>
-            <img src={images.white_star} width={11} height={10} className={styles['image']} />
+            <img
+              alt="White Star"
+              src={images.white_star}
+              width={11}
+              height={10}
+              className={styles['image']}
+            />
           </div>
         </div>
         <div className={styles['product-image']}>
-          <img src={image} height={imageheight} />
+          <img alt="Product Image" src={image} height={imageheight} />
         </div>
         <div className={styles['lower-container']}>
           <div className={styles['lower-sub-container']}>
@@ -48,11 +52,8 @@ const ProductListCard = ({ product = {} }) => {
           </div>
         </div>
       </div>
-      {/* <div style={{ backgroundColor: 'white', borderRadius: 20 }}>
-        <img src={images.addToBagGreen} height={28} width={28} />
-      </div> */}
       <div className={styles['add-to-bag']}>
-        <img src={images.addToBag} height={38} width={38} />
+        <img alt="Add To Bag" src={images.addToBag} height={38} width={38} />
       </div>
     </div>
   );

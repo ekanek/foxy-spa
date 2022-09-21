@@ -1,8 +1,8 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Header from 'components/UI/organisms/Header';
 import RatingsOverviewHeader from 'components/UI/atoms/product-review/RatingsOverviewHeader';
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
-import { useNavigate, useLocation } from 'react-router-dom';
 const ProductReviewPage = () => {
   const navigate = useNavigate();
   function onPressContainer() {

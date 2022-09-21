@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/ProductListCard.module.scss';
 import images from 'assets/images';
 import AttributePills from 'components/UI/molecules/AttributePills';
@@ -27,7 +26,7 @@ const ProductDescriptionContainer = ({ showCartButton, showPillsAndRating }) => 
           Get this for 10% off{' '}
           {showCartButton && (
             <div className={styles['vertical-list-card__addtoBag']}>
-              <img src={images.addToBag} height={42} width={42} />
+              <img alt="Add To Bag" src={images.addToBag} height={42} width={42} />
             </div>
           )}
         </div>

@@ -1,5 +1,5 @@
-import images from 'assets/images';
 import React, { useState } from 'react';
+import images from 'assets/images';
 import styles from 'styles/Molecules.module.scss';
 
 const ratingConfig = {

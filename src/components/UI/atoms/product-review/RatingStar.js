@@ -1,11 +1,10 @@
-import React from 'react';
 import images from 'assets/images';
 import styles from 'styles/productPage.module.scss';
 const EmoStar = ({ index, hoverIndex }) => {
   let image = hoverIndex < index ? images.rating.outline_star : images.rating.filled_star;
   return (
     <div className={styles['emo-star']}>
-      <img src={image} width={18} />
+      <img alt="Emo Star" src={image} width={18} />
     </div>
   );
 };

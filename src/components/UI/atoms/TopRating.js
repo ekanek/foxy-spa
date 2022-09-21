@@ -1,21 +1,18 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import images from 'assets/images';
 import styles from 'styles/productPage.module.scss';
-import { useNavigate } from 'react-router-dom';
 const EmoStar = ({ index, hoverIndex }) => {
-  let image = hoverIndex < index ? images.rating.outline_star : images.rating.filled_star;
+  const image = hoverIndex < index ? images.rating.outline_star : images.rating.filled_star;
   return (
     <div className={styles['emo-star']}>
-      <img src={image} width={18} />
+      <img alt="Emo Star" src={image} width={18} />
     </div>
   );
 };
 
 const TopRating = ({ rating = 0, brand }) => {
   const navigate = useNavigate();
-  const onClick = () => {
-    navigate('/brand_certificate', { state: { brand } });
-  };
+  const onClick = () => navigate('/brand_certificate', { state: { brand } });
   return (
     <div className={styles['TopRating']}>
       <div>
@@ -29,7 +26,7 @@ const TopRating = ({ rating = 0, brand }) => {
         </div>
       </div>
       <div onClick={onClick}>
-        <img height={19} width={19} src={images.verified_image} />
+        <img alt="verified image" height={19} width={19} src={images.verified_image} />
         <span className={styles['verified_text']}> 100% Original</span>
       </div>
     </div>

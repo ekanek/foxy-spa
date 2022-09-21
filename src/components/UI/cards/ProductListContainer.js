@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/ProductListCard.module.scss';
 import Grid from 'components/layout/Grid/Grid';
 const ProductListContainer = ({ productList = [] }) => {

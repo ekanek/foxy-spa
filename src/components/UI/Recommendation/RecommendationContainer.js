@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
 import styles from 'styles/Recommendation.module.scss';
 import ReviewContext from 'components/UI/Recommendation/ReviewContext';
 const RecommendationContainer = ({ foxy_match = {}, rating = '' }) => {

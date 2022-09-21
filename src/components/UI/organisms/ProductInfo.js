@@ -1,5 +1,4 @@
 import AttributePills from 'components/UI/molecules/AttributePills';
-import React from 'react';
 import styles from 'styles/productPage.module.scss';
 import ProductVariant from 'components/UI/molecules/ProductVariant';
 import TopRating from 'components/UI/atoms/TopRating';

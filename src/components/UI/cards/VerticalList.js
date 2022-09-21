@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/ProductListCard.module.scss';
 import Utilities from 'utils/Utility';
 // import images from 'assets/images';
@@ -13,7 +12,7 @@ const VerticalList = ({ image = '' }) => {
         width: Utilities.getScreenWidth() - 24,
       }}>
       <div className={styles['vertical-list-card__image']}>
-        <img src={image} height={116} width={116} />
+        <img alt="Product Image" src={image} height={116} width={116} />
       </div>
       <ProductDescriptionContainer showCartButton={true} />
     </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/ProductVariant.module.scss';
 import ProductVariantItem from 'components/UI/atoms/ProductVariantItem';
 const ProductVariant = (props) => {
@@ -31,12 +30,17 @@ const ProductVariant = (props) => {
               initialVariantId={item.id}
             />
           ))}
-          {variantData.length > 13 ? (
+          {/* {variantData.length > 13 ? (
             <div className={styles['other-shades']}>
               <div className={styles['other-shades-text']}>+{variantData.length - 13}</div>
             </div>
           ) : (
             <div></div>
+          )} */}
+          {variantData.length > 13 && (
+            <div className={styles['other-shades']}>
+              <div className={styles['other-shades-text']}>+{variantData.length - 13}</div>
+            </div>
           )}
         </div>
       </div>

@@ -21,74 +21,55 @@ function HomeScreen() {
   const onClick = () => {
     navigate('/');
   };
-  const { state } = useLocation();
-  const productUrl = String(state?.slug);
-  console.log(productUrl);
-  let url = '';
-  if (productUrl === 'undefined') {
-    url = 'api/v2/products/lakme-enrich-matte-lipstick';
-  } else {
-    url = productUrl;
-  }
-  const { data, isFetching } = useGetProductDetailsQuery(url);
-  if (isFetching) {
-    return <Shimmer />;
-  }
+  const { state = {} } = useLocation();
+  const productUrl = state?.slug;
+  const url = productUrl || 'api/v2/products/lakme-enrich-matte-lipstick';
+  const { data: product, isFetching } = useGetProductDetailsQuery(url);
+  if (isFetching) return <Shimmer />;
   const {
     // image_url: image = '',
     name = '',
-    star_ingredients: ingredients,
+    star_ingredients: ingredients = [],
     reviews = [],
-    clean_description,
-    ingredients: ingredients_description,
-    how_to: howtouse_description,
-    metrological_info,
+    clean_description: cleanDescription = '',
+    ingredients: ingredientsDescription = '',
+    how_to: howToUseDescription = '',
+    metrological_info: metrologicalInfo = '',
     rating = 0,
     ratings_count: ratingsCount = 0,
     reviews_count: reviewsCount = 0,
-    consolidated_list_lower: product_list = [],
+    consolidated_list_lower: productList = [],
     foxy_match = {},
-  } = data;
-  console.log('PRODUCT DATA', data);
+  } = product;
+  console.log(product);
   return (
     <>
       {show === false ? (
         <div>
           <div className={styles['product-page-container']}>
             <Header title={name} onPress={onClick} />
-            <ProductInfoContainer data={data} />
-            {/* <ProductPersonalizedHorizontal image={image} />
-            <VerticalList image={image} /> */}
+            <ProductInfoContainer product={product} />
             <OffersRail />
             <RecommendationContainer foxy_match={foxy_match} rating={rating} />
             <IngredientsList ingredients={ingredients} />
-            <ProductDescriptionShort
-              setShow={setShow}
-              show={show}
-              description={clean_description}
-            />
+            <ProductDescriptionShort setShow={setShow} show={show} description={cleanDescription} />
             <ReviewsAndRatings
               reviews={reviews}
               rating={rating}
               reviewsCount={reviewsCount}
               ratingsCount={ratingsCount}
             />
+            {productList.length !== 0 && <ProductListContainer productList={productList} />}
           </div>
-
-          {product_list.length !== 0 ? (
-            <ProductListContainer productList={product_list} />
-          ) : (
-            <div></div>
-          )}
-          <SiteFooter />
           <BuyNowAddToBag />
+          <SiteFooter />
         </div>
       ) : (
         <ProductDescription
-          description={clean_description}
-          desc_ingredients={ingredients_description}
-          howtouse_description={howtouse_description}
-          metrological_info={metrological_info}
+          description={cleanDescription}
+          desc_ingredients={ingredientsDescription}
+          howtouse_description={howToUseDescription}
+          metrological_info={metrologicalInfo}
           setShow={setShow}
           show={show}
         />

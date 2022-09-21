@@ -1,5 +1,4 @@
 // import React, { useEffect } from 'react';
-import React from 'react';
 import { List } from 'antd';
 import ProductListCard from 'components/UI/cards/ProductListCard';
 import { capitalize } from 'lodash';

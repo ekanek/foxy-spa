@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import React from 'react';
+
 import styles from 'styles/Description-container.module.scss';
 import AnimateHeight from 'react-animate-height';
 import images from 'assets/images';

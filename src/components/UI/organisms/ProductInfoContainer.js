@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ImageCarousel from 'components/UI/organisms/ImageCarousel';
 import ProductInfo from 'components/UI/organisms/ProductInfo';
-function ProductInfoContainer({ data = {} }) {
+function ProductInfoContainer({ product = {} }) {
   const [variantId, setVariantId] = useState('');
   const [variantsData, setVariantsData] = useState([]);
   const [imageData, setImageData] = useState([]);
@@ -11,11 +11,11 @@ function ProductInfoContainer({ data = {} }) {
   const [displayName, setDisplayName] = useState('Shade WM10');
 
   useEffect(() => {
-    setImageData(data?.images);
-    setMrpData(data?.mrp);
-    setFinalspData(data?.final_sp);
-    setDiscountData(data?.discount);
-    setVariantsData(data?.variant_attributes[0]?.allowed_values);
+    setImageData(product?.images);
+    setMrpData(product?.mrp);
+    setFinalspData(product?.final_sp);
+    setDiscountData(product?.discount);
+    setVariantsData(product?.variant_attributes[0]?.allowed_values);
     if (variantId) {
       const filteredData = variantsData?.filter((item) => item.id === variantId);
       const tempData = filteredData?.[0];
@@ -32,8 +32,14 @@ function ProductInfoContainer({ data = {} }) {
       setDiscountData(variant_discount);
       setDisplayName(display_name);
     }
-  }, [data, variantId]);
-  const { name = '', hero_description: description, rating = 0, variant_attributes, brand } = data;
+  }, [product, variantId]);
+  const {
+    name = '',
+    hero_description: description,
+    rating = 0,
+    variant_attributes,
+    brand,
+  } = product;
   return (
     <>
       <div>

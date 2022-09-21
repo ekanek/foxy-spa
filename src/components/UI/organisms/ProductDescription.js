@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/Description-container.module.scss';
 import Header from 'components/UI/organisms/Header';
 const ProductDescription = (props) => {

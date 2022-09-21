@@ -1,5 +1,4 @@
 import Pill from 'components/UI/atoms/Pill';
-import React from 'react';
 import styles from 'styles/Molecules.module.scss';
 
 function AttributePills(props) {

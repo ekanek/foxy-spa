@@ -1,4 +1,3 @@
-import React from 'react';
 import { BackButton, BagButton, SearchButton } from 'components/UI/molecules/HeaderButtons';
 import HeaderTitle from 'components/UI/atoms/HeaderTitle';
 import styles from 'styles/header.module.scss';

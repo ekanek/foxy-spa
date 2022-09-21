@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from 'styles/GridRails.module.scss';
 const OfferRailsCard = (props) => {
   return (

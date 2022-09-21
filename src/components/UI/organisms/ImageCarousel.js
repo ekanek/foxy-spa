@@ -1,7 +1,6 @@
-import { Carousel } from 'antd';
-import React from 'react';
-import styles from 'styles/Organisms.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { Carousel } from 'antd';
+import styles from 'styles/Organisms.module.scss';
 const ProductImage = ({ imageUrl }) => {
   return (
     <div>
@@ -10,12 +9,12 @@ const ProductImage = ({ imageUrl }) => {
   );
 };
 const ImageCarousel = ({ images = [], name = '' }) => {
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/productImage', { state: { slideImage: images, name: name } });
+  };
+  const onChange = (currentSlide) => {
+    console.log(currentSlide);
   };
   return (
     <div onClick={onClick}>

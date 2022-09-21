@@ -10,7 +10,12 @@ export default function ProductReviewCard(review) {
     <div className={styles['review-card']}>
       <div className={styles['review-card__customer-rating']}>
         <span>{star}</span>
-        <img src={images.white_star} width={12} className={styles['review-card__image']} />
+        <img
+          alt="Review Card"
+          src={images.white_star}
+          width={12}
+          className={styles['review-card__image']}
+        />
       </div>
 
       <div className={styles['review-card__text']}>{body}</div>
@@ -21,9 +26,9 @@ export default function ProductReviewCard(review) {
           {
             <div
               onClick={() => {
-                setIsLiked(!isLiked);
+                setIsLiked((isLiked) => !isLiked);
               }}>
-              <img src={thumb} />
+              <img src={thumb} alt="Thumb" />
               {likes > 0 && (
                 <span className={styles['review-card__num-likes']}>
                   {isLiked ? likes + 1 : likes}

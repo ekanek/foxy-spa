@@ -1,10 +1,8 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import styles from 'styles/Carousel.module.scss';
 import images from 'assets/images';
-import { useNavigate } from 'react-router-dom';
 const ProductImage = ({ imageUrl }) => {
   return (
     <div>
