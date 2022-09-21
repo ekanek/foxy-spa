@@ -1,7 +1,7 @@
 import styles from 'styles/ProductVariant.module.scss';
 import ProductVariantItem from 'components/UI/atoms/ProductVariantItem';
 const ProductVariant = (props) => {
-  const { variantData = [], setVariantId = '', variantId = '', displayName = '' } = props;
+  const { variants = [], setVariantId = '', variantId = '', displayName = '' } = props;
   return (
     <div className={styles['variant_container']}>
       <div className={styles['top-row']}>
@@ -21,7 +21,7 @@ const ProductVariant = (props) => {
       </div>
       <div className={styles['variant_color_container']}>
         <div className={styles['color-container']}>
-          {variantData.slice(0, 13).map((item) => (
+          {variants.slice(0, 13).map((item) => (
             <ProductVariantItem
               key={item.id}
               image={item.image_url}
@@ -30,16 +30,9 @@ const ProductVariant = (props) => {
               initialVariantId={item.id}
             />
           ))}
-          {/* {variantData.length > 13 ? (
+          {variants.length > 13 && (
             <div className={styles['other-shades']}>
-              <div className={styles['other-shades-text']}>+{variantData.length - 13}</div>
-            </div>
-          ) : (
-            <div></div>
-          )} */}
-          {variantData.length > 13 && (
-            <div className={styles['other-shades']}>
-              <div className={styles['other-shades-text']}>+{variantData.length - 13}</div>
+              <div className={styles['other-shades-text']}>+{variants.length - 13}</div>
             </div>
           )}
         </div>

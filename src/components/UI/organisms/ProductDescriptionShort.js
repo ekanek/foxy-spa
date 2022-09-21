@@ -1,18 +1,13 @@
 // import React, { useState } from 'react';
-
-import styles from 'styles/Description-container.module.scss';
 import AnimateHeight from 'react-animate-height';
+import styles from 'styles/Description-container.module.scss';
 import images from 'assets/images';
 const ProductDescriptionShort = (props) => {
   const { description, show, setShow } = props;
   // const [showDesc, setShowDesc] = useState(false);
-  function handleClick() {
-    if (show === false) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  }
+  const handleClick = () => {
+    setShow(!show);
+  };
   return (
     <div className={styles['container']} onClick={handleClick}>
       <div className={styles['description-title']}> Everything you need to know</div>

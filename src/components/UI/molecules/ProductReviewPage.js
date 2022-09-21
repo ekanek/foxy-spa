@@ -5,12 +5,9 @@ import RatingsOverviewHeader from 'components/UI/atoms/product-review/RatingsOve
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
 const ProductReviewPage = () => {
   const navigate = useNavigate();
-  function onPressContainer() {
-    navigate('/');
-  }
   const { state } = useLocation();
+  const onPressContainer = () => navigate('/');
   const { rating = 0, reviews = [], ratingsCount = 0, reviewsCount = 0 } = state;
-  console.log(state);
   return (
     <div>
       <Header title="All Reviews" onPress={onPressContainer} />

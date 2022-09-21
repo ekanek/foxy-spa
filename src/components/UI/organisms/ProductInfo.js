@@ -30,7 +30,7 @@ const ProductInfo = ({
       </div> */}
       <ProductVariant
         displayName={displayName}
-        variantData={variant[0].allowed_values}
+        variants={variant[0].allowed_values}
         variantId={variantId}
         setVariantId={setVariantId}
       />

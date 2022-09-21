@@ -4,11 +4,7 @@ const ProductDescription = (props) => {
   const { description, desc_ingredients, howtouse_description, metrological_info, show, setShow } =
     props;
   function onPressContainer() {
-    if (show === false) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
+    setShow(!show);
   }
   return (
     <div>

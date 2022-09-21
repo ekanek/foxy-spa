@@ -13,7 +13,7 @@ import ReviewsAndRatings from 'components/UI/organisms/product-page/ReviewsAndRa
 import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
-import ProductListContainer from 'components/UI/cards/ProductListContainer';
+import ProductListContainer from 'components/UI/cards/grid-card/ProductListContainer';
 
 function HomeScreen() {
   const [show, setShow] = useState(false);

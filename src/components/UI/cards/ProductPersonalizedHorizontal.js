@@ -3,13 +3,13 @@ import Utilities from 'utils/Utility';
 import ProductDescriptionContainer from 'components/UI/molecules/ProductDescriptionContainer';
 import images from 'assets/images';
 const ProductPersonalizedHorizontal = ({ image = '' }) => {
-  let cardWidth = Utilities.getScreenWidth() - 58;
+  const cardWidth = Utilities.getScreenWidth() - 58;
   return (
     <div className={styles['hero-rail-card-container']} style={{ width: cardWidth }}>
       <div className={styles['hero-rail-card-container__image']}>
         <img alt="Product Image" src={image} height={280} width={250} />
       </div>
-      <ProductDescriptionContainer showPillsAndRating={true} />
+      <ProductDescriptionContainer showPillsAndRating />
       <div className={styles['button-container']}>
         <div className={styles['buttons']}>
           <div className={styles['buttons-content']}>

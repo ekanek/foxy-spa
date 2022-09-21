@@ -1,15 +1,18 @@
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from 'styles/ProductListCard.module.scss';
 import images from 'assets/images';
 import Utilities from 'utils/Utility';
+import ProductTopContent from 'components/UI/cards/grid-card/ProductTopContent';
 const ProductListCard = ({ product = {} }) => {
   const navigate = useNavigate();
-  const onClick = () => {
-    navigate('/product', { state: { slug } });
-  };
-  const widthCard = Utilities.getDynamicWidthForGrid(2, 16);
-  const heightCard = Utilities.getDynamicWidthForGrid(2, 16) + 137;
-  const imageheight = Utilities.getDynamicWidthForGrid(2, 60);
+  const onClick = () => navigate('/product', { state: { slug } });
+  if (product.length === 0) {
+    return null;
+  }
+  const widthCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16), []);
+  const heightCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 137, []);
+  const imageHeight = useMemo(() => Utilities.getDynamicWidthForGrid(2, 60), []);
   const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
   return (
     <div
@@ -17,27 +20,9 @@ const ProductListCard = ({ product = {} }) => {
       className={styles['product-card-container']}
       style={{ width: widthCard, height: heightCard }}>
       <div className={styles['product-card-sub-container']}>
-        <div className={styles['top-header']}>
-          <div className={styles['variant-data-container']}>
-            <div className={styles['variant-data']}>
-              <div className={styles['variant-color']}></div>
-              <div className={styles['variant-name']}>Buff Nude 05</div>
-            </div>
-          </div>
-          <div className={styles['customer-rating']}>
-            {/* <span>3.8</span> */}
-            <div style={{ fontWeight: 700 }}>{rating}</div>
-            <img
-              alt="White Star"
-              src={images.white_star}
-              width={11}
-              height={10}
-              className={styles['image']}
-            />
-          </div>
-        </div>
+        <ProductTopContent rating={rating} />
         <div className={styles['product-image']}>
-          <img alt="Product Image" src={image} height={imageheight} />
+          <img alt="Product Image" src={image} height={imageHeight} />
         </div>
         <div className={styles['lower-container']}>
           <div className={styles['lower-sub-container']}>

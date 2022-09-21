@@ -3,9 +3,10 @@ import styles from 'styles/productPage.module.scss';
 import images from 'assets/images';
 const CertificatePage = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
+  const onClick = () => navigate('/');
   const { brand } = state;
   const { name = '', certificate_image_url = '' } = brand;
-  const navigate = useNavigate();
   return (
     <div className={styles['certificate-container']}>
       <div className={styles['cross-image']} onClick={() => navigate('/')}>
@@ -25,7 +26,7 @@ const CertificatePage = () => {
           <img alt="Certificate" src={certificate_image_url} height={400} width={300} />
         </div>
         <div className={styles['outer-container-got-it']}>
-          <div onClick={() => navigate('/')} className={styles['got-it-button-style']}>
+          <div onClick={onClick} className={styles['got-it-button-style']}>
             <span>Got It!</span>
           </div>
         </div>

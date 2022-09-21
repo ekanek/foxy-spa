@@ -1,15 +1,18 @@
 import styles from 'styles/ProductListCard.module.scss';
 import Grid from 'components/layout/Grid/Grid';
 const ProductListContainer = ({ productList = [] }) => {
+  if (productList.length === 0) {
+    return null;
+  }
   const listData = productList[4];
   const {
     objects: productItems = [],
-    display,
-    columns,
-    display_count,
-    content,
-    size,
-    name,
+    display = '',
+    columns = 0,
+    display_count = 0,
+    content = '',
+    size = '',
+    name = '',
   } = listData;
 
   return (

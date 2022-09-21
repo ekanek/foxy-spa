@@ -1,6 +1,6 @@
 // import React, { useEffect } from 'react';
 import { List } from 'antd';
-import ProductListCard from 'components/UI/cards/ProductListCard';
+import ProductListCard from 'components/UI/cards/grid-card/ProductListCard';
 import { capitalize } from 'lodash';
 const GridContainerComponents = {
   DefaultsizeProductCard: ProductListCard,
