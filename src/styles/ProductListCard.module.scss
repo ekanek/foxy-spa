@@ -14,8 +14,8 @@
 .product-card-container {
   position: relative;
   background-color: white;
-  // height: 300px;
-  // width: 190px;
+  height: 35vh;
+  width: 21vh;
   margin: 6px;
   border-radius: 6px;
   // width: Utility.getDynamicWidthForGrid(2, 16),
@@ -31,6 +31,19 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 4px;
+}
+.product-info__name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #173143;
+  line-height: 1.6rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 3.2rem;
 }
 .variant-data-container {
   height: 18px;
@@ -63,7 +76,7 @@
 }
 .add-to-bag {
   position: absolute;
-  bottom: 90px;
+  bottom: 75px;
   right: 10px;
   //   height: 40px;
   //   width: 40px;

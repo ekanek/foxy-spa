@@ -14,18 +14,24 @@ function ProductInfoContainer({ product }) {
     final_sp = 0,
     discount = '',
   } = product;
-  const variants = variant_attributes[0]?.allowed_values;
-  if (variants.length === 0) return null;
-  const filteredVariants = variants?.filter((item) => item.id === variantId);
-  const selectedVariants = filteredVariants[0];
-  const productImage = variantId && filteredVariants.length ? selectedVariants?.images : images;
-  const productMrp = variantId && filteredVariants.length ? selectedVariants?.mrp : mrp;
-  const productFinalSp =
-    variantId && filteredVariants.length ? selectedVariants?.final_sp : final_sp;
-  const productDiscount =
-    variantId && filteredVariants.length ? selectedVariants?.discount : discount;
-  const productDisplayName =
-    variantId && filteredVariants.length ? selectedVariants?.display_name : 'Select Shade';
+  const [firstVariantAttribute = {}] = variant_attributes;
+  const variants = firstVariantAttribute.allowed_values || [];
+  const filteredVariants = variants?.filter(({ id = '' }) => id === variantId);
+  const isFilteredVariantsPresent = Boolean(filteredVariants.length);
+  const [firstFilterVariantAttribute = {}] = filteredVariants;
+  const selectedVariants = firstFilterVariantAttribute;
+  const {
+    images: variantImage = '',
+    mrp: variantMrp = '',
+    final_sp: finalSp = '',
+    discount: variantDiscount = '',
+    display_name: displayName = '',
+  } = selectedVariants;
+  const productImage = variantId && isFilteredVariantsPresent ? variantImage : images;
+  const productMrp = variantId && isFilteredVariantsPresent ? variantMrp : mrp;
+  const productFinalSp = variantId && isFilteredVariantsPresent ? finalSp : final_sp;
+  const productDiscount = variantId && isFilteredVariantsPresent ? variantDiscount : discount;
+  const productDisplayName = variantId && isFilteredVariantsPresent ? displayName : 'Select Shade';
 
   return (
     <>

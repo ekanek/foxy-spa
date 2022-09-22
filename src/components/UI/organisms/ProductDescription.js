@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from 'styles/Description-container.module.scss';
 import Header from 'components/UI/organisms/Header';
+import sanitizeHtml from 'sanitize-html';
 const ProductDescription = () => {
   const { state = {} } = useLocation();
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const ProductDescription = () => {
 
                 <div
                   className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: ingredientsDescription }}></div>
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(ingredientsDescription) }}></div>
               </div>
               <div>
                 <div className={styles['sub-heading']}>
@@ -36,7 +37,7 @@ const ProductDescription = () => {
                 </div>
                 <div
                   className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: howToUseDescription }}></div>
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(howToUseDescription) }}></div>
               </div>
               <div>
                 <div className={styles['sub-heading']}>
@@ -44,7 +45,7 @@ const ProductDescription = () => {
                 </div>
                 <div
                   className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: metrologicalInfo }}></div>
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(metrologicalInfo) }}></div>
               </div>
             </div>
           </div>

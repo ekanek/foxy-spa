@@ -11,7 +11,7 @@ const ProductListCard = ({ product = {} }) => {
     return null;
   }
   const widthCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16), []);
-  const heightCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 137, []);
+  const heightCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 110, []);
   const imageHeight = useMemo(() => Utilities.getDynamicWidthForGrid(2, 60), []);
   const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
   return (
@@ -30,7 +30,7 @@ const ProductListCard = ({ product = {} }) => {
             <div className={styles['product-info__name']}>{name}</div>
             <div className={styles['pricing']}>
               <span className={styles['pricing__sp']}>{'₹' + final_sp}</span>
-              <span className={styles['pricing__mrp']}>{'₹' + mrp}</span>
+              {final_sp < mrp && <span className={styles['pricing__mrp']}>{'₹' + mrp}</span>}
 
               <span className={styles['pricing__discount-percent']}>{discount}</span>
             </div>
