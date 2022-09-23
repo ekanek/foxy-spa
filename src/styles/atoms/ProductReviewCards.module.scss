@@ -7,43 +7,56 @@
 
   &__customer-rating {
     display: flex;
+    flex-direction: row;
+    width: 36px;
     justify-content: space-evenly;
-    align-items: center;
-    line-height: 15px;
-    font-size: 14px;
-    background: #01b460;
-    color: #fff;
-    font-weight: 900;
-    width: max-content;
+    height: 18px;
     border-radius: 4px;
     align-items: center;
-    padding: 2px;
-    padding-left: 4px;
+    padding: 4;
   }
 
   &__text {
     color: #173143;
     margin-top: 12px;
     margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    max-height: 110px;
+    min-height: 30px;
+    line-height: 18px;
+    font-size: 14px;
   }
-
+  &__normal-text {
+    color: #173143;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    max-height: 110px;
+    min-height: 30px;
+    line-height: 18px;
+  }
+  &__button {
+    color: #4285f4;
+    padding: 1em;
+    margin: -1em;
+  }
   &__subtext {
     color: #979baa;
     font-size: 12px;
   }
 
-  &__image {
-    margin-left: 6px;
-    margin-right: 4px;
-  }
-
   &__footer {
-    height: 1px;
+    height: 1.5px;
     margin-top: 12px;
-    background: #979baa;
+    background: #cacbd2;
     opacity: 0.4;
-    margin-left: 12px;
-    margin-right: 12px;
+    width: 100%;
   }
 
   &__flex {
@@ -62,20 +75,28 @@
     margin-left: 6px;
     color: grey;
   }
-
-  .rating1 {
-    background: #e4454c;
+  &__star {
+    color: white;
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 500;
   }
-  .rating2 {
-    background: #f3c52d;
-  }
-  .rating3 {
-    background: #05de78;
-  }
-  .rating4 {
-    background: #01b460;
-  }
-  .rating5 {
-    background: #018346;
-  }
+}
+.rating1 {
+  background: #e4454c;
+}
+.rating2 {
+  background: #f3c52d;
+}
+.rating3 {
+  background: #05de78;
+}
+.rating4 {
+  background: #01b460;
+}
+.rating5 {
+  background: #018346;
+}
+.noRating {
+  background: #979baa;
 }

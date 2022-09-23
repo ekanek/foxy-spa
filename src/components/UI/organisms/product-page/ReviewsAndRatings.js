@@ -6,9 +6,11 @@ import RateStars from 'components/UI/molecules/RateStars';
 import images from 'assets/images';
 const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratingsCount = 0 }) => {
   const navigate = useNavigate();
+  console.log(navigate);
   const onClick = () => {
     navigate('/AllReview', { state: { rating, reviews, reviewsCount, ratingsCount } });
   };
+  const slicedReviews = reviews.slice(0, 5);
   return (
     <div>
       <div className={`${styles['list-title']} ${styles['margin-left']}`}>Rating and Reviews</div>
@@ -17,14 +19,14 @@ const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratings
         reviewsCount={reviewsCount}
         ratingsCount={ratingsCount}
       />
-      <CustomerReviewList reviews={reviews} />
+
+      <CustomerReviewList reviews={slicedReviews} />
       <div
         style={{
           width: '100%',
           backgroundColor: 'white',
           marginTop: -3,
           position: 'absolute',
-          // left: 20,
         }}>
         <div className={styles['review-button-container']} onClick={onClick}>
           <div className={styles['review-button']}>

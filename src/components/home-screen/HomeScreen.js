@@ -40,8 +40,8 @@ function HomeScreen() {
   return (
     <>
       <div>
+        <Header title={name} onPress={onClick} />
         <div className={styles['product-page-container']}>
-          <Header title={name} onPress={onClick} />
           <ProductInfoContainer product={product} />
           <OffersRail />
           <RecommendationContainer foxy_match={foxy_match} rating={rating} />

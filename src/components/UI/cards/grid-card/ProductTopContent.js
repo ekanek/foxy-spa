@@ -1,5 +1,6 @@
+import AverageRating from 'components/UI/atoms/product-review/AverageRating';
 import styles from 'styles/ProductListCard.module.scss';
-import images from 'assets/images';
+// import images from 'assets/images';
 function ProductTopContent({ rating = '' }) {
   return (
     <div className={styles['top-header']}>
@@ -9,16 +10,8 @@ function ProductTopContent({ rating = '' }) {
           <div className={styles['variant-name']}>Buff Nude 05</div>
         </div>
       </div>
-      <div className={styles['customer-rating']}>
-        {/* <span>3.8</span> */}
-        <div style={{ fontWeight: 700 }}>{rating}</div>
-        <img
-          alt="White Star"
-          src={images.white_star}
-          width={11}
-          height={10}
-          className={styles['image']}
-        />
+      <div style={{ marginRight: 10 }}>
+        <AverageRating ratings={rating} />
       </div>
     </div>
   );

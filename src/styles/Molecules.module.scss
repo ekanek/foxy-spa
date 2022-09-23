@@ -94,19 +94,33 @@
     }
   }
 }
-
-.rate-stars {
+.rate-stars-container {
   background: white;
+  padding: 15px;
+  margin-top: 30px;
+  // border: 1px solid #bbbebc;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 450;
+    padding: 0 10px;
+    margin-bottom: 4px;
+  }
+}
+.rate-stars {
   height: max-content;
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 15px;
-  margin-top: 20px;
+  padding: 10px;
 }
 
 .emo-star {
-  margin: 12px;
+  margin: 4px;
   width: max-content;
   height: 70px;
   font-size: 10px;

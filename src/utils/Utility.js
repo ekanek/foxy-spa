@@ -1,5 +1,5 @@
 import useWindowDimensions from 'utils/UseWindowDimensions';
-
+import moment from 'moment';
 const { width } = useWindowDimensions();
 export default class Utilities {
   static padding = 12;
@@ -12,5 +12,8 @@ export default class Utilities {
   static getScreenWidth() {
     // Change name to window width
     return width;
+  }
+  static getTimeAgo(date) {
+    return moment.utc(date).local().startOf('seconds').fromNow();
   }
 }

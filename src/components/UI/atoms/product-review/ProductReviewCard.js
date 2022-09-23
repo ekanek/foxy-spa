@@ -1,27 +1,41 @@
-import images from 'assets/images';
 import React, { useState } from 'react';
+// import AnimateHeight from 'react-animate-height';
+import images from 'assets/images';
 import styles from 'styles/atoms/ProductReviewCards.module.scss';
+import ReviewCreatedAt from 'components/UI/atoms/product-review/ReviewCreatedAt';
+import AverageRating from 'components/UI/atoms/product-review/AverageRating';
 
 export default function ProductReviewCard(review) {
-  const { body = '', likes_count: likes = '', user_name: name = '', star = '' } = review;
   const [isLiked, setIsLiked] = useState(false);
+  const [show, setShow] = useState(true);
+  const {
+    body = '',
+    likes_count: likes = '',
+    user_name: name = '',
+    star = '',
+    created_at: createdAt = '',
+  } = review;
   const thumb = isLiked ? images.blueLike : images.greyLike;
+  const onclick = () => setShow(!show);
+
+  let bodyStyle = '';
+  if (show) {
+    bodyStyle = 'review-card__text';
+  } else {
+    bodyStyle = 'normal-text';
+  }
   return (
     <div className={styles['review-card']}>
-      <div className={styles['review-card__customer-rating']}>
-        <span>{star}</span>
-        <img
-          alt="Review Card"
-          src={images.white_star}
-          width={12}
-          className={styles['review-card__image']}
-        />
-      </div>
-
-      <div className={styles['review-card__text']}>{body}</div>
+      <AverageRating ratings={star} />
+      <div className={styles[bodyStyle]}>{body}</div>
+      {body.length > 400 && (
+        <div onClick={onclick} className={styles['review-card__button']}>
+          {show ? 'More' : 'Less'}
+        </div>
+      )}
       <div className={styles['review-card__subtext']}>{name}</div>
       <div className={styles['review-card__flex']}>
-        <div className={styles['review-card__subtext']}>2 days ago</div>
+        <ReviewCreatedAt createdAt={createdAt} />
         <div className={styles['review-card__likes']}>
           {
             <div

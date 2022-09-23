@@ -8,9 +8,11 @@
   margin-left: 12px;
 }
 .review-button-container {
-  margin-left: 220px;
   height: 30px;
   cursor: pointer;
+
+  width: 100%;
+  background: white;
 }
 .review-button {
   color: #4285f4;
@@ -19,6 +21,8 @@
   margin-left: auto;
   font-weight: 500;
   display: flex;
+  position: absolute;
+  right: 20px;
 }
 .arrow-style {
   margin-left: 8px;

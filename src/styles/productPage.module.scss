@@ -1,10 +1,11 @@
 .product-page-container {
   display: flex;
   flex-direction: column;
-  background: #ececec;
+  background: #f4f6f8;
   width: '100%';
   height: '100%';
   overflow-x: hidden;
+  // position: relative;
 }
 .TopRating {
   display: flex;

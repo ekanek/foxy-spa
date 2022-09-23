@@ -5,7 +5,7 @@ import styles from 'styles/header.module.scss';
 function Header({ title = '', onPress = () => {} }) {
   return (
     <div className={styles['header-container']}>
-      <BackButton height={26} width={30} onPress={onPress} />
+      <BackButton height={16} width={15} onPress={onPress} />
       <HeaderTitle title={title} />
       <BagButton height={24} width={24} />
       <SearchButton height={24} width={24} />

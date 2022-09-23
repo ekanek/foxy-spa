@@ -3,16 +3,17 @@
   font-size: 18px;
   color: #173143;
   margin-bottom: 12px;
+  padding: 12px;
 }
 
 .offer-rail {
-  padding: 12px;
 }
 .prompts-container {
   display: flex;
   align-items: center;
   margin-top: 4px;
   overflow: scroll;
+  margin-bottom: 30px;
 }
 .prompts-container::-webkit-scrollbar {
   display: none;
@@ -53,7 +54,7 @@
   border-radius: 8px;
 }
 .circle-outside-left {
-  background: linear-gradient(90deg, #ececec 50%, #cfe9da 50%);
+  background: linear-gradient(90deg, #f4f6f8 50%, #cfe9da 50%);
   right: unset;
   left: -14px;
   height: 20px;
@@ -67,13 +68,13 @@
   z-index: 1;
 }
 .circle-inside {
-  background: #ececec;
+  background: #f4f6f8;
   height: 12px;
   width: 12px;
   border-radius: 10px;
 }
 .circle-outside-right {
-  background: linear-gradient(90deg, #cfe9da 50%, #ececec 50%);
+  background: linear-gradient(90deg, #cfe9da 50%, #f4f6f8 50%);
   left: unset;
   right: -14px;
   height: 20px;
@@ -119,21 +120,30 @@
   justify-content: space-between;
   background-color: white;
   border-radius: 0 0 8px 8px;
-  padding: 10px;
+  padding: 7px;
   margin-top: 10px;
 }
 .prompt-bottom-coupon-code {
   background-color: #01b4601a;
   border: 1px #01b460 dashed;
+  font-family: 'Roboto', sans-serif;
+  width: 7rem;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
 }
 .prompt-bottom-coupon-applied {
   color: #ffffff;
   background-color: #000000;
   border-radius: 16px;
-  font-size: 8px;
-  font-weight: bold;
-  line-height: 10px;
+  font-size: 10px;
+  font-weight: 50;
+  line-height: 14px;
   text-align: center;
-  padding: 6px;
+  padding: 5px;
   cursor: pointer;
+  width: 7rem;
+  font-family: 'Roboto', sans-serif;
 }

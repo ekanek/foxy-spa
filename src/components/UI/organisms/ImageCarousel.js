@@ -8,6 +8,7 @@ const ProductImage = ({ imageUrl }) => {
     </div>
   );
 };
+
 const ImageCarousel = ({ images = [], name = '' }) => {
   const navigate = useNavigate();
   const onClick = () => {

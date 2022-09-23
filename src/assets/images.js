@@ -1,5 +1,5 @@
 import { APP_ASSET_URL } from 'lib/constants';
-import backButton from './images/productPageBack.png';
+import backButton from './images/back-button.png';
 import bagButton from './images/bagProductPage@3x.png';
 import searchButton from './images/searchProductPageNew@3x.png';
 import rightArrow from './images/rightChevron@3x.png';

@@ -14,39 +14,37 @@ const ProductDescription = () => {
   };
   return (
     <div>
-      <Header title="Everything you need to know" onPress={onPressBack} />
       <div className={styles['container']}>
-        <div>
-          <div className={styles['description-container']}>
-            <div className={styles['description-sub-container']}>
+        <Header title="Everything you need to know" onPress={onPressBack} />
+        <div className={styles['description-container']}>
+          <div className={styles['description-sub-container']}>
+            <div
+              className={styles['description-content']}
+              dangerouslySetInnerHTML={{ __html: description }}></div>
+            <div>
+              <div className={styles['sub-heading']}>
+                <b>Ingredients</b>
+              </div>
+
               <div
                 className={styles['description-content']}
-                dangerouslySetInnerHTML={{ __html: description }}></div>
-              <div>
-                <div className={styles['sub-heading']}>
-                  <b>Ingredients</b>
-                </div>
-
-                <div
-                  className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(ingredientsDescription) }}></div>
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(ingredientsDescription) }}></div>
+            </div>
+            <div>
+              <div className={styles['sub-heading']}>
+                <b>How to Use</b>
               </div>
-              <div>
-                <div className={styles['sub-heading']}>
-                  <b>How to Use</b>
-                </div>
-                <div
-                  className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(howToUseDescription) }}></div>
+              <div
+                className={styles['description-content']}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(howToUseDescription) }}></div>
+            </div>
+            <div>
+              <div className={styles['sub-heading']}>
+                <b>Additional Info</b>
               </div>
-              <div>
-                <div className={styles['sub-heading']}>
-                  <b>Additional Info</b>
-                </div>
-                <div
-                  className={styles['description-content']}
-                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(metrologicalInfo) }}></div>
-              </div>
+              <div
+                className={styles['description-content']}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(metrologicalInfo) }}></div>
             </div>
           </div>
         </div>

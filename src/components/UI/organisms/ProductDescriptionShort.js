@@ -10,6 +10,7 @@ const ProductDescriptionShort = (props) => {
     navigate('/description', {
       state: { ingredientsDescription, howToUseDescription, metrologicalInfo, description },
     });
+    window.scrollTo(0, 0);
   };
   return (
     <div className={styles['container']} onClick={onClick}>
