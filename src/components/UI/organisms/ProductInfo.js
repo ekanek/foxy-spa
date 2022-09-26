@@ -21,13 +21,9 @@ const ProductInfo = ({
       <div className={styles['product-info__hero-description']}>{description}</div>
       <div className={styles['pricing']}>
         <span className={styles['pricing__sp']}>{'₹' + sp}</span>
-        <span className={styles['pricing__mrp']}>{'₹' + mrp}</span>
-
-        <span className={styles['pricing__discount-percent']}>({discount})</span>
+        {sp < mrp && <span className={styles['pricing__mrp']}>{'₹' + mrp}</span>}
+        <span className={styles['pricing__discount-percent']}>{discount}</span>
       </div>
-      {/* <div className={styles['product-info__additional-message']}>
-        SPLURGE30 applied. Final prices in bag
-      </div> */}
       <ProductVariant
         displayName={displayName}
         variants={variant[0].allowed_values}

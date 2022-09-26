@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header from 'components/UI/organisms/Header';
 import styles from 'styles/productPage.module.scss';
@@ -12,8 +13,12 @@ import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
 import ProductListContainer from 'components/UI/cards/grid-card/ProductListContainer';
+
+import ProductDelivery from 'components/delivery-info/ProductDelivery';
+
 function HomeScreen() {
   const navigate = useNavigate();
+  const [stockedStatus, setStockedStatus] = useState(true);
   const { state = {} } = useLocation();
   const onClick = () => {
     navigate('/');
@@ -37,12 +42,17 @@ function HomeScreen() {
     consolidated_list_lower: productList = [],
     foxy_match = {},
   } = product;
+  console.log(product);
+  function updateStockedStatus(status) {
+    setStockedStatus(status);
+    console.log(status);
+  }
   return (
     <>
       <div>
         <Header title={name} onPress={onClick} />
         <div className={styles['product-page-container']}>
-          <ProductInfoContainer product={product} />
+          <ProductInfoContainer product={product} updateStockedStatus={updateStockedStatus} />
           <OffersRail />
           <RecommendationContainer foxy_match={foxy_match} rating={rating} />
           <IngredientsList ingredients={ingredients} />
@@ -58,9 +68,10 @@ function HomeScreen() {
             reviewsCount={reviewsCount}
             ratingsCount={ratingsCount}
           />
+          <ProductDelivery />
           <ProductListContainer productList={productList} />
         </div>
-        <BuyNowAddToBag />
+        <BuyNowAddToBag stockedStatus={stockedStatus} />
         <SiteFooter />
       </div>
     </>

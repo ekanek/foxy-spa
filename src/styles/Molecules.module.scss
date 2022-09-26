@@ -148,7 +148,7 @@
 
   &__flex {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 8px;
   }
 
@@ -170,6 +170,7 @@
     background: white !important;
     border: 1px #01b460 solid;
     color: #01b460;
+    font-family: 'Roboto', sans-serif;
   }
   &__buy-now {
     display: flex;
@@ -180,5 +181,6 @@
     border-radius: 8px;
     background: linear-gradient(to right, #52cb8c, #01b460);
     color: white;
+    font-family: 'Roboto', sans-serif;
   }
 }

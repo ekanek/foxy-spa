@@ -10,7 +10,7 @@ const ProductListCard = ({ product = {} }) => {
   if (product.length === 0) {
     return null;
   }
-  const widthCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16), []);
+  const widthCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 7, []);
   const heightCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 110, []);
   const imageHeight = useMemo(() => Utilities.getDynamicWidthForGrid(2, 60), []);
   const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
@@ -22,11 +22,11 @@ const ProductListCard = ({ product = {} }) => {
       <div className={styles['product-card-sub-container']}>
         <ProductTopContent rating={rating} />
         <div className={styles['product-image']}>
-          <img alt="Product Image" src={image} height={imageHeight} />
+          <img alt="Product Image" src={image} height={imageHeight} width={widthCard} />
         </div>
         <div className={styles['lower-container']}>
           <div className={styles['lower-sub-container']}>
-            <div className={styles['shade-name']}>Faces</div>
+            <div className={styles['shade-name']}>FACES</div>
             <div className={styles['product-info__name']}>{name}</div>
             <div className={styles['pricing']}>
               <span className={styles['pricing__sp']}>{'₹' + final_sp}</span>

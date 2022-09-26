@@ -41,7 +41,7 @@ export default function RateStars() {
           <AverageRating />
         </div>
 
-        <div className={styles['rate-stars-container__text']}>How do you know this product?</div>
+        <div className={styles['rate-stars-container__text']}>How do you rate this product?</div>
       </div>
 
       <div className={styles['rate-stars']}>

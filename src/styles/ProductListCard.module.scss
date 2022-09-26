@@ -14,9 +14,7 @@
 .product-card-container {
   position: relative;
   background-color: white;
-  height: 35vh;
-  width: 21vh;
-  margin: 6px;
+  margin-left: 5px;
   border-radius: 6px;
   // width: Utility.getDynamicWidthForGrid(2, 16),
   // height: Utility.getDynamicWidthForGrid(2, 16) + 116,
@@ -124,20 +122,25 @@
   margin-top: 8px;
 }
 .shade-name {
-  font-size: 12px;
-  color: #969a98;
+  font-size: 10px;
+  color: #9d9d9d;
   font-weight: 700;
   margin-bottom: 4px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 8px;
 }
 .product-info {
   padding: 15px;
   background: white;
   &__name {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 15px;
     font-weight: 500;
     color: #173143;
+    text-align: left;
+    align-items: flex-start;
+    height: 32px;
   }
   &__additional-message {
     font-family: 'Roboto', sans-serif;
@@ -153,21 +156,18 @@
   flex: 1;
   margin-top: 5px;
   &__sp {
-    // font-family: 'Roboto', sans-serif;
-    display: block;
+    font-family: 'Roboto', sans-serif;
     color: #173143;
-    font-weight: 700;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 14px;
   }
 
   &__mrp {
-    color: #979baa;
+    color: #9d9d9d;
     font-family: 'Roboto', sans-serif;
     text-decoration: line-through;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 10px;
+    line-height: 14px;
     margin-left: 6px;
     margin-right: 6px;
     white-space: nowrap;
@@ -175,11 +175,13 @@
 
   &__discount-percent {
     font-family: 'Roboto', sans-serif;
-    color: #fd5c63;
-    opacity: 70%;
+    color: #ff5a60;
+    opacity: 0.7;
     white-space: nowrap;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0;
   }
 }
 .hero-rail-card-container {

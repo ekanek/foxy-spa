@@ -28,6 +28,7 @@ const ProductVariant = (props) => {
               setVariantId={setVariantId}
               variantId={variantId}
               initialVariantId={item.id}
+              stockStatus={item.outOfStock}
             />
           ))}
           {variants.length > 13 && (

@@ -28,6 +28,7 @@ import match_play_image from './images/foxy-match-play.png';
 import match_star_image from './images/star-image.png';
 import addToBag from './images/add_to_bag.png';
 import unlikeImage from './images/unlikeImage.png';
+import carIcon from './images/car-icon.png';
 const images = {
   backButton: backButton,
   bagButton: bagButton,
@@ -67,6 +68,7 @@ const images = {
   match_star_image: match_star_image,
   addToBag: addToBag,
   unlikeImage: unlikeImage,
+  carIcon: carIcon,
 };
 
 export default images;

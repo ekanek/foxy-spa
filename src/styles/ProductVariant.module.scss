@@ -25,16 +25,17 @@
   justify-content: space-around;
 }
 .other-shades {
-  height: 35px;
-  width: 35px;
+  height: 37px;
+  width: 37px;
   background-color: #f4f6f8;
-  border-radius: 17px;
+  border-radius: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   margin-top: 5px;
   padding: 8px;
+  margin-left: 2px;
 }
 .other-shades-text {
   font-size: 13px;
@@ -60,4 +61,24 @@
   border-radius: 7px;
   background: black;
   border: solid 1px white;
+}
+.out-of-stock-slash {
+  position: absolute !important;
+  background: white;
+  top: 0px;
+  left: 16px;
+  width: 2px;
+  height: 34px !important;
+  transform: rotate(45deg);
+  padding: 0px !important;
+  border: unset !important;
+}
+.out-of-stock-img {
+  height: 37px;
+  width: 37px;
+  border-radius: 22px;
+  background-color: #ffffff;
+  position: absolute !important;
+  bottom: 0px;
+  opacity: 0.5;
 }

@@ -37,30 +37,31 @@
 
 .site-footer {
   margin: 12px;
-
   .top-brands {
-    padding: 12px;
+    // padding: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
     background: white;
     &__title {
       font-weight: 900;
-      font-size: 13px;
+      font-size: 11px;
       margin-bottom: 12px;
       font-family: 'Roboto', sans-serif;
-      margin-bottom: 12px;
     }
 
     &__brand {
       flex-direction: row;
       border-radius: 16px;
       font-size: 12px;
-      height: 24px;
+      height: 15px;
       color: #17314380;
       font-family: 'Roboto', sans-serif;
       justify-content: space-between;
       align-items: center;
       width: fit-content;
       margin-right: 5px;
-
+      margin-top: 8px;
       :active {
         color: red;
         opacity: 0.5;

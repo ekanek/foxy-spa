@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageCarousel from 'components/UI/organisms/ImageCarousel';
 import ProductInfo from 'components/UI/organisms/ProductInfo';
-function ProductInfoContainer({ product }) {
+function ProductInfoContainer({ product, updateStockedStatus = () => {} }) {
   const [variantId, setVariantId] = useState('');
   const {
     images = [],
@@ -13,6 +13,7 @@ function ProductInfoContainer({ product }) {
     mrp = 0,
     final_sp = 0,
     discount = '',
+    outOfStock = '',
   } = product;
   const [firstVariantAttribute = {}] = variant_attributes;
   const variants = firstVariantAttribute.allowed_values || [];
@@ -26,13 +27,18 @@ function ProductInfoContainer({ product }) {
     final_sp: finalSp = '',
     discount: variantDiscount = '',
     display_name: displayName = '',
+    outOfStock: variantStockedStatus = '',
   } = selectedVariants;
   const productImage = variantId && isFilteredVariantsPresent ? variantImage : images;
   const productMrp = variantId && isFilteredVariantsPresent ? variantMrp : mrp;
   const productFinalSp = variantId && isFilteredVariantsPresent ? finalSp : final_sp;
   const productDiscount = variantId && isFilteredVariantsPresent ? variantDiscount : discount;
   const productDisplayName = variantId && isFilteredVariantsPresent ? displayName : 'Select Shade';
-
+  const productStockedStatus =
+    variantId && isFilteredVariantsPresent ? variantStockedStatus : outOfStock;
+  if (variantId && isFilteredVariantsPresent) {
+    updateStockedStatus(productStockedStatus);
+  }
   return (
     <>
       <div>
