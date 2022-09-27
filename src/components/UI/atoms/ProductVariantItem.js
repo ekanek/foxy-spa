@@ -13,6 +13,7 @@ const ProductVariantItem = (props) => {
       />
       {initialVariantId === variantId && (
         <div>
+          <div className={styles['out-of-stock-img']}></div>
           <img
             alt="black tick"
             className={styles['tick-style']}
@@ -20,7 +21,6 @@ const ProductVariantItem = (props) => {
             height={9}
             width={9}
           />
-          <div className={styles['out-of-stock-img']}></div>
         </div>
       )}
 
