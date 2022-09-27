@@ -11,9 +11,10 @@ const variantShadeStyle = {
   borderColor: '#ffffff',
 };
 const variantCountStyle = {
-  fontSize: 10,
+  fontSize: 11,
+  fontWeight: 'bold',
   marginLeft: 1,
-  marginBottom: 5,
+  marginBottom: 6,
   fontFamily: 'Roboto-Regular',
   color: '#9d9d9d',
 };
