@@ -50,6 +50,9 @@
 .variant_color_container {
   position: relative;
 }
+.variant-image {
+  border-radius: 50px;
+}
 .view-all-text {
   color: #4285f4;
   font-size: 14px;
@@ -59,8 +62,8 @@
 }
 .tick-style {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 24px;
+  left: 22px;
   width: 14px;
   height: 14px;
   padding: 2px;
@@ -80,10 +83,12 @@
   border: unset !important;
 }
 .out-of-stock-img {
-  height: 35px;
-  width: 35px;
-  border-radius: 22px;
-  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  border: 1.5px solid black;
   position: absolute !important;
   bottom: 0px;
+  top: -2.2px;
+  left: -2.5px;
 }

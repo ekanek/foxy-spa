@@ -4,7 +4,13 @@ const ProductVariantItem = (props) => {
   const { image, initialVariantId, setVariantId, variantId, stockStatus } = props;
   return (
     <div className={styles['variant-color-style']} onClick={() => setVariantId(initialVariantId)}>
-      <img alt="variant Color" height={35} width={35} style={{ borderRadius: 22 }} src={image} />
+      <img
+        alt="variant Color"
+        height={35}
+        width={35}
+        className={styles['variant-image']}
+        src={image}
+      />
       {initialVariantId === variantId && (
         <div>
           <img
