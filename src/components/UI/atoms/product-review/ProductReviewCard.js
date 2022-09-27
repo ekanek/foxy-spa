@@ -30,7 +30,7 @@ export default function ProductReviewCard(review) {
       <div className={styles[bodyStyle]}>{body}</div>
       {body.length > 400 && (
         <div onClick={onclick} className={styles['review-card__button']}>
-          {show ? 'More' : 'Less'}
+          {show ? 'Read More' : 'Read Less'}
         </div>
       )}
       <div className={styles['review-card__subtext']}>{name}</div>

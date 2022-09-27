@@ -23,7 +23,6 @@
   display: flex;
   align-items: flex-end;
   background: white;
-
   &__rating {
     font-size: 22px;
     font-weight: bold;
@@ -45,4 +44,20 @@
     flex: 0.5;
     align-items: flex-end;
   }
+}
+
+.rating-header-all-review {
+  position: fixed;
+  display: flex;
+  z-index: 10;
+  top: 45px;
+  height: 66px;
+  padding: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: #979baa;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-end;
+  background: white;
+  width: 100%;
 }

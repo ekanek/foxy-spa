@@ -29,6 +29,8 @@ import match_star_image from './images/star-image.png';
 import addToBag from './images/add_to_bag.png';
 import unlikeImage from './images/unlikeImage.png';
 import carIcon from './images/car-icon.png';
+import sortIcon from './images/sort-icon.png';
+import redArrow from './images/red-down-arrorw.png';
 const images = {
   backButton: backButton,
   bagButton: bagButton,
@@ -69,6 +71,8 @@ const images = {
   addToBag: addToBag,
   unlikeImage: unlikeImage,
   carIcon: carIcon,
+  sortIcon: sortIcon,
+  redArrow: redArrow,
 };
 
 export default images;

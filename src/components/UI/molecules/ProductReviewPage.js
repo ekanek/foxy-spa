@@ -4,6 +4,7 @@ import Header from 'components/UI/organisms/Header';
 import RatingsOverviewHeader from 'components/UI/atoms/product-review/RatingsOverviewHeader';
 import CustomerReviewList from 'components/UI/molecules/CustomerReviewList';
 import styles from 'styles/Organisms.module.scss';
+import ReviewFilter from 'components/UI/atoms/product-review/review-filter/ReviewFilter';
 const ProductReviewPage = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -17,8 +18,12 @@ const ProductReviewPage = () => {
           rating={rating}
           reviewsCount={reviewsCount}
           ratingsCount={ratingsCount}
+          allReview
         />
-        <CustomerReviewList reviews={reviews} />
+        <ReviewFilter />
+        <div style={{ marginTop: 150 }}>
+          <CustomerReviewList reviews={reviews} />
+        </div>
       </div>
     </div>
   );

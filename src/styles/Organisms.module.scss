@@ -24,6 +24,12 @@
   position: absolute;
   right: 20px;
 }
+.all-review {
+  background: #f4f6f8;
+}
+.all-review::-webkit-scrollbar {
+  display: none;
+}
 .arrow-style {
   margin-left: 8px;
 }

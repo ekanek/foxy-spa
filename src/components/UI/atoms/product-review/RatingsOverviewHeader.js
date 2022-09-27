@@ -1,6 +1,11 @@
 import images from 'assets/images';
 import styles from 'styles/Atoms.module.scss';
-export default function RatingsOverviewHeader({ rating = 0, ratingsCount = 0, reviewsCount = 0 }) {
+export default function RatingsOverviewHeader({
+  rating = 0,
+  ratingsCount = 0,
+  reviewsCount = 0,
+  allReview = '',
+}) {
   let text = '';
   if (ratingsCount !== 0 && reviewsCount !== 0) {
     text = `(${ratingsCount} ratings | ${reviewsCount} reviews)`;
@@ -9,8 +14,14 @@ export default function RatingsOverviewHeader({ rating = 0, ratingsCount = 0, re
   } else if (reviewsCount === 0) {
     text = ` ${ratingsCount} ratings`;
   }
+  let headerStyle = '';
+  if (allReview) {
+    headerStyle = 'rating-header-all-review';
+  } else {
+    headerStyle = 'ratings-header';
+  }
   return (
-    <div className={styles['ratings-header']}>
+    <div className={styles[headerStyle]}>
       <div className={styles['ratings-header__flex']}>
         <div className={styles['ratings-header__rating']}>{rating}</div>
         <div>{' / 5'}</div>

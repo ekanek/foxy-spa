@@ -13,14 +13,30 @@ const ProductListCard = ({ product = {} }) => {
   const widthCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 7, []);
   const heightCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 110, []);
   const imageHeight = useMemo(() => Utilities.getDynamicWidthForGrid(2, 60), []);
-  const { image_url: image = '', mrp, discount, final_sp, rating, name, slug } = product;
+  const {
+    image_url: image = '',
+    mrp = '',
+    discount = '',
+    final_sp = '',
+    rating = '',
+    name = '',
+    slug = '',
+    variants_details: variantDetails = {},
+  } = product;
+  console.log(variantDetails, 'hhhhhhhhhhh');
+  const { variants_count: variantsCount = '', variants_shade_images: variantsShadeImages = [] } =
+    variantDetails;
   return (
     <div
       onClick={onClick}
       className={styles['product-card-container']}
       style={{ width: widthCard, height: heightCard }}>
       <div className={styles['product-card-sub-container']}>
-        <ProductTopContent rating={rating} />
+        <ProductTopContent
+          rating={rating}
+          variantsCount={variantsCount}
+          variantsShadeImages={variantsShadeImages}
+        />
         <div className={styles['product-image']}>
           <img alt="Product Image" src={image} height={imageHeight} width={widthCard} />
         </div>
