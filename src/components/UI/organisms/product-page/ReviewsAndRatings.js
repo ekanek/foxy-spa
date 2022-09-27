@@ -9,6 +9,7 @@ const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratings
   console.log(navigate);
   const onClick = () => {
     navigate('/AllReview', { state: { rating, reviews, reviewsCount, ratingsCount } });
+    window.scrollTo(0, 0);
   };
   const slicedReviews = reviews.slice(0, 5);
   return (

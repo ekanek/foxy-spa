@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'antd';
 import styles from 'styles/Organisms.module.scss';
+
 const ProductImage = ({ imageUrl }) => {
   return (
     <div>

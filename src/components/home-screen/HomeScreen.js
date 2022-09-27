@@ -13,7 +13,7 @@ import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
 import ProductListContainer from 'components/UI/cards/grid-card/ProductListContainer';
-
+// import ProductDeliveryContainer from 'components/delivery-info/ProductDeliveryContainer';
 import ProductDelivery from 'components/delivery-info/ProductDelivery';
 
 function HomeScreen() {
@@ -45,7 +45,6 @@ function HomeScreen() {
   console.log(product);
   function updateStockedStatus(status) {
     setStockedStatus(status);
-    console.log(status);
   }
   return (
     <>
@@ -68,6 +67,7 @@ function HomeScreen() {
             reviewsCount={reviewsCount}
             ratingsCount={ratingsCount}
           />
+
           <ProductDelivery />
           <ProductListContainer productList={productList} />
         </div>

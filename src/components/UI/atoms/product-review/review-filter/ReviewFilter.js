@@ -15,11 +15,7 @@ const ReviewFilter = () => {
         <div className={styles['filter-list__verified']}>
           <span>Verified Only</span>
         </div>
-        <FilterRatingStar />
-        <FilterRatingStar />
-        <FilterRatingStar />
-        <FilterRatingStar />
-        <FilterRatingStar />
+        {[...Array(5)].map((e, i) => <FilterRatingStar key={i} value={i} />).reverse()}
       </div>
     </div>
   );

@@ -1,21 +1,12 @@
 import styles from 'styles/ProductListCard.module.scss';
 
-const variantShade = {
+const variantShadeStyle = {
   height: 12,
-  width: 13,
+  width: 12,
   borderRadius: 7,
   borderWidth: 0.7,
   borderStyle: 'solid',
-  borderColor: '#ffffff',
-  marginBottom: 10,
-};
-const variantShadeTemp = {
-  height: 12,
-  width: 13,
-  borderRadius: 7,
-  borderWidth: 0.7,
-  borderStyle: 'solid',
-  marginLeft: -7,
+  marginLeft: -6,
   marginBottom: 10,
   borderColor: '#ffffff',
 };
@@ -26,19 +17,7 @@ const variantCountStyle = {
   fontFamily: 'Roboto-Regular',
   color: '#9d9d9d',
 };
-function ProductColor(image, index) {
-  let variantColorStyle = '';
-  if (index === 0) {
-    variantColorStyle = variantShade;
-  } else if (index > 0) {
-    variantColorStyle = variantShadeTemp;
-  }
-  return (
-    <div key={index}>
-      <img src={image} style={variantColorStyle} />
-    </div>
-  );
-}
+
 const VariantCount = (props) => {
   const { variantsCount } = props;
   return <div style={variantCountStyle}>{variantsCount}</div>;
@@ -49,10 +28,14 @@ const VariantShades = (props) => {
     <div
       style={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'row-reverse',
         marginRight: 4,
       }}>
-      {variantsShadeImages.map((image, index) => ProductColor(image, index))}
+      {variantsShadeImages.map((image, index) => (
+        <div key={index}>
+          <img src={image} style={variantShadeStyle} />
+        </div>
+      ))}
     </div>
   );
 };

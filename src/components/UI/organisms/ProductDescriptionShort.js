@@ -32,6 +32,20 @@ const ProductDescriptionShort = (props) => {
           </div>
         </div>
       </div>
+      <div className={styles['description-footer']}>
+        <div style={{ margin: 10 }}>
+          <div className={styles['description-footer_lowest-price']}>
+            <img src={images.trendingDown} width={16} height={16} style={{ marginRight: 8 }} />
+            <span className={styles['footer-text']}>Lowest price in last 15 days</span>
+          </div>
+          <div className={styles['description-footer_expiry-date']}>
+            <img src={images.featherCalendar} width={16} height={16} style={{ marginRight: 8 }} />
+            <span className={styles['footer-text']}>
+              Expiry date <span style={{ fontWeight: 'bold' }}>31 Jan 2025</span>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

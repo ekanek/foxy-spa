@@ -16,6 +16,12 @@
   margin: 5px;
   position: relative;
 }
+.tick-container {
+  border: 2px solid black;
+  height: 35px;
+  width: 35;
+  border-radius: 20px;
+}
 .color-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

@@ -29,7 +29,8 @@
   margin-top: 2px;
 }
 .description-button-container {
-  margin-left: 260px;
+  position: absolute;
+  right: -90px;
   height: 30px;
   width: 50%;
   cursor: pointer;
@@ -50,6 +51,7 @@
   background-color: white;
   margin-bottom: 40px;
   height: 350px;
+  position: relative;
 }
 .description-content {
   font-size: 14px;
@@ -57,4 +59,15 @@
 }
 .description-content-container {
   margin-top: 25px;
+}
+.description-footer {
+  background-color: white;
+  height: 13vh;
+  margin-top: -40px;
+  border-top: 1px solid #cacbd2;
+}
+.footer-text {
+  font-size: 14px;
+  color: #173143;
+  font-family: 'Roboto', sans-serif;
 }

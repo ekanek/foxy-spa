@@ -31,6 +31,8 @@ import unlikeImage from './images/unlikeImage.png';
 import carIcon from './images/car-icon.png';
 import sortIcon from './images/sort-icon.png';
 import redArrow from './images/red-down-arrorw.png';
+import trendingDown from './images/feather_trending-down.png';
+import featherCalendar from './images/feather_calendar.png';
 const images = {
   backButton: backButton,
   bagButton: bagButton,
@@ -73,6 +75,8 @@ const images = {
   carIcon: carIcon,
   sortIcon: sortIcon,
   redArrow: redArrow,
+  trendingDown: trendingDown,
+  featherCalendar: featherCalendar,
 };
 
 export default images;
