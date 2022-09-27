@@ -6,7 +6,10 @@ import Utilities from 'utils/Utility';
 import ProductTopContent from 'components/UI/cards/grid-card/ProductTopContent';
 const ProductListCard = ({ product = {} }) => {
   const navigate = useNavigate();
-  const onClick = () => navigate('/product', { state: { slug } });
+  const onClick = () => {
+    navigate('/product', { state: { slug } });
+    window.scroll(0, 0);
+  };
   if (product.length === 0) {
     return null;
   }
