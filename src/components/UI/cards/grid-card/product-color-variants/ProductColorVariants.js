@@ -6,7 +6,7 @@ const variantShadeStyle = {
   borderRadius: 7,
   borderWidth: 0.7,
   borderStyle: 'solid',
-  marginLeft: -6,
+  marginLeft: -7,
   marginBottom: 10,
   borderColor: '#ffffff',
 };
@@ -33,7 +33,7 @@ const VariantShades = (props) => {
       }}>
       {variantsShadeImages.map((image, index) => (
         <div key={index}>
-          <img src={image} style={variantShadeStyle} />
+          <img src={image} height={12} width={12} style={variantShadeStyle} />
         </div>
       ))}
     </div>
