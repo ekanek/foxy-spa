@@ -45,11 +45,9 @@ export default function RateStars() {
       </div>
 
       <div className={styles['rate-stars']}>
-        <EmoStar index={1} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-        <EmoStar index={2} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-        <EmoStar index={3} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-        <EmoStar index={4} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-        <EmoStar index={5} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
+        {[...Array(5)].map((e, i) => (
+          <EmoStar index={i + 1} key={i} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
+        ))}
       </div>
     </div>
   );
