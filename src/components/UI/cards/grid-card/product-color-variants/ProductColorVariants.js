@@ -41,7 +41,6 @@ const VariantShades = (props) => {
 };
 const ProductColorVariants = (props) => {
   const { variantsCount = '', variantsShadeImages = [] } = props;
-  console.log(variantsCount, variantsShadeImages);
   return (
     <div className={styles['variant-data-container']}>
       <div className={styles['variant-data']}>

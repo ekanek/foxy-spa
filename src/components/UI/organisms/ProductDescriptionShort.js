@@ -4,7 +4,12 @@ import AnimateHeight from 'react-animate-height';
 import styles from 'styles/Description-container.module.scss';
 import images from 'assets/images';
 const ProductDescriptionShort = (props) => {
-  const { description, ingredientsDescription, howToUseDescription, metrologicalInfo } = props;
+  const {
+    description = '',
+    ingredientsDescription = '',
+    howToUseDescription = '',
+    metrologicalInfo = '',
+  } = props;
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/description', {

@@ -5,12 +5,12 @@ import sanitizeHtml from 'sanitize-html';
 const ProductDescription = () => {
   const { state = {} } = useLocation();
   const navigate = useNavigate();
-  const description = state.description;
-  const ingredientsDescription = state.ingredientsDescription;
-  const howToUseDescription = state.howToUseDescription;
-  const metrologicalInfo = state.metrologicalInfo;
+  const description = state?.description;
+  const ingredientsDescription = state?.ingredientsDescription;
+  const howToUseDescription = state?.howToUseDescription;
+  const metrologicalInfo = state?.metrologicalInfo;
   const onPressBack = () => {
-    navigate('/');
+    navigate(-1);
   };
   return (
     <div>

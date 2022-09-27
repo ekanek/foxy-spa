@@ -23,7 +23,6 @@ const ProductListCard = ({ product = {} }) => {
     slug = '',
     variants_details: variantDetails = {},
   } = product;
-  console.log(variantDetails, 'hhhhhhhhhhh');
   const { variants_count: variantsCount = '', variants_shade_images: variantsShadeImages = [] } =
     variantDetails;
   return (

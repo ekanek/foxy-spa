@@ -7,12 +7,15 @@ import styles from 'styles/Organisms.module.scss';
 import ReviewFilter from 'components/UI/atoms/product-review/review-filter/ReviewFilter';
 const ProductReviewPage = () => {
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const onPressContainer = () => navigate('/');
-  const { rating = 0, reviews = [], ratingsCount = 0, reviewsCount = 0 } = state;
+  const { state = {} } = useLocation();
+  const onPressBack = () => navigate(-1);
+  const rating = state?.rating;
+  const reviews = state?.reviews;
+  const ratingsCount = state?.ratingsCount;
+  const reviewsCount = state?.reviewsCount;
   return (
     <div className={styles['all-review']}>
-      <Header title="All Reviews" onPress={onPressContainer} />
+      <Header title="All Reviews" onPress={onPressBack} />
       <div>
         <RatingsOverviewHeader
           rating={rating}

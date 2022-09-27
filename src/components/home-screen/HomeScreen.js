@@ -21,7 +21,7 @@ function HomeScreen() {
   const [stockedStatus, setStockedStatus] = useState(true);
   const { state = {} } = useLocation();
   const onClick = () => {
-    navigate('/');
+    navigate(-1);
   };
   const productUrl = state?.slug;
   const url = productUrl || 'api/v2/products/lakme-enrich-matte-lipstick';
