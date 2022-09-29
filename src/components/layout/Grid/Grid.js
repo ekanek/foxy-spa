@@ -6,26 +6,32 @@ const GridContainerComponents = {
   DefaultsizeProductCard: ProductListCard,
 };
 const Grid = (props) => {
-  const { productItems, columns, content, size } = props;
+  const { list = {} } = props;
+  // productItems = {},
 
-  const getComponents = (item) => {
-    // useEffect(() => {
-    let ContainerComponent = GridContainerComponents[content];
-    if (
-      content === 'product'
-      //   content === 'product' ||
-      //   content === 'sku' ||
-      //   content === 'media' ||
-      //   content === 'artist' ||
-      //   content === 'brand'
-    ) {
-      ContainerComponent =
-        GridContainerComponents[`${capitalize(size)}${capitalize(item.type)}Card`];
-    }
-    // if (content === 'mixed') {
-    //   ContainerComponent = Grid.Components[item.type];
-    // }
+  const { columns = '', content = '', size = '', objects = [] } = list;
+  let ContainerComponent = undefined;
 
+  ContainerComponent = GridContainerComponents[content];
+  if (
+    content === 'product'
+    //   content === 'product' ||
+    //   content === 'sku' ||
+    //   content === 'media' ||
+    //   content === 'artist' ||
+    //   content === 'brand'
+  ) {
+    ContainerComponent =
+      GridContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}Card`];
+  }
+
+  // if (content === 'mixed') {
+  //   ContainerComponent = Grid.Components[item.type];
+  //
+
+  //   let data = productItems.slice(0, display_count);
+  const RenderItem = (item) => {
+    console.log(ContainerComponent);
     if (item === undefined || ContainerComponent === undefined) {
       return null;
     }
@@ -36,9 +42,8 @@ const Grid = (props) => {
       </List.Item>
     );
   };
-
-  //   let data = productItems.slice(0, display_count);
-  return <List grid={{ column: columns }} dataSource={productItems} renderItem={getComponents} />;
+  console.log('RENDER');
+  return <List grid={{ column: columns }} dataSource={objects} renderItem={RenderItem} />;
 };
 
 export default Grid;

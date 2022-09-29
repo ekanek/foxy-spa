@@ -1,0 +1,122 @@
+.card-container {
+  height: 367px;
+  width: 249px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 20px;
+  position: relative;
+  &__img {
+    height: 250.39px;
+    width: 249px;
+    border-radius: 10px;
+  }
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.lower-container {
+  border-top: 2px solid #ecedf3;
+}
+.lower-sub-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+.shade-name {
+  font-size: 12px;
+  color: #979baa;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 14.06px;
+  font-family: 'Roboto', sans-serif;
+  // margin-top: 8px;
+}
+.product-info {
+  &__name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #173143;
+    text-align: left;
+    align-items: flex-start;
+    height: 30px;
+  }
+  &__additional-message {
+    font-family: 'Roboto', sans-serif;
+    color: #fd5c63;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+.pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  margin-top: 5px;
+  &__sp {
+    width: 35px;
+    height: 16px;
+    opacity: 90%;
+    font-family: 'Roboto', sans-serif;
+    color: #173143;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+
+  &__mrp {
+    color: #979baa;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: line-through;
+    font-size: 11px;
+    line-height: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    white-space: nowrap;
+    width: 31px;
+    height: 15px;
+    font-weight: 400;
+    line-height: 13px;
+    opacity: 0.9;
+  }
+
+  &__discount-percent {
+    font-family: 'Roboto', sans-serif;
+    color: #fc8086;
+    opacity: 0.9;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0;
+    width: 31px;
+    height: 15px;
+  }
+}
+.offer-text {
+  height: 12.46px;
+  width: 84px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: #fc8086;
+}
+.add-to-bag {
+  position: absolute;
+  bottom: 95px;
+  right: 10px;
+  //   height: 40px;
+  //   width: 40px;
+  //   background-color: white;
+  border-radius: 50px;
+  margin-top: 2px;
+  border: 1px solid #f4f6f8;
+}

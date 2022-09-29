@@ -24,7 +24,9 @@ function HomeScreen() {
     navigate(-1);
   };
   const productUrl = state?.slug;
-  const url = productUrl || 'api/v2/products/lakme-enrich-matte-lipstick';
+  const url =
+    productUrl ||
+    'api/v2/products/love-beauty-planet-tea-tree-peppermint-vetiver-paraben-free-purifying-conditioner';
   const { data: product, isFetching } = useGetProductDetailsQuery(url);
   if (isFetching) return <Shimmer />;
   const {

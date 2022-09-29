@@ -9,6 +9,9 @@ import { API_DOMAIN } from '../lib/constants';
 const CreateBaseQuery = {
   baseUrl: API_DOMAIN,
   prepareHeaders: (headers) => {
+    const token = '32e9ed50-35a9-11ed-918c-21b247b0c871';
+    headers.set('x-guest-token', `Bearer ${token}`);
+
     return headers;
   },
 };
@@ -123,6 +126,9 @@ export const api = createApi({
     getProductDetails: builder.query({
       query: (slug) => slug,
     }),
+    getBannerDetails: builder.query({
+      query: () => '/api/v4/lists/demo-plum.json',
+    }),
   }),
 });
 
@@ -138,6 +144,7 @@ export const {
   // useGetOrdersQuery,
   // useGetSchemesQuery,
   useGetProductDetailsQuery,
+  useGetBannerDetailsQuery,
   // useSendOtpMutation,
   // useVerifyOtpMutation,
 } = api;
