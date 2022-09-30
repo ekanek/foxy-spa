@@ -5,11 +5,15 @@ import ProductColorVariants from 'components/UI/cards/grid-card/product-color-va
 function ProductTopContent({ rating = '', variantsCount = '', variantsShadeImages = [] }) {
   return (
     <div className={styles['top-header']}>
-      <ProductColorVariants
-        variantsCount={variantsCount}
-        variantsShadeImages={variantsShadeImages}
-      />
-      <div style={{ marginRight: 10 }}>
+      {variantsCount ? (
+        <ProductColorVariants
+          variantsCount={variantsCount}
+          variantsShadeImages={variantsShadeImages}
+        />
+      ) : (
+        <div></div>
+      )}
+      <div style={{ marginRight: 10, marginTop: 3 }}>
         <AverageRating ratings={rating} />
       </div>
     </div>

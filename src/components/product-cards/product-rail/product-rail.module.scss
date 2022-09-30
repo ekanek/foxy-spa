@@ -1,15 +1,29 @@
 .card-container {
   height: 367px;
   width: 249px;
+  min-width: 249px;
+  max-width: 249px;
   background-color: #ffffff;
   border-radius: 10px;
-  margin: 20px;
+  margin-right: 10px;
+  // display: inline-block;
   position: relative;
   &__img {
     height: 250.39px;
     width: 249px;
     border-radius: 10px;
   }
+}
+.rails-container {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  overflow: scroll;
+  margin-bottom: 30px;
+  margin-left: 8px;
+}
+.rails-container::-webkit-scrollbar {
+  display: none;
 }
 .info-container {
   display: flex;

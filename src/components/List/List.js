@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+// import { useGetBannerDetailsQuery } from 'apis/productApis';
 import Grid from 'components/layout/Grid/Grid';
 import lodash from 'lodash';
-export class List extends Component {
+import Vertical from 'components/layout/Vertical/Vertical';
+import Rail from 'components/layout/Rail/Rail';
+import HeroRail from 'components/layout/hero-rail/HeroRail';
+export default class List extends Component {
   LayoutStyle = {
     //     list: Listing,
     grid: Grid,
+    vertical: Vertical,
+    rail: Rail,
+    heroRail: HeroRail,
     //     rectangularGrid: Grid,
     //     personalizedGrid: PersonalisedGrid,
     //     gridRail: GridRail, // not known
@@ -34,6 +41,14 @@ export class List extends Component {
     //     unimplemented: CardSequence,
     //     staggeredGrid: StaggeredGrid,
   };
+  constructor(props) {
+    super(props);
+  }
+  // componentDidMount() {
+  //   const { data: list } = useGetBannerDetailsQuery();
+  //   console.log(list);
+  //   this.setState({ list: list });
+  // }
   render() {
     let { list = {} } = this.props;
     // if (Utility.isBlank(list) && Utility.isPresent(itemData)) {
@@ -116,8 +131,8 @@ export class List extends Component {
     //     this.displayCountPaginatedItems = list.display_count; // more page sends display count in props
     //   }
     display = lodash.camelCase(display);
+    console.log(display, 'akakhk');
     const LayoutComponent = this.LayoutStyle[display];
-
     //   this.setItems(list, display);
     if (LayoutComponent === undefined) return null;
     return (
@@ -127,5 +142,3 @@ export class List extends Component {
     );
   }
 }
-
-export default List;

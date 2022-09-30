@@ -8,7 +8,7 @@ function ProductInfoContainer({ product, updateStockedStatus = () => {} }) {
     name = '',
     hero_description: description,
     rating = 0,
-    variant_attributes,
+    variant_attributes = [],
     brand,
     mrp = 0,
     final_sp = 0,

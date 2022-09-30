@@ -15,6 +15,7 @@ import RecommendationContainer from 'components/UI/Recommendation/Recommendation
 import ProductListContainer from 'components/UI/cards/grid-card/ProductListContainer';
 // import ProductDeliveryContainer from 'components/delivery-info/ProductDeliveryContainer';
 import ProductDelivery from 'components/delivery-info/ProductDelivery';
+import DemoList from 'components/layout/Grid/DemoList';
 
 function HomeScreen() {
   const navigate = useNavigate();
@@ -24,9 +25,7 @@ function HomeScreen() {
     navigate(-1);
   };
   const productUrl = state?.slug;
-  const url =
-    productUrl ||
-    'api/v2/products/love-beauty-planet-tea-tree-peppermint-vetiver-paraben-free-purifying-conditioner';
+  const url = productUrl || '/api/v2/products/lakme-enrich-matte-lipstick';
   const { data: product, isFetching } = useGetProductDetailsQuery(url);
   if (isFetching) return <Shimmer />;
   const {
@@ -44,7 +43,6 @@ function HomeScreen() {
     consolidated_list_lower: productList = [],
     foxy_match = {},
   } = product;
-  console.log(product);
   function updateStockedStatus(status) {
     setStockedStatus(status);
   }
@@ -55,6 +53,7 @@ function HomeScreen() {
         <div className={styles['product-page-container']}>
           <ProductInfoContainer product={product} updateStockedStatus={updateStockedStatus} />
           <OffersRail />
+          <DemoList />
           <RecommendationContainer foxy_match={foxy_match} rating={rating} />
           <IngredientsList ingredients={ingredients} />
           <ProductDescriptionShort

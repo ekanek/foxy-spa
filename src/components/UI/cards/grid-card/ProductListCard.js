@@ -4,13 +4,13 @@ import styles from 'styles/ProductListCard.module.scss';
 import images from 'assets/images';
 import Utilities from 'utils/Utility';
 import ProductTopContent from 'components/UI/cards/grid-card/ProductTopContent';
-const ProductListCard = ({ product = {} }) => {
+const ProductListCard = ({ list = {} }) => {
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/product', { state: { slug } });
     window.scroll(0, 0);
   };
-  if (product.length === 0) {
+  if (list.length === 0) {
     return null;
   }
   const widthCard = useMemo(() => Utilities.getDynamicWidthForGrid(2, 16) + 7, []);
@@ -25,7 +25,9 @@ const ProductListCard = ({ product = {} }) => {
     name = '',
     slug = '',
     variants_details: variantDetails = {},
-  } = product;
+    brand = {},
+  } = list;
+  const { name: brandName = '' } = brand;
   const { variants_count: variantsCount = '', variants_shade_images: variantsShadeImages = [] } =
     variantDetails;
   return (
@@ -44,7 +46,7 @@ const ProductListCard = ({ product = {} }) => {
         </div>
         <div className={styles['lower-container']}>
           <div className={styles['lower-sub-container']}>
-            <div className={styles['shade-name']}>FACES</div>
+            <div className={styles['shade-name']}>{brandName}</div>
             <div className={styles['product-info__name']}>{name}</div>
             <div className={styles['pricing']}>
               <span className={styles['pricing__sp']}>{'₹' + final_sp}</span>

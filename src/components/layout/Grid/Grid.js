@@ -31,14 +31,13 @@ const Grid = (props) => {
 
   //   let data = productItems.slice(0, display_count);
   const RenderItem = (item) => {
-    console.log(ContainerComponent);
     if (item === undefined || ContainerComponent === undefined) {
       return null;
     }
     // });
     return (
       <List.Item>
-        <ContainerComponent product={item} />
+        <ContainerComponent list={item} />
       </List.Item>
     );
   };

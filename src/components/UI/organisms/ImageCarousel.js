@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'antd';
 import styles from 'styles/Organisms.module.scss';
 
@@ -10,16 +10,16 @@ const ProductImage = ({ imageUrl }) => {
   );
 };
 
-const ImageCarousel = ({ images = [], name = '' }) => {
-  const navigate = useNavigate();
-  const onClick = () => {
-    navigate('/productImage', { state: { slideImage: images, name: name } });
-  };
+const ImageCarousel = ({ images = [] }) => {
+  // const navigate = useNavigate();
+  // const onClick = () => {
+  //   navigate('/productImage', { state: { slideImage: images, name: name } });
+  // };
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
   return (
-    <div onClick={onClick}>
+    <div style={{ alignSelf: 'center' }}>
       <Carousel afterChange={onChange} className={styles['carousel']}>
         {images.map((image) => (
           <ProductImage imageUrl={image} key={image} />
