@@ -5,6 +5,7 @@ import lodash from 'lodash';
 import Vertical from 'components/layout/Vertical/Vertical';
 import Rail from 'components/layout/Rail/Rail';
 import HeroRail from 'components/layout/hero-rail/HeroRail';
+import VerticalRail from 'components/layout/vertical-rail/VerticalRail';
 export default class List extends Component {
   LayoutStyle = {
     //     list: Listing,
@@ -12,6 +13,7 @@ export default class List extends Component {
     vertical: Vertical,
     rail: Rail,
     heroRail: HeroRail,
+    verticalRail: VerticalRail,
     //     rectangularGrid: Grid,
     //     personalizedGrid: PersonalisedGrid,
     //     gridRail: GridRail, // not known
@@ -131,7 +133,6 @@ export default class List extends Component {
     //     this.displayCountPaginatedItems = list.display_count; // more page sends display count in props
     //   }
     display = lodash.camelCase(display);
-    console.log(display, 'akakhk');
     const LayoutComponent = this.LayoutStyle[display];
     //   this.setItems(list, display);
     if (LayoutComponent === undefined) return null;

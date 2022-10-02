@@ -1,0 +1,98 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  // padding: 8px;
+  margin-left: 15px;
+  &__brandName {
+    width: 231px;
+    height: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #979baa;
+  }
+  &__name {
+    width: 212px;
+    height: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #173143;
+    margin-top: 3px;
+    // line-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+.pricing {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  font-family: 'Roboto', sans-serif;
+  margin-top: 3px;
+  &__sp {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    width: 27px;
+    height: 12px;
+    color: #173143;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;
+    margin-right: 8px;
+    // flex: none;
+    // order: 0;
+    // flex-grow: 0;
+  }
+
+  &__mrp {
+    width: 23px;
+    height: 12px;
+    opacity: 0.9;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #979baa;
+    // margin-left: 8px;
+    // margin-right: 8px;
+    text-decoration: line-through;
+    white-space: nowrap;
+  }
+
+  &__discount-percent {
+    font-family: 'Roboto', sans-serif;
+    color: #ff7e7e;
+    opacity: 0.9;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0;
+    width: 34px;
+    height: 12px;
+    margin-left: 8px;
+  }
+}
+.offer-text {
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  color: #01b460;
+  font-weight: 400;
+  font-size: 12px;
+  bottom: 5px;
+}
+.list-offer-text {
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  color: #01b460;
+  font-weight: 400;
+  font-size: 12px;
+  bottom: 20px;
+}

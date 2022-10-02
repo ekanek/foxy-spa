@@ -5,11 +5,11 @@ import images from 'assets/images';
 import Utilities from 'utils/Utility';
 import ProductTopContent from 'components/UI/cards/grid-card/ProductTopContent';
 import PricingContainer from 'components/UI/cards/grid-card/PricingContainer';
-const ProductListCard = ({ list = {} }) => {
-  console.log(list);
+
+const ProductVariantCard = ({ list = {} }) => {
   const navigate = useNavigate();
   const onClick = () => {
-    navigate('/product', { state: { slug } });
+    navigate('/product', { state: { productSlug } });
     window.scroll(0, 0);
   };
   if (list.length === 0) {
@@ -19,32 +19,27 @@ const ProductListCard = ({ list = {} }) => {
   const heightCard = Utilities.getDynamicWidthForGrid(2, 16) + 110;
   const imageHeight = Utilities.getDynamicWidthForGrid(2, 60);
   const {
-    image_url: image = '',
+    product_slug: productSlug = '',
+    brand_name: brandName = '',
+    image_url: variantImage = '',
+    display_name: variantName = '',
+    product_name: name = '',
+    rating = '',
+    images: productImage = [],
     mrp = '',
     discount = '',
     final_sp = '',
-    rating = '',
-    name = '',
-    slug = '',
-    variants_details: variantDetails = {},
-    brand = {},
   } = list;
-  const { name: brandName = '' } = brand;
-  const { variants_count: variantsCount = '', variants_shade_images: variantsShadeImages = [] } =
-    variantDetails;
+
   return (
     <div
       onClick={onClick}
       className={styles['product-card-container']}
       style={{ width: widthCard, height: heightCard }}>
       <div className={styles['product-card-sub-container']}>
-        <ProductTopContent
-          rating={rating}
-          variantsCount={variantsCount}
-          variantsShadeImages={variantsShadeImages}
-        />
+        <ProductTopContent rating={rating} variantImage={variantImage} variantName={variantName} />
         <div className={styles['product-image']}>
-          <img alt="Product Image" src={image} height={imageHeight} width={widthCard} />
+          <img alt="Product Image" src={productImage[0]} height={imageHeight} width={widthCard} />
         </div>
         <PricingContainer
           brandName={brandName}
@@ -61,4 +56,4 @@ const ProductListCard = ({ list = {} }) => {
   );
 };
 
-export default ProductListCard;
+export default ProductVariantCard;

@@ -1,8 +1,10 @@
+// import VerticalCard from 'components/UI/cards/vertical-rail-card/VerticalCard';
+import ListingCard from 'components/UI/cards/listing-card/ListingCard';
 import { capitalize } from 'lodash';
-import HeroRailCard from 'components/UI/cards/hero-card/HeroRailCard';
-import styles from '../../product-cards/product-rail/product-rail.module.scss';
-const HeroRailContainerComponents = {
-  DefaultsizeProductHeroRail: HeroRailCard,
+// import styles from '../../product-cards/product-rail/product-rail.module.scss';
+const ListingContainerComponents = {
+  DefaultsizeProductList: ListingCard,
+  //   list:
   //   salon: Salon,
   //   product: Product,
   //   list: Collection,
@@ -31,14 +33,14 @@ const HeroRailContainerComponents = {
   //   routine: RoutineRailWithDescriptionCard,
   //   pro_link: LinkCardRail,
 };
-const HeroRail = (props) => {
+const Listing = (props) => {
   const { list = {} } = props;
   // productItems = {},
 
   const { content = '', size = '', objects = [] } = list;
   let ContainerComponent = undefined;
 
-  ContainerComponent = HeroRailContainerComponents[content];
+  ContainerComponent = ListingContainerComponents[content];
   if (
     content === 'product'
     //   content === 'product' ||
@@ -48,7 +50,7 @@ const HeroRail = (props) => {
     //   content === 'brand'
   ) {
     ContainerComponent =
-      HeroRailContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}HeroRail`];
+      ListingContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}List`];
   }
 
   // if (content === 'mixed') {
@@ -56,8 +58,11 @@ const HeroRail = (props) => {
   //
 
   //   let data = productItems.slice(0, display_count);
+
+  console.log('RENDER');
+
   return (
-    <div className={styles['rails-container']}>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       {objects.map((item) => (
         <ContainerComponent key={item.id} list={item} />
       ))}
@@ -65,4 +70,4 @@ const HeroRail = (props) => {
   );
 };
 
-export default HeroRail;
+export default Listing;

@@ -18,7 +18,16 @@ const variantCountStyle = {
   fontFamily: 'Roboto-Regular',
   color: '#9d9d9d',
 };
-
+const singleVariantStyle = {
+  height: 12,
+  width: 12,
+  borderRadius: 7,
+  borderWidth: 0.7,
+  borderStyle: 'solid',
+  marginLeft: 3,
+  marginBottom: 1,
+  borderColor: '#ffffff',
+};
 const VariantCount = (props) => {
   const { variantsCount } = props;
   return <div style={variantCountStyle}>{variantsCount}</div>;
@@ -41,14 +50,31 @@ const VariantShades = (props) => {
   );
 };
 const ProductColorVariants = (props) => {
-  const { variantsCount = '', variantsShadeImages = [] } = props;
+  const {
+    variantsCount = '',
+    variantsShadeImages = [],
+    variantName = '',
+    variantImage = '',
+  } = props;
 
   return (
-    <div className={styles['variant-data-container']}>
-      <div className={styles['variant-data']}>
-        <VariantShades variantsShadeImages={variantsShadeImages} />
-        <VariantCount variantsCount={variantsCount} />
-      </div>
+    <div>
+      {variantsCount && (
+        <div className={styles['variant-data-container']}>
+          <div className={styles['variant-data']}>
+            <VariantShades variantsShadeImages={variantsShadeImages} />
+            <VariantCount variantsCount={variantsCount} />
+          </div>
+        </div>
+      )}
+      {variantName && (
+        <div className={styles['variant-type-data-container']}>
+          <div className={styles['variant-data']}>
+            <img src={variantImage} height={12} width={12} style={singleVariantStyle} />
+            <div className={styles['display-name']}> {variantName}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

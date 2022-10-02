@@ -1,25 +1,25 @@
 // import React, { useEffect } from 'react';
 import { List } from 'antd';
 import ProductListCard from 'components/UI/cards/grid-card/ProductListCard';
+import ProductVariantCard from 'components/UI/cards/grid-card/ProductVariantCard';
 import { capitalize } from 'lodash';
 const GridContainerComponents = {
   DefaultsizeProductCard: ProductListCard,
+  DefaultsizeVariantCard: ProductVariantCard,
 };
 const Grid = (props) => {
   const { list = {} } = props;
   // productItems = {},
-
-  const { columns = '', content = '', size = '', objects = [] } = list;
+  const { columns = '', content = '', size = '', objects = [], display_count = 0 } = list;
   let ContainerComponent = undefined;
-
   ContainerComponent = GridContainerComponents[content];
   if (
-    content === 'product'
+    content === 'product' ||
     //   content === 'product' ||
-    //   content === 'sku' ||
-    //   content === 'media' ||
-    //   content === 'artist' ||
-    //   content === 'brand'
+    content === 'sku'
+    // content === 'media' ||
+    // content === 'artist' ||
+    // content === 'brand'
   ) {
     ContainerComponent =
       GridContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}Card`];
@@ -29,7 +29,7 @@ const Grid = (props) => {
   //   ContainerComponent = Grid.Components[item.type];
   //
 
-  //   let data = productItems.slice(0, display_count);
+  let renderProduct = objects.slice(0, display_count);
   const RenderItem = (item) => {
     if (item === undefined || ContainerComponent === undefined) {
       return null;
@@ -41,8 +41,7 @@ const Grid = (props) => {
       </List.Item>
     );
   };
-  console.log('RENDER');
-  return <List grid={{ column: columns }} dataSource={objects} renderItem={RenderItem} />;
+  return <List grid={{ column: columns }} dataSource={renderProduct} renderItem={RenderItem} />;
 };
 
 export default Grid;

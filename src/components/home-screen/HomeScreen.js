@@ -19,13 +19,19 @@ import DemoList from 'components/layout/Grid/DemoList';
 
 function HomeScreen() {
   const navigate = useNavigate();
-  const [stockedStatus, setStockedStatus] = useState(true);
+  const [stockedStatus, setStockedStatus] = useState(false);
   const { state = {} } = useLocation();
   const onClick = () => {
     navigate(-1);
   };
   const productUrl = state?.slug;
-  const url = productUrl || '/api/v2/products/lakme-enrich-matte-lipstick';
+  const variantSlug = state?.productSlug;
+  let url = '';
+  if (!productUrl && !variantSlug) {
+    url = '/api/v2/products/lakme-enrich-matte-lipstick';
+  } else {
+    url = productUrl || `/api/v2/products/${variantSlug}`;
+  }
   const { data: product, isFetching } = useGetProductDetailsQuery(url);
   if (isFetching) return <Shimmer />;
   const {

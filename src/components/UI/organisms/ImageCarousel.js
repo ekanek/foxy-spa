@@ -5,7 +5,7 @@ import styles from 'styles/Organisms.module.scss';
 const ProductImage = ({ imageUrl }) => {
   return (
     <div>
-      <img src={imageUrl} width={400} height={400} />
+      <img src={imageUrl} width={350} height={400} />
     </div>
   );
 };
@@ -19,7 +19,7 @@ const ImageCarousel = ({ images = [] }) => {
     console.log(currentSlide);
   };
   return (
-    <div style={{ alignSelf: 'center' }}>
+    <div>
       <Carousel afterChange={onChange} className={styles['carousel']}>
         {images.map((image) => (
           <ProductImage imageUrl={image} key={image} />

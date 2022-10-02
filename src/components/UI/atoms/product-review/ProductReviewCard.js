@@ -5,7 +5,7 @@ import styles from 'styles/atoms/ProductReviewCards.module.scss';
 import ReviewCreatedAt from 'components/UI/atoms/product-review/ReviewCreatedAt';
 import AverageRating from 'components/UI/atoms/product-review/AverageRating';
 
-export default function ProductReviewCard(review) {
+export default function ProductReviewCard(review = {}) {
   const [isLiked, setIsLiked] = useState(false);
   const [show, setShow] = useState(true);
   const {

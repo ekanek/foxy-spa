@@ -18,7 +18,7 @@
   background: white;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
 }
 
@@ -26,7 +26,7 @@
   font-size: 10px;
   color: #173143;
   text-transform: uppercase;
-  width: 25px;
+  margin: 2px;
   text-align: center;
 }
 .verified_text {

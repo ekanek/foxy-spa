@@ -1,8 +1,9 @@
+// import { List } from 'antd';
+import VerticalCard from 'components/UI/cards/vertical-rail-card/VerticalCard';
 import { capitalize } from 'lodash';
-import HeroRailCard from 'components/UI/cards/hero-card/HeroRailCard';
 import styles from '../../product-cards/product-rail/product-rail.module.scss';
-const HeroRailContainerComponents = {
-  DefaultsizeProductHeroRail: HeroRailCard,
+const RailContainerComponents = {
+  DefaultsizeProductVerticalRail: VerticalCard,
   //   salon: Salon,
   //   product: Product,
   //   list: Collection,
@@ -31,14 +32,14 @@ const HeroRailContainerComponents = {
   //   routine: RoutineRailWithDescriptionCard,
   //   pro_link: LinkCardRail,
 };
-const HeroRail = (props) => {
+const VerticalRail = (props) => {
   const { list = {} } = props;
   // productItems = {},
 
   const { content = '', size = '', objects = [] } = list;
   let ContainerComponent = undefined;
 
-  ContainerComponent = HeroRailContainerComponents[content];
+  ContainerComponent = RailContainerComponents[content];
   if (
     content === 'product'
     //   content === 'product' ||
@@ -48,7 +49,7 @@ const HeroRail = (props) => {
     //   content === 'brand'
   ) {
     ContainerComponent =
-      HeroRailContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}HeroRail`];
+      RailContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}VerticalRail`];
   }
 
   // if (content === 'mixed') {
@@ -56,7 +57,26 @@ const HeroRail = (props) => {
   //
 
   //   let data = productItems.slice(0, display_count);
+  //   const RenderItem = (item) => {
+  //     console.log(ContainerComponent);
+  //     if (item === undefined || ContainerComponent === undefined) {
+  //       return null;
+  //     }
+  //     // });
+  //     return (
+  //       <List.Item>
+  //         <ContainerComponent list={item} />
+  //       </List.Item>
+  //     );
+  //   };
+  console.log('RENDER');
   return (
+    // <List
+    //   //   grid={{ column: 2 }}
+    //   itemLayout="horizontal"
+    //   dataSource={objects}
+    //   renderItem={RenderItem}
+    // />
     <div className={styles['rails-container']}>
       {objects.map((item) => (
         <ContainerComponent key={item.id} list={item} />
@@ -65,4 +85,4 @@ const HeroRail = (props) => {
   );
 };
 
-export default HeroRail;
+export default VerticalRail;

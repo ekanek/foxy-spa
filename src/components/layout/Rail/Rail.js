@@ -57,26 +57,7 @@ const Rail = (props) => {
   //
 
   //   let data = productItems.slice(0, display_count);
-  //   const RenderItem = (item) => {
-  //     console.log(ContainerComponent);
-  //     if (item === undefined || ContainerComponent === undefined) {
-  //       return null;
-  //     }
-  //     // });
-  //     return (
-  //       <List.Item>
-  //         <ContainerComponent list={item} />
-  //       </List.Item>
-  //     );
-  //   };
-  console.log('RENDER');
   return (
-    // <List
-    //   //   grid={{ column: 2 }}
-    //   itemLayout="horizontal"
-    //   dataSource={objects}
-    //   renderItem={RenderItem}
-    // />
     <div className={styles['rails-container']}>
       {objects.map((item) => (
         <ContainerComponent key={item.id} list={item} />

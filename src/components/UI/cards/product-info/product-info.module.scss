@@ -1,21 +1,23 @@
 .infoContainer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   &__brandName {
     width: 100px;
-    height: 14px;
+    height: 18px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 14px;
     color: #979baa;
   }
   &__name {
+    margin-top: 8px;
     width: 281px;
     height: 32px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 16px;
     color: #173143;
     // line-height: 1.6rem;
@@ -31,16 +33,23 @@
   align-items: center;
   flex: 1;
   font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
   &__sp {
-    width: 42px;
-    height: 16px;
-    opacity: 90%;
-    font-family: 'Roboto', sans-serif;
-    color: #173143;
-    font-size: 12px;
-    line-height: 14px;
     font-weight: 500;
-    line-height: 14px;
+    font-size: 16px;
+    line-height: 19px;
+    width: 95.71px;
+    height: 19px;
+    // color: #173143;
+    // font-family: 'Roboto', sans-serif;
+    // width: 42px;
+    // height: 16px;
+    // opacity: 90%;
+
+    // font-size: 12px;
+    // line-height: 14px;
+    // font-weight: 500;
+    // line-height: 14px;
   }
 
   &__mrp {

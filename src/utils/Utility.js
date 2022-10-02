@@ -1,6 +1,6 @@
 import useWindowDimensions from 'utils/UseWindowDimensions';
 import moment from 'moment';
-const { width } = useWindowDimensions();
+const { width, height } = useWindowDimensions();
 export default class Utilities {
   static padding = 12;
   static spacingBetweenItems = 4;
@@ -12,6 +12,9 @@ export default class Utilities {
   static getScreenWidth() {
     // Change name to window width
     return width;
+  }
+  static getScreenHeight() {
+    return height;
   }
   static getTimeAgo(date) {
     return moment.utc(date).local().startOf('seconds').fromNow();

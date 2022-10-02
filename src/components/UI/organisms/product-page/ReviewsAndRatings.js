@@ -6,12 +6,11 @@ import RateStars from 'components/UI/molecules/RateStars';
 import images from 'assets/images';
 const ReviewsAndRatings = ({ rating = 0, reviews = [], reviewsCount = 0, ratingsCount = 0 }) => {
   const navigate = useNavigate();
-  console.log(navigate);
   const onClick = () => {
     navigate('/AllReview', { state: { rating, reviews, reviewsCount, ratingsCount } });
     window.scrollTo(0, 0);
   };
-  const slicedReviews = reviews.slice(0, 5);
+  const slicedReviews = reviews?.slice(0, 5);
   return (
     <div>
       <div className={`${styles['list-title']} ${styles['margin-left']}`}>Rating and Reviews</div>
