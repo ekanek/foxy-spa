@@ -13,7 +13,6 @@ const HeroRailCard = ({ list = {} }) => {
     navigate('/product', { state: { slug } });
     window.scroll(0, 0);
   };
-  console.log(Utilities.getScreenHeight());
   const { image_url: image, slug = '', rating = 0 } = list;
   return (
     <div onClick={onClick} style={cardStyles} className={styles['hero-rail-card-container']}>
@@ -32,7 +31,7 @@ const HeroRailCard = ({ list = {} }) => {
         </div>
 
         <AttributePills />
-        <HeroButton />
+        <HeroButton buttonWidth={(Utilities.getScreenWidth() - 58 - 36) / 2} />
       </div>
     </div>
   );
@@ -40,10 +39,10 @@ const HeroRailCard = ({ list = {} }) => {
 
 export default HeroRailCard;
 const cardStyles = {
-  height: Utilities.getScreenHeight() - 180,
+  height: 580,
   width: Utilities.getScreenWidth() - 58,
 };
 const imageStyle = {
-  height: Utilities.getScreenHeight() - 450,
+  height: 270,
   width: Utilities.getScreenWidth() - 58,
 };

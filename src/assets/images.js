@@ -77,6 +77,7 @@ const images = {
   redArrow: redArrow,
   trendingDown: trendingDown,
   featherCalendar: featherCalendar,
+  addToBagWhite: `${APP_ASSET_URL}/420/add_to_bag___white.png`,
 };
 
 export default images;

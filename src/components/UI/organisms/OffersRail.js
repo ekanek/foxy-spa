@@ -47,6 +47,7 @@ const OffersRail = () => {
   return (
     <div className={styles['offer-rail']}>
       <div className={styles['list-title']}>Pick your best offer</div>
+      <div className={styles['list-sub-title']}>Free gift is always there. We promise </div>
       <div className={styles['prompts-container']}>
         {offersData.map((offer) => (
           <OfferRailsCard

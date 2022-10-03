@@ -6,7 +6,6 @@ import Utilities from 'utils/Utility';
 import ProductTopContent from 'components/UI/cards/grid-card/ProductTopContent';
 import PricingContainer from 'components/UI/cards/grid-card/PricingContainer';
 const ProductListCard = ({ list = {} }) => {
-  console.log(list);
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/product', { state: { slug } });
@@ -15,9 +14,6 @@ const ProductListCard = ({ list = {} }) => {
   if (list.length === 0) {
     return null;
   }
-  const widthCard = Utilities.getDynamicWidthForGrid(2, 16) + 7;
-  const heightCard = Utilities.getDynamicWidthForGrid(2, 16) + 110;
-  const imageHeight = Utilities.getDynamicWidthForGrid(2, 60);
   const {
     image_url: image = '',
     mrp = '',
@@ -33,10 +29,7 @@ const ProductListCard = ({ list = {} }) => {
   const { variants_count: variantsCount = '', variants_shade_images: variantsShadeImages = [] } =
     variantDetails;
   return (
-    <div
-      onClick={onClick}
-      className={styles['product-card-container']}
-      style={{ width: widthCard, height: heightCard }}>
+    <div onClick={onClick} className={styles['product-card-container']} style={cardStyles}>
       <div className={styles['product-card-sub-container']}>
         <ProductTopContent
           rating={rating}
@@ -44,7 +37,7 @@ const ProductListCard = ({ list = {} }) => {
           variantsShadeImages={variantsShadeImages}
         />
         <div className={styles['product-image']}>
-          <img alt="Product Image" src={image} height={imageHeight} width={widthCard} />
+          <img alt="Product Image" src={image} style={imageStyles} />
         </div>
         <PricingContainer
           brandName={brandName}
@@ -62,3 +55,11 @@ const ProductListCard = ({ list = {} }) => {
 };
 
 export default ProductListCard;
+const cardStyles = {
+  width: Utilities.getDynamicWidthForGrid(2, 16) + 7,
+  height: Utilities.getDynamicWidthForGrid(2, 16) + 110,
+};
+const imageStyles = {
+  width: Utilities.getDynamicWidthForGrid(2, 16) + 7,
+  height: Utilities.getDynamicWidthForGrid(2, 60),
+};

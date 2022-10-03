@@ -1,9 +1,9 @@
 import styles from './hero-rail.module.scss';
 import images from 'assets/images';
-const HeroButton = () => {
+const HeroButton = ({ buttonWidth = '' }) => {
   return (
     <div className={styles['button-container']}>
-      <div className={styles['button-container__buttons']}>
+      <div className={styles['button-container__buttons']} style={{ width: buttonWidth }}>
         <div className={styles['button-container__wishlist-content']}>
           <img
             alt="Unlike Icon"
@@ -19,9 +19,11 @@ const HeroButton = () => {
         </div>
       </div>
 
-      <div className={`${styles['button-container__buttons']} ${styles['black-color']}`}>
+      <div
+        className={`${styles['button-container__buttons']} ${styles['black-color']}`}
+        style={{ width: buttonWidth }}>
         <div className={styles['button-container__addToBag-content']}>
-          <img alt="Add To bag Green Icon" src={images.addToBagGreen} height={16} width={14} />
+          <img alt="Add To bag Green Icon" src={images.addToBagWhite} height={16} width={14} />
           <div className={styles['button-container__addToBag']} style={{ marginLeft: 5 }}>
             Add To Bag
           </div>

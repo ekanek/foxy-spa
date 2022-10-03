@@ -2,11 +2,20 @@
   font-weight: bold;
   font-size: 18px;
   color: #173143;
-  margin-bottom: 12px;
+  margin-top: 20px;
   padding: 12px;
 }
 
 .offer-rail {
+}
+.list-sub-title {
+  color: #979baa;
+  font-size: 14px;
+  padding: 8px;
+  // min-height: 2em;
+  margin-top: -14px;
+  margin-left: 4px;
+  font-family: 'Roboto', sans-serif;
 }
 .prompts-container {
   display: flex;

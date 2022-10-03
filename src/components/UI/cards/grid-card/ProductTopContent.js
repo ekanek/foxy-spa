@@ -21,7 +21,10 @@ function ProductTopContent({
       ) : (
         <div></div>
       )}
-      <div style={variantsCount ? { marginRight: 10 } : { marginRight: 10, marginTop: 10 }}>
+      <div
+        style={
+          variantsCount || variantName ? { marginRight: 10 } : { marginRight: 10, marginTop: 8 }
+        }>
         <AverageRating ratings={rating} />
       </div>
     </div>
