@@ -7,7 +7,7 @@ const TopRating = ({ rating = 0, brand }) => {
   const navigate = useNavigate();
   const onClick = () => navigate('/brand_certificate', { state: { brand } });
   const goToReviewSection = () => {
-    window.scrollTo(0, 1700);
+    window.scrollTo(0, 2890);
   };
   return (
     <div className={styles['TopRating']}>

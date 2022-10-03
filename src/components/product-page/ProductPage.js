@@ -13,11 +13,10 @@ import BuyNowAddToBag from 'components/UI/molecules/BuyNowAddToBag';
 import ProductInfoContainer from 'components/UI/organisms/ProductInfoContainer';
 import RecommendationContainer from 'components/UI/Recommendation/RecommendationContainer';
 import ProductListContainer from 'components/UI/cards/grid-card/ProductListContainer';
-// import ProductDeliveryContainer from 'components/delivery-info/ProductDeliveryContainer';
 import ProductDelivery from 'components/delivery-info/ProductDelivery';
 import DemoList from 'components/layout/Grid/DemoList';
 
-function HomeScreen() {
+function ProductPage() {
   const navigate = useNavigate();
   const [stockedStatus, setStockedStatus] = useState(false);
   const { state = {} } = useLocation();
@@ -87,4 +86,4 @@ function HomeScreen() {
 const Shimmer = () => {
   return <ProductPageShimmer />;
 };
-export default HomeScreen;
+export default ProductPage;
