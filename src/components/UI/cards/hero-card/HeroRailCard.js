@@ -43,6 +43,8 @@ const cardStyles = {
   width: Utilities.getScreenWidth() - 58,
 };
 const imageStyle = {
-  height: 270,
+  height: 223,
+  flex: 1,
+  marginBottom: 12,
   width: Utilities.getScreenWidth() - 58,
 };

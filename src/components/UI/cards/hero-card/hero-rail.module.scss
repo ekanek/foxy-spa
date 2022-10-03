@@ -107,7 +107,7 @@
   margin-top: 10px;
   margin-bottom: 20px;
   &__buttons {
-    width: 40vw;
+    // width: 40vw;
     height: 35px;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -116,7 +116,7 @@
   }
   &__wishlistButton {
     font-family: 'Roboto', sans-serif;
-    width: 43px;
+    // width: 43px;
     height: 16px;
     font-weight: 500;
     font-size: 12px;
@@ -130,7 +130,7 @@
     justify-content: center;
     align-items: center;
     top: 9px;
-    right: 50px;
+    right: 40px;
   }
   &__addToBag-content {
     position: absolute;
@@ -142,7 +142,7 @@
     right: 30px;
   }
   &__addToBag {
-    width: 70px;
+    // width: 70px;
     height: 16px;
     font-weight: 500;
     font-size: 12px;
