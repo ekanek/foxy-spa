@@ -15,7 +15,7 @@ import RecommendationContainer from 'components/UI/Recommendation/Recommendation
 import ProductListContainer from 'components/UI/cards/grid-card/ProductListContainer';
 import ProductDelivery from 'components/delivery-info/ProductDelivery';
 import DemoList from 'components/layout/Grid/DemoList';
-
+import HomePage from 'components/UI/home-page/HomePage';
 function ProductPage() {
   const navigate = useNavigate();
   const [stockedStatus, setStockedStatus] = useState(false);
@@ -67,6 +67,7 @@ function ProductPage() {
             howToUseDescription={howToUseDescription}
             metrologicalInfo={metrologicalInfo}
           />
+          <HomePage />
           <ReviewsAndRatings
             reviews={reviews}
             rating={rating}

@@ -10,7 +10,7 @@ const RailCard = ({ list = {} }) => {
   };
   const { image_url: image, slug = '' } = list;
   return (
-    <div onClick={onClick} className={styles['card-container']}>
+    <div style={{ marginLeft: 4 }} onClick={onClick} className={styles['card-container']}>
       <div className={styles['content']}>
         <img className={styles['card-container__img']} src={image} />
         <ProductCardInfo list={list} />

@@ -129,6 +129,9 @@ export const api = createApi({
     getBannerDetails: builder.query({
       query: () => '/api/v4/lists/demo-plum.json',
     }),
+    getHomePageDetails: builder.query({
+      query: () => '/api/v4/lists/home-page.json?page=1',
+    }),
   }),
 });
 
@@ -145,6 +148,7 @@ export const {
   // useGetSchemesQuery,
   useGetProductDetailsQuery,
   useGetBannerDetailsQuery,
+  useGetHomePageDetailsQuery,
   // useSendOtpMutation,
   // useVerifyOtpMutation,
 } = api;

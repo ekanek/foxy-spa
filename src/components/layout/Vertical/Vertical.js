@@ -18,8 +18,8 @@ const Vertical = (props) => {
     // let ContainerComponent = VerticalContainerComponents[content];
     // console.log(ContainerComponent, 'component');
     if (
-      item.content === 'product'
-      //   content === 'product' ||
+      item.content === 'product' ||
+      item.content === 'list'
       //   content === 'sku' ||
       //   content === 'media' ||
       //   content === 'artist' ||
@@ -27,9 +27,9 @@ const Vertical = (props) => {
     ) {
       ContainerComponent = VerticalContainerComponents()[item.type];
     }
-    // if (content === 'mixed') {
-    //   ContainerComponent = VerticalContainerComponents[item.type];
-    // }
+    if (item.content === 'mixed') {
+      ContainerComponent = VerticalContainerComponents[item.type];
+    }
     if (item === undefined || ContainerComponent === undefined) {
       return null;
     }

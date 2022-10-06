@@ -19,4 +19,28 @@ export default class Utilities {
   static getTimeAgo(date) {
     return moment.utc(date).local().startOf('seconds').fromNow();
   }
+  static listDefaultViewHeight = 64;
+  static getCardDimentions(columns, content) {
+    let spacing = 8;
+    let additionalHeight = 0;
+    let cardImageRatio = 1;
+    let horizontalMargin = 0;
+    if (content === 'artistCard') {
+      spacing = 24;
+      additionalHeight = Utilities.artistNameContainerHeight;
+    }
+    if (content === 'mediaCard') {
+      additionalHeight = 52;
+      cardImageRatio = 9 / 16;
+    }
+    if (columns !== 2) {
+      horizontalMargin = 3;
+    }
+    const viewwidth = Utilities.getDynamicWidthForGrid(columns, spacing) - horizontalMargin;
+    const viewheight =
+      cardImageRatio * Utilities.getDynamicWidthForGrid(columns, spacing) + additionalHeight;
+    const imagewidth = Utilities.getDynamicWidthForGrid(columns, spacing);
+    const imageheight = cardImageRatio * Utilities.getDynamicWidthForGrid(columns, spacing);
+    return [viewwidth, viewheight, imagewidth, imageheight];
+  }
 }

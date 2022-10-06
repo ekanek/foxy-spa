@@ -5,6 +5,8 @@ import ProductReviewPage from 'components/UI/molecules/ProductReviewPage';
 import CertificatePage from 'components/UI/molecules/CertificatePage';
 import ProductPage from 'components/product-page/ProductPage';
 import ProductDescription from 'components/UI/organisms/ProductDescription';
+// import HomePage from 'components/UI/home-page/HomePage';
+
 export default function AppRoutes() {
   return (
     <div className="container">
