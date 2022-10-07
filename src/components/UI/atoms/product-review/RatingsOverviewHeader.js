@@ -1,7 +1,11 @@
 import images from 'assets/images';
-import React from 'react';
 import styles from 'styles/Atoms.module.scss';
-export default function RatingsOverviewHeader({ rating = 0, ratingsCount = 0, reviewsCount = 0 }) {
+export default function RatingsOverviewHeader({
+  rating = 0,
+  ratingsCount = 0,
+  reviewsCount = 0,
+  allReview = '',
+}) {
   let text = '';
   if (ratingsCount !== 0 && reviewsCount !== 0) {
     text = `(${ratingsCount} ratings | ${reviewsCount} reviews)`;
@@ -10,12 +14,23 @@ export default function RatingsOverviewHeader({ rating = 0, ratingsCount = 0, re
   } else if (reviewsCount === 0) {
     text = ` ${ratingsCount} ratings`;
   }
+  let headerStyle = '';
+  if (allReview) {
+    headerStyle = 'rating-header-all-review';
+  } else {
+    headerStyle = 'ratings-header';
+  }
   return (
-    <div className={styles['ratings-header']}>
+    <div className={styles[headerStyle]}>
       <div className={styles['ratings-header__flex']}>
         <div className={styles['ratings-header__rating']}>{rating}</div>
         <div>{' / 5'}</div>
-        <img src={images.rating.filled_star} width={16} className={styles['ratings-header__img']} />
+        <img
+          alt="Filled Star"
+          src={images.rating.filled_star}
+          width={16}
+          className={styles['ratings-header__img']}
+        />
       </div>
       <div className={styles['ratings-header__flex-end']}>{text}</div>
     </div>

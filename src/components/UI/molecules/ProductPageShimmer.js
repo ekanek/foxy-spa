@@ -1,4 +1,3 @@
-import React from 'react';
 import { Breathing, Shimmer } from 'react-shimmer';
 import styles from 'styles/Molecules.module.scss';
 

@@ -1,0 +1,54 @@
+.container {
+  background: #f3f6f8;
+  width: 100%;
+  &__head-text {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 40px 0 12px 12px;
+    color: #173143;
+  }
+}
+.delivery-info-container {
+  height: 127px;
+  background: #ffffff;
+  width: 100vw;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  &__content {
+    margin: 10px;
+  }
+  &__top {
+    margin-top: 1.5rem;
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
+  }
+  &__text {
+    line-height: 16px;
+    font-size: 14px;
+    font-style: normal;
+    letter-spacing: 0;
+    color: #173143;
+    margin-top: 2px;
+    font-weight: 480;
+  }
+}
+.button-container {
+  &__button {
+    position: absolute;
+    color: #4285f4;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    font-weight: 500;
+    display: flex;
+    right: 20px;
+    bottom: -30px;
+  }
+  &__arrow-style {
+    margin-left: 8px;
+  }
+}

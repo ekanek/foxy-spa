@@ -1,0 +1,36 @@
+.card-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  // width: '100%';
+  height: 120px;
+  background: #ffffff;
+  border-radius: 4px;
+  // margin-right: 9px;
+  &__image-container {
+    height: 120px;
+    width: 95px;
+    border-right: 1px solid #f4f6f8;
+  }
+  &__image {
+    width: 88px;
+    height: 88px;
+    align-self: center;
+    margin: 6px;
+  }
+  &__right-container {
+  }
+  &__addToBag {
+    position: absolute;
+    border: 1px solid #f4f6f8;
+    border-radius: 50px;
+    bottom: 20px;
+    right: 15px;
+  }
+}
+.offer-text {
+  font-family: 'Roboto', sans-serif;
+  color: #fd5c63;
+  font-weight: 400;
+  font-size: 14px;
+}

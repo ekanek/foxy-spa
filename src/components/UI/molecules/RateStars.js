@@ -1,6 +1,7 @@
-import images from 'assets/images';
 import React, { useState } from 'react';
+import images from 'assets/images';
 import styles from 'styles/Molecules.module.scss';
+import AverageRating from 'components/UI/atoms/product-review/AverageRating';
 
 const ratingConfig = {
   1: { text: 'Hated it', url: images.rating.product_1_star },
@@ -23,7 +24,7 @@ const EmoStar = ({ index, hoverIndex, setIndex }) => {
   return (
     <div className={styles['emo-star']} onMouseEnter={onMouseEnter}>
       <div className={styles['emo-star__centre']}>
-        <img src={image} width={50} />
+        <img src={image} width={45} />
         <div>{comment}</div>
       </div>
     </div>
@@ -34,12 +35,20 @@ export default function RateStars() {
   const [hoverIndex, setHoverIndex] = useState(0);
 
   return (
-    <div className={styles['rate-stars']}>
-      <EmoStar index={1} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-      <EmoStar index={2} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-      <EmoStar index={3} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-      <EmoStar index={4} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
-      <EmoStar index={5} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
+    <div className={styles['rate-stars-container']}>
+      <div className={styles['rate-stars-container__header']}>
+        <div style={{ padding: 1, marginTop: 4 }}>
+          <AverageRating />
+        </div>
+
+        <div className={styles['rate-stars-container__text']}>How do you rate this product?</div>
+      </div>
+
+      <div className={styles['rate-stars']}>
+        {[...Array(5)].map((e, i) => (
+          <EmoStar index={i + 1} key={i} hoverIndex={hoverIndex} setIndex={setHoverIndex} />
+        ))}
+      </div>
     </div>
   );
 }

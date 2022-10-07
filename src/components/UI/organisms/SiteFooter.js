@@ -107,7 +107,7 @@ const PolicyAndConnect = () => {
             <img src={images.fbIcon} width={23} height={23} />
           </a>
           <a target="_blank" href="https://twitter.com/FoxyFamous" rel="noreferrer">
-            <img src={images.twitterIcon} width={23} height={23} />
+            <img style={{ marginTop: 6 }} src={images.twitterIcon} width={23} height={23} />
           </a>
         </div>
       </div>

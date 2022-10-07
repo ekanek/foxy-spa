@@ -87,25 +87,39 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     &__image {
       color: transparent;
       opacity: 0.3;
     }
   }
 }
-
-.rate-stars {
+.rate-stars-container {
   background: white;
+  padding: 15px;
+  margin-top: 30px;
+  // border: 1px solid #bbbebc;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 450;
+    padding: 0 10px;
+    margin-bottom: 4px;
+  }
+}
+.rate-stars {
   height: max-content;
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 12px;
+  padding: 10px;
 }
 
 .emo-star {
-  margin: 12px;
+  margin: 4px;
   width: max-content;
   height: 70px;
   font-size: 10px;
@@ -133,7 +147,7 @@
 
   &__flex {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 8px;
   }
 
@@ -155,6 +169,7 @@
     background: white !important;
     border: 1px #01b460 solid;
     color: #01b460;
+    font-family: 'Roboto', sans-serif;
   }
   &__buy-now {
     display: flex;
@@ -165,5 +180,6 @@
     border-radius: 8px;
     background: linear-gradient(to right, #52cb8c, #01b460);
     color: white;
+    font-family: 'Roboto', sans-serif;
   }
 }

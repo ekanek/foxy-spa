@@ -2,44 +2,99 @@
   font-weight: bold;
   font-size: 18px;
   color: #173143;
-  margin-bottom: 12px;
+  margin-top: 20px;
+  padding: 12px;
 }
 
 .offer-rail {
-  padding: 12px;
+}
+.list-sub-title {
+  color: #979baa;
+  font-size: 14px;
+  padding: 8px;
+  // min-height: 2em;
+  margin-top: -14px;
+  margin-left: 4px;
+  font-family: 'Roboto', sans-serif;
 }
 .prompts-container {
   display: flex;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  align-items: center;
+  margin-top: 4px;
+  overflow: scroll;
+  margin-bottom: 30px;
 }
 .prompts-container::-webkit-scrollbar {
   display: none;
 }
-.prompt-active {
-  border-radius: 12px;
+.offer-card-container {
+  position: relative;
   min-width: 280px;
   max-width: 280px;
+  margin-left: 12px;
   height: 156px;
-  position: relative;
-  border: 4px solid #f5f6f8;
   margin-top: 12px;
+  filter: grayscale(0);
+  opacity: 1;
+  border-radius: 4px;
+  display: block;
   margin-bottom: 8px;
+}
+.behind-prompt {
+  display: block;
   border: 4px solid #cfe9da;
   background: #cfe9da;
-  margin-right: 12px;
+  position: absolute;
+  width: 90%;
+  height: 98%;
+  transform: rotate(4deg);
+  left: 5px;
+  border-radius: 8px;
 }
-.prompt-not-active {
-  border-radius: 12px;
-  min-width: 280px;
-  max-width: 280px;
-  margin-right: 12px;
-  height: 156px;
-}
-.offer-image {
+.main-card-container {
   display: block;
   background-color: white;
+  border: 4px solid #cfe9da;
+  position: absolute;
+  min-width: 270px;
+  max-width: 260px;
+  margin-right: 12px;
+  height: 156px;
+  border-radius: 8px;
+}
+.circle-outside-left {
+  background: linear-gradient(90deg, #f4f6f8 50%, #cfe9da 50%);
+  right: unset;
+  left: -14px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  z-index: 1;
+}
+.circle-inside {
+  background: #f4f6f8;
+  height: 12px;
+  width: 12px;
+  border-radius: 10px;
+}
+.circle-outside-right {
+  background: linear-gradient(90deg, #cfe9da 50%, #f4f6f8 50%);
+  left: unset;
+  right: -14px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+  top: calc(50% - 10px);
+  z-index: 1;
 }
 .prompt-top {
   min-height: 94px;
@@ -58,12 +113,15 @@
 .prompt-header-text {
   font-size: 14px;
   line-height: 28px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .prompt-text {
   color: #979baa;
   font-size: 12px;
-  min-height: 2.8em;
+  min-height: 2em;
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
 }
 .prompt-bottom-container {
   display: grid;
@@ -71,21 +129,30 @@
   justify-content: space-between;
   background-color: white;
   border-radius: 0 0 8px 8px;
-  padding: 10px;
+  padding: 7px;
   margin-top: 10px;
 }
 .prompt-bottom-coupon-code {
   background-color: #01b4601a;
   border: 1px #01b460 dashed;
+  font-family: 'Roboto', sans-serif;
+  width: 7rem;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
 }
 .prompt-bottom-coupon-applied {
   color: #ffffff;
   background-color: #000000;
   border-radius: 16px;
   font-size: 10px;
-  font-weight: bold;
-  line-height: 10px;
+  font-weight: 50;
+  line-height: 14px;
   text-align: center;
-  padding: 6px;
+  padding: 5px;
   cursor: pointer;
+  width: 7rem;
+  font-family: 'Roboto', sans-serif;
 }
