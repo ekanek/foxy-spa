@@ -1,14 +1,16 @@
 // import React, { useEffect } from 'react';
 import { List } from 'antd';
+import { capitalize } from 'lodash';
 import ProductListCard from 'components/UI/cards/grid-card/ProductListCard';
 import ProductVariantCard from 'components/UI/cards/grid-card/ProductVariantCard';
 import Collection from 'components/UI/cards/collections/Collection';
-import { capitalize } from 'lodash';
+import BrandGrid from 'components/UI/cards/brand-grid/BrandGrid';
 import styles from './grid.module.scss';
 const GridContainerComponents = {
   DefaultsizeProductCard: ProductListCard,
   DefaultsizeVariantCard: ProductVariantCard,
   DefaultsizeListCard: Collection,
+  DefaultsizeBrandCard: BrandGrid,
 };
 const Grid = (props) => {
   const { list = {} } = props;
@@ -23,17 +25,15 @@ const Grid = (props) => {
     display: layout = '',
     subtitle = '',
   } = list;
-  // console.log(name, objects, content);
   let ContainerComponent = undefined;
   ContainerComponent = GridContainerComponents[content];
   if (
     content === 'product' ||
-    //   content === 'product' ||
     content === 'sku' ||
-    content === 'list'
+    content === 'list' ||
+    content === 'brand'
     // content === 'media' ||
     // content === 'artist' ||
-    // content === 'brand'
   ) {
     ContainerComponent =
       GridContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}Card`];
@@ -41,7 +41,7 @@ const Grid = (props) => {
   // if (content === 'mixed') {
   //   ContainerComponent = Grid.Components[item.type];
   //
-
+  console.log(`${capitalize(size)}${capitalize(objects[0].type)}Card`);
   let renderProduct = objects.slice(0, display_count);
   const RenderItem = (item) => {
     if (item === undefined || ContainerComponent === undefined) {

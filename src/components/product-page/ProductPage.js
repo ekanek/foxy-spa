@@ -58,7 +58,6 @@ function ProductPage() {
         <div className={styles['product-page-container']}>
           <ProductInfoContainer product={product} updateStockedStatus={updateStockedStatus} />
           <OffersRail />
-          <DemoList />
           <RecommendationContainer foxy_match={foxy_match} rating={rating} />
           <IngredientsList ingredients={ingredients} />
           <ProductDescriptionShort
@@ -67,6 +66,7 @@ function ProductPage() {
             howToUseDescription={howToUseDescription}
             metrologicalInfo={metrologicalInfo}
           />
+          <DemoList />
           <HomePage />
           <ReviewsAndRatings
             reviews={reviews}

@@ -19,11 +19,11 @@ const Vertical = (props) => {
     // console.log(ContainerComponent, 'component');
     if (
       item.content === 'product' ||
-      item.content === 'list'
+      item.content === 'list' ||
+      item.content === 'brand'
       //   content === 'sku' ||
       //   content === 'media' ||
       //   content === 'artist' ||
-      //   content === 'brand'
     ) {
       ContainerComponent = VerticalContainerComponents()[item.type];
     }

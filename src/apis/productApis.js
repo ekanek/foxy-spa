@@ -130,7 +130,7 @@ export const api = createApi({
       query: () => '/api/v4/lists/demo-plum.json',
     }),
     getHomePageDetails: builder.query({
-      query: () => '/api/v4/lists/home-page.json?page=1',
+      query: () => '/api/v4/lists/home-page.json?page=6',
     }),
   }),
 });

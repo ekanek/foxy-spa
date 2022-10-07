@@ -1,4 +1,4 @@
-.collection-container {
+.brandCard-container {
   margin: 4px;
 }
 .imageStyle {
@@ -10,6 +10,12 @@
 .threeColumnImageStyle {
   height: 32vw;
   width: 31.5vw;
+  border-radius: 4px;
+  overflow: 'hidden';
+}
+.fourColumnImageStyle {
+  height: 23vw;
+  width: 23.3vw;
   border-radius: 4px;
   overflow: 'hidden';
 }

@@ -3,7 +3,6 @@ import styles from './collection-card.module.scss';
 
 const CardImage = ({ image = '', columns = 0, layout = '' }) => {
   if (!image) return null;
-  console.log(layout);
   let imageContainerStyle;
   if (columns === 2) {
     imageContainerStyle = 'imageStyle';

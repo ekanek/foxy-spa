@@ -44,7 +44,6 @@ const Rail = (props) => {
     name = '',
     subtitle = '',
   } = list;
-  console.log(name);
   let ContainerComponent = undefined;
   ContainerComponent = RailContainerComponents[content];
   if (
@@ -58,8 +57,6 @@ const Rail = (props) => {
     ContainerComponent =
       RailContainerComponents[`${capitalize(size)}${capitalize(objects[0].type)}Rail`];
   }
-  console.log(`${capitalize(size)}${capitalize(objects[0].type)}Rail`, 'AKHKH');
-
   // if (content === 'mixed') {
   //   ContainerComponent = Grid.Components[item.type];
   //
